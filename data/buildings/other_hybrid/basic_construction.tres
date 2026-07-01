@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=6 format=3 uid="uid://dvjxfmfmht348"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="Texture2D" uid="uid://n1oiqn43d448" path="res://assets/buildings/other/Basic Construction.png" id="4_icon"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 10
+
+[resource]
+script = ExtResource("1_script")
+building_id = "basic_construction"
+display_name = "Basic Construction"
+description = "Once this construction has been active for some time, it can be upgraded into a resource building of your choice: Wood, Wheat, Ore, or Clay. Cycle: 30s. Build Cost: 10 Gold."
+icon = ExtResource("4_icon")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 2
+building_category = 7
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 30.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/BasicConstruction.gd"

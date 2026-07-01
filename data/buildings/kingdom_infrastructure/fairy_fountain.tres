@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=7 format=3 uid="uid://bkovy2v7dcdha"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://b22kplbnkjd24" path="res://assets/environment/buildings/fairy_fountain.png" id="3_l6xc5"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "water"
+amount = 400
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 90
+
+[resource]
+script = ExtResource("1_script")
+building_id = "fairy_fountain"
+display_name = "Fairy Fountain"
+description = "Does not need to be watched to work. Produces 5 of a random resource each cycle."
+icon = ExtResource("3_l6xc5")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 2
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 10.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/FairyFountain.gd"

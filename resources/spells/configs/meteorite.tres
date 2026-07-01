@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=4 format=3 uid="uid://ben1ee2hgpdf4"]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/FireballEffect.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bclnqeh8htkic" path="res://assets/vfx/spells/1.png" id="2_1fxwk"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "meteorite"
+spell_name = "Meteorite"
+icon = ExtResource("2_1fxwk")
+description = "Calls down a meteor from above the screen. The strike lands after 3 seconds and deals 110 area damage."
+target_radius = 50.0
+target_type = "point"
+effect_scene = ExtResource("2")
+duration = 3.0
+damage = 110.0
+damage_per_second = 0.0
+max_stacks = 99

@@ -1,0 +1,1265 @@
+[gd_scene load_steps=25 format=3 uid="uid://gjm3v10jy1ry"]
+
+[ext_resource type="Script" path="res://scripts/dev/CharacterCreationScratchEditable.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d3fprcto64uo6" path="res://assets/Characher_Creation/hero_creation_background.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://blthbxp3b7ern" path="res://assets/Characher_Creation/hero_stats_background.png" id="3_stats_bg"]
+[ext_resource type="Texture2D" uid="uid://fccsqsa1ye3f" path="res://assets/Characher_Creation/free_points_background.png" id="4_free_bg"]
+[ext_resource type="Texture2D" uid="uid://ckqpy8t0yu107" path="res://assets/Characher_Creation/left_minus.png" id="5_left_minus"]
+[ext_resource type="Texture2D" uid="uid://bd71w66vwubhh" path="res://assets/Characher_Creation/left_lock.png" id="6_left_lock"]
+[ext_resource type="Texture2D" uid="uid://ciimo3d8pymni" path="res://assets/Characher_Creation/right_plus.png" id="7_right_plus"]
+[ext_resource type="Texture2D" uid="uid://cgy6numltr18c" path="res://assets/Characher_Creation/right_lock.png" id="8_right_lock"]
+[ext_resource type="Texture2D" uid="uid://cak6s84pfla7j" path="res://assets/Characher_Creation/number_of_stats.png" id="9_number_bg"]
+[ext_resource type="Texture2D" uid="uid://qjuamkk2lng8" path="res://assets/Characher_Creation/Kings Stats/Power.png" id="10_power"]
+[ext_resource type="Texture2D" uid="uid://bqav5c7qirkyn" path="res://assets/Characher_Creation/Kings Stats/Speed.png" id="11_speed"]
+[ext_resource type="Texture2D" uid="uid://bkvc35qqhd8my" path="res://assets/Characher_Creation/Kings Stats/Thinking.png" id="12_thinking"]
+[ext_resource type="Texture2D" uid="uid://b1h2nlsa4oh2s" path="res://assets/Characher_Creation/Kings Stats/Lucky.png" id="13_lucky"]
+[ext_resource type="Texture2D" uid="uid://uslvmi60jesh" path="res://assets/Characher_Creation/Kings Stats/Heath.png" id="14_heath"]
+[ext_resource type="Texture2D" uid="uid://b564kgdo1ray2" path="res://assets/Characher_Creation/Kings Stats/Charisma.png" id="15_charisma"]
+[ext_resource type="Texture2D" uid="uid://br51y78xbdu8v" path="res://assets/Characher_Creation/Kings Stats/Crown.png" id="16_crown"]
+[ext_resource type="Texture2D" uid="uid://c34becolx2280" path="res://assets/Characher_Creation/class_background.png" id="17_class_bg"]
+[ext_resource type="Texture2D" uid="uid://gvcx8yqxlmnt" path="res://assets/Characher_Creation/class_name_background.png" id="18_class_name_bg"]
+[ext_resource type="Texture2D" uid="uid://dk8rtmky7pe46" path="res://assets/Characher_Creation/age_backgroundpng.png" id="19_age_bg"]
+[ext_resource type="Texture2D" uid="uid://cdwrchnaq5nfi" path="res://assets/Characher_Creation/name_background.png" id="20_name_bg"]
+[ext_resource type="Texture2D" uid="uid://cq4bi1k784rm3" path="res://assets/Characher_Creation/slider_left.png" id="21_slider_left"]
+[ext_resource type="Texture2D" uid="uid://wn2e65qursvp" path="res://assets/Characher_Creation/slider_right.png" id="22_slider_right"]
+[ext_resource type="Texture2D" uid="uid://cuc83v0m1pmqp" path="res://assets/Characher_Creation/face_editor/above_face_background.png" id="23_face_editor_top"]
+[ext_resource type="Texture2D" uid="uid://cmvglck1dgml8" path="res://assets/Characher_Creation/face_editor/under_face_background.png" id="24_face_editor_bottom"]
+
+[node name="CharacterCreationScratchEditable" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+class_token_physics_mode = 1
+
+[node name="HeroCreationBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FreePointsPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 306.0
+offset_top = -13.0
+offset_right = 566.0
+offset_bottom = 83.0
+scale = Vector2(1.5, 1.5)
+
+[node name="Background" type="TextureRect" parent="FreePointsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_free_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FreePointsLabel" type="Label" parent="FreePointsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.666667
+offset_top = 5.33333
+offset_right = 0.666656
+offset_bottom = 5.33334
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.12, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 51
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsPanel" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(960, 840)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -956.0
+offset_top = -378.0
+offset_right = 4.0
+offset_bottom = 462.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.933746, 0.904726)
+mouse_filter = 2
+texture = ExtResource("3_stats_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="StatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 46.0
+offset_right = -56.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Rows" type="VBoxContainer" parent="StatsPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PowerRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/PowerRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("10_power")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/PowerRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/PowerRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/PowerRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/PowerRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/PowerRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpeedRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/SpeedRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("11_speed")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/SpeedRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/SpeedRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/SpeedRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/SpeedRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/SpeedRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ThinkingRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/ThinkingRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("12_thinking")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/ThinkingRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/ThinkingRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/ThinkingRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/ThinkingRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/ThinkingRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LuckyRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/LuckyRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("13_lucky")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/LuckyRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/LuckyRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/LuckyRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/LuckyRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/LuckyRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HeathRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/HeathRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("14_heath")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/HeathRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/HeathRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/HeathRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/HeathRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/HeathRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharismaRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/CharismaRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("15_charisma")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/CharismaRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/CharismaRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/CharismaRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/CharismaRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/CharismaRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CrownRow" type="HBoxContainer" parent="StatsPanel/Margin/Rows"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_constants/separation = 22
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="StatsPanel/Margin/Rows/CrownRow"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("16_crown")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MinusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/CrownRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("5_left_minus")
+texture_pressed = ExtResource("5_left_minus")
+texture_hover = ExtResource("5_left_minus")
+texture_disabled = ExtResource("6_left_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ValueHolder" type="Control" parent="StatsPanel/Margin/Rows/CrownRow"]
+custom_minimum_size = Vector2(92, 64)
+layout_mode = 2
+
+[node name="NumberBackground" type="TextureRect" parent="StatsPanel/Margin/Rows/CrownRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("9_number_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ValueLabel" type="Label" parent="StatsPanel/Margin/Rows/CrownRow/ValueHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.16, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 42
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlusButton" type="TextureButton" parent="StatsPanel/Margin/Rows/CrownRow"]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+texture_normal = ExtResource("7_right_plus")
+texture_pressed = ExtResource("7_right_plus")
+texture_hover = ExtResource("7_right_plus")
+texture_disabled = ExtResource("8_right_lock")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ClassPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 940.0
+offset_top = 125.0
+offset_right = 1376.0
+offset_bottom = 407.0
+
+[node name="ClassBackground" type="TextureRect" parent="ClassPanel"]
+layout_mode = 1
+offset_left = -47.0
+offset_top = -118.0
+offset_right = 197.0
+offset_bottom = -15.0
+mouse_filter = 2
+texture = ExtResource("17_class_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="ClassPanel/ClassBackground"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 36
+text = "Class"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderLeft" type="TextureButton" parent="ClassPanel"]
+custom_minimum_size = Vector2(74, 74)
+layout_mode = 1
+offset_left = 8.0
+offset_top = -50.0
+offset_right = 82.0
+offset_bottom = 24.0
+texture_normal = ExtResource("21_slider_left")
+texture_pressed = ExtResource("21_slider_left")
+texture_hover = ExtResource("21_slider_left")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SliderRight" type="TextureButton" parent="ClassPanel"]
+custom_minimum_size = Vector2(74, 74)
+layout_mode = 1
+offset_left = 66.0
+offset_top = -48.0
+offset_right = 140.0
+offset_bottom = 26.0
+texture_normal = ExtResource("22_slider_right")
+texture_pressed = ExtResource("22_slider_right")
+texture_hover = ExtResource("22_slider_right")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TokenRig" type="Node2D" parent="ClassPanel"]
+position = Vector2(88, -258)
+
+[node name="RopeAnchor" type="Marker2D" parent="ClassPanel/TokenRig"]
+position = Vector2(146, 195)
+
+[node name="TokenSpawnPoint" type="Marker2D" parent="ClassPanel/TokenRig"]
+position = Vector2(63, 7)
+scale = Vector2(0.5, 0.5)
+
+[node name="TokenRestPoint" type="Marker2D" parent="ClassPanel/TokenRig"]
+position = Vector2(76, 194)
+
+[node name="RopeLine" type="Line2D" parent="ClassPanel/TokenRig"]
+points = PackedVector2Array(72, 24, 76, 164)
+width = 6.0
+default_color = Color(0.35, 0.22, 0.09, 1)
+
+[node name="RopeSprite" type="Sprite2D" parent="ClassPanel/TokenRig"]
+position = Vector2(111, 195)
+
+[node name="RopeTopHolder" type="Sprite2D" parent="ClassPanel/TokenRig"]
+position = Vector2(146, 195)
+
+[node name="RopeBottomHolder" type="Sprite2D" parent="ClassPanel/TokenRig"]
+position = Vector2(76, 164)
+
+[node name="TokenRoot" type="Node2D" parent="ClassPanel/TokenRig"]
+position = Vector2(76, 164)
+
+[node name="TokenSprite" type="Sprite2D" parent="ClassPanel/TokenRig/TokenRoot"]
+scale = Vector2(0.666667, 0.666667)
+
+[node name="TokenAttachPoint" type="Marker2D" parent="ClassPanel/TokenRig/TokenRoot"]
+position = Vector2(0, -28)
+
+[node name="ClassNamePanel" type="Control" parent="ClassPanel"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 221.0
+offset_top = -111.0
+offset_right = 511.0
+offset_bottom = -15.0
+
+[node name="Background" type="TextureRect" parent="ClassPanel/ClassNamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("18_class_name_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassNameLabel" type="Label" parent="ClassPanel/ClassNamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+text = "Сhivalry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FaceEditorPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 438.0
+offset_top = 352.0
+offset_right = 1148.0
+offset_bottom = 1372.0
+scale = Vector2(0.745435, 0.646532)
+
+[node name="TopPlate" type="TextureRect" parent="FaceEditorPanel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 34.0
+offset_right = 744.0
+offset_bottom = 604.0
+texture = ExtResource("23_face_editor_top")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BottomPlate" type="TextureRect" parent="FaceEditorPanel"]
+layout_mode = 0
+offset_left = -71.0
+offset_top = 5.0
+offset_right = 589.0
+offset_bottom = 405.0
+scale = Vector2(1.44643, 1.48944)
+texture = ExtResource("24_face_editor_bottom")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingsAnchor" type="Marker2D" parent="FaceEditorPanel"]
+position = Vector2(659, 227)
+
+[node name="AgePanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 417.0
+offset_top = 99.0
+offset_right = 697.0
+offset_bottom = 188.0
+
+[node name="Background" type="TextureRect" parent="AgePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("19_age_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AgeInput" type="LineEdit" parent="AgePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/selection_color = Color(1, 0.92, 0.72, 0.55)
+theme_override_colors/caret_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_placeholder_color = Color(0.35, 0.22, 0.08, 0.65)
+theme_override_colors/font_selected_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_constants/minimum_character_width = 2
+theme_override_font_sizes/font_size = 34
+text = "16"
+placeholder_text = "16"
+alignment = 1
+flat = true
+
+[node name="AgeFocusCaret" type="ColorRect" parent="AgePanel"]
+visible = false
+layout_mode = 1
+offset_left = 138.0
+offset_top = 17.0
+offset_right = 142.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.08, 0.05, 0.02, 1)
+
+[node name="NamePanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 513.0
+offset_top = 15.0
+offset_right = 923.0
+offset_bottom = 105.0
+
+[node name="Background" type="TextureRect" parent="NamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("20_name_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameSignRig" type="Node2D" parent="NamePanel"]
+
+[node name="LeftAnchor" type="Marker2D" parent="NamePanel/NameSignRig"]
+position = Vector2(120, 75)
+
+[node name="RightAnchor" type="Marker2D" parent="NamePanel/NameSignRig"]
+position = Vector2(290, 75)
+
+[node name="SignSpawnPoint" type="Marker2D" parent="NamePanel/NameSignRig"]
+position = Vector2(205, 128)
+
+[node name="SignRestPoint" type="Marker2D" parent="NamePanel/NameSignRig"]
+position = Vector2(205, 138)
+
+[node name="LeftRope" type="Sprite2D" parent="NamePanel/NameSignRig"]
+position = Vector2(157, 106)
+
+[node name="RightRope" type="Sprite2D" parent="NamePanel/NameSignRig"]
+position = Vector2(252, 106)
+
+[node name="LeftTopHolder" type="Sprite2D" parent="NamePanel/NameSignRig"]
+position = Vector2(120, 75)
+
+[node name="RightTopHolder" type="Sprite2D" parent="NamePanel/NameSignRig"]
+position = Vector2(290, 75)
+
+[node name="LeftBottomHolder" type="Sprite2D" parent="NamePanel/NameSignRig"]
+position = Vector2(156, 128)
+
+[node name="RightBottomHolder" type="Sprite2D" parent="NamePanel/NameSignRig"]
+position = Vector2(254, 128)
+
+[node name="SignRoot" type="Node2D" parent="NamePanel/NameSignRig"]
+position = Vector2(205, 128)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="SignSprite" type="Sprite2D" parent="NamePanel/NameSignRig/SignRoot"]
+
+[node name="SignLabel" type="Label" parent="NamePanel/NameSignRig/SignRoot"]
+offset_left = -124.0
+offset_top = -26.0
+offset_right = 124.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 28
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftAttachPoint" type="Marker2D" parent="NamePanel/NameSignRig/SignRoot"]
+position = Vector2(-50, -29)
+
+[node name="RightAttachPoint" type="Marker2D" parent="NamePanel/NameSignRig/SignRoot"]
+position = Vector2(50, -29)
+
+[node name="NameInput" type="LineEdit" parent="NamePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -3.0
+offset_right = -6.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/selection_color = Color(1, 0.92, 0.72, 0.55)
+theme_override_colors/caret_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_placeholder_color = Color(0.35, 0.22, 0.08, 0.65)
+theme_override_colors/font_selected_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_font_sizes/font_size = 30
+placeholder_text = "Name"
+flat = true
+
+[node name="NameFocusCaret" type="ColorRect" parent="NamePanel"]
+visible = false
+layout_mode = 1
+offset_left = 203.0
+offset_top = 18.0
+offset_right = 207.0
+offset_bottom = 72.0
+mouse_filter = 2
+color = Color(0.08, 0.05, 0.02, 1)
+
+[node name="SpellPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 925.0
+offset_top = 237.0
+offset_right = 1397.0
+offset_bottom = 479.0
+
+[node name="TitleLabel" type="Label" parent="SpellPanel"]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 132.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Active"
+vertical_alignment = 1
+
+[node name="SelectedSpellButton" type="TextureButton" parent="SpellPanel"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+offset_top = 58.0
+offset_right = 110.0
+offset_bottom = 168.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DropdownPanel" type="Control" parent="SpellPanel"]
+visible = false
+z_index = 300
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 0
+offset_left = 132.0
+offset_top = 25.0
+offset_right = 472.0
+offset_bottom = 347.0
+
+[node name="Background" type="ColorRect" parent="SpellPanel/DropdownPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.36, 0.36, 0.36, 0.92)
+
+[node name="Margin" type="MarginContainer" parent="SpellPanel/DropdownPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="SpellPanel/DropdownPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="OptionsGrid" type="GridContainer" parent="SpellPanel/DropdownPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="SpellOption1" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpellOption2" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpellOption3" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpellOption4" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpellOption5" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SpellOption6" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ActionRow" type="HBoxContainer" parent="SpellPanel/DropdownPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="ConfirmButton" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/ActionRow"]
+visible = false
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CancelButton" type="TextureButton" parent="SpellPanel/DropdownPanel/Margin/VBox/ActionRow"]
+visible = false
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PassiveSpellPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 1058.0
+offset_top = 237.0
+offset_right = 1530.0
+offset_bottom = 479.0
+
+[node name="TitleLabel" type="Label" parent="PassiveSpellPanel"]
+layout_mode = 1
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 147.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Passive"
+vertical_alignment = 1
+
+[node name="SelectedSpellButton" type="TextureButton" parent="PassiveSpellPanel"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 1
+offset_top = 60.0
+offset_right = 110.0
+offset_bottom = 170.0
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DropdownPanel" type="Control" parent="PassiveSpellPanel"]
+visible = false
+z_index = 300
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 0
+offset_left = 132.0
+offset_top = 25.0
+offset_right = 472.0
+offset_bottom = 347.0
+
+[node name="Background" type="ColorRect" parent="PassiveSpellPanel/DropdownPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.36, 0.36, 0.36, 0.92)
+
+[node name="Margin" type="MarginContainer" parent="PassiveSpellPanel/DropdownPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PassiveSpellPanel/DropdownPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="OptionsGrid" type="GridContainer" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 3
+
+[node name="PassiveOption1" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PassiveOption2" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PassiveOption3" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PassiveOption4" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PassiveOption5" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PassiveOption6" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/OptionsGrid"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ActionRow" type="HBoxContainer" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="ConfirmButton" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/ActionRow"]
+visible = false
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CancelButton" type="TextureButton" parent="PassiveSpellPanel/DropdownPanel/Margin/VBox/ActionRow"]
+visible = false
+custom_minimum_size = Vector2(84, 84)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DescriptionPanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 916.0
+offset_top = 438.0
+offset_right = 1652.0
+offset_bottom = 775.0
+
+[node name="Background" type="TextureRect" parent="DescriptionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Margin" type="MarginContainer" parent="DescriptionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = 28.0
+offset_right = -36.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="DescriptionPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TitleLabel" type="Label" parent="DescriptionPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.07, 0.02, 1)
+theme_override_colors/font_outline_color = Color(1, 0.96, 0.8, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "King Ability"
+
+[node name="BodyLabel" type="RichTextLabel" parent="DescriptionPanel/Margin/VBox"]
+custom_minimum_size = Vector2(0, 111)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.08, 0.05, 0.01, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "Choose one king ability for this class."
+fit_content = true
+scroll_active = false
+
+[node name="MetaRow" type="HBoxContainer" parent="DescriptionPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="CostInfo" type="HBoxContainer" parent="DescriptionPanel/Margin/VBox/MetaRow"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CostIcon" type="TextureRect" parent="DescriptionPanel/Margin/VBox/MetaRow/CostInfo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CostLabel" type="Label" parent="DescriptionPanel/Margin/VBox/MetaRow/CostInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+vertical_alignment = 1
+
+[node name="CooldownInfo" type="HBoxContainer" parent="DescriptionPanel/Margin/VBox/MetaRow"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CooldownIcon" type="Label" parent="DescriptionPanel/Margin/VBox/MetaRow/CooldownInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_font_sizes/font_size = 28
+text = "⌛"
+vertical_alignment = 1
+
+[node name="CooldownLabel" type="Label" parent="DescriptionPanel/Margin/VBox/MetaRow/CooldownInfo"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14, 0.08, 0.02, 1)
+theme_override_font_sizes/font_size = 24
+text = "0 sec"
+vertical_alignment = 1
+
+[node name="NextButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 1278.0
+offset_top = 631.0
+offset_right = 1423.0
+offset_bottom = 701.0
+theme_override_font_sizes/font_size = 28
+text = "Continue"
+
+[node name="SelectionFocus" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 120.0
+offset_bottom = 120.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

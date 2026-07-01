@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://ct73myqx35gpi"]
+
+[ext_resource type="Texture2D" uid="uid://d4kabvvd3cluw" path="res://assets/environment/biomes/bushes/Bushe3.png" id="1_ncrg4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cji1w"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50eml"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx5jj"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0cs8"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vqnx"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uma83"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvvha"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgwna"]
+atlas = ExtResource("1_ncrg4")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_empty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cji1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50eml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx5jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0cs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vqnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uma83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvvha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgwna")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bush_03" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_empty")
+autoplay = "default"

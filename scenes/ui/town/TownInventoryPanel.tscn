@@ -1,0 +1,201 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8x7k2m3n4p50"]
+
+[ext_resource type="Script" path="res://scripts/ui/town/TownInventoryPanel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://g14jthel5iao" path="res://assets/ui/storage_ui_invormation_background.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/equip.png" id="3_equip"]
+[ext_resource type="PackedScene" path="res://scenes/ui/town/BuildingToolButton.tscn" id="4_destroy_tool_button"]
+[ext_resource type="Texture2D" uid="uid://cohm525dgeo1g" path="res://assets/gameplay/skills/lock.png" id="8_lock"]
+[ext_resource type="Texture2D" uid="uid://c81w4ah234k5q" path="res://assets/ui/icons/Icon_09.png" id="9_destroy_icon"]
+
+
+
+[node name="TownInventoryPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08, 0.08, 0.12, 0.95)
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "TOWN STORAGE"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+text = "X"
+
+[node name="Content" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = -50.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="PlayerSection" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Content/PlayerSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Backpack"
+horizontal_alignment = 1
+
+[node name="PlayerGrid" type="GridContainer" parent="Content/PlayerSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="TownSection" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Content/TownSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Storage (10x10)"
+horizontal_alignment = 1
+
+[node name="TownGrid" type="GridContainer" parent="Content/TownSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 10
+
+[node name="InfoSection" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 0
+
+[node name="UtilityButtons" type="HBoxContainer" parent="Content/InfoSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="AutoArrangeButton" type="Button" parent="Content/InfoSection/UtilityButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Auto"
+
+[node name="StackAllButton" type="Button" parent="Content/InfoSection/UtilityButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Stack"
+
+[node name="SortCriteria" type="OptionButton" parent="Content/InfoSection/UtilityButtons"]
+custom_minimum_size = Vector2(110, 30)
+layout_mode = 2
+
+[node name="SortAsc" type="Button" parent="Content/InfoSection/UtilityButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "↑"
+
+[node name="SortDesc" type="Button" parent="Content/InfoSection/UtilityButtons"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "↓"
+
+[node name="SortApplyButton" type="Button" parent="Content/InfoSection/UtilityButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Sort"
+
+[node name="InfoPanel" type="TextureRect" parent="Content/InfoSection"]
+custom_minimum_size = Vector2(250, 300)
+layout_mode = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+
+[node name="ItemName" type="Label" parent="Content/InfoSection/InfoPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 18
+text = "Select Item"
+horizontal_alignment = 1
+
+[node name="ItemDescription" type="RichTextLabel" parent="Content/InfoSection/InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 50.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="ActionButtons" type="HBoxContainer" parent="Content/InfoSection"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="EquipButton" type="TextureButton" parent="Content/InfoSection/ActionButtons"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("3_equip")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DestroyButton" parent="Content/InfoSection/ActionButtons" instance=ExtResource("4_destroy_tool_button")]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+disabled = true
+toggle_mode = false
+icon = ExtResource("9_destroy_icon")
+tool_id = "destroy"
+tool_name = "Destroy"
+tool_color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="LockButton" type="TextureButton" parent="Content/InfoSection/ActionButtons"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+disabled = true
+toggle_mode = true
+texture_normal = ExtResource("8_lock")
+ignore_texture_size = true
+stretch_mode = 5

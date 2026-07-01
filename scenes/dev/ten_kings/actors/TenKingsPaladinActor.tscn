@@ -1,0 +1,81 @@
+[gd_scene load_steps=16 format=3 uid="uid://b3vav262c050f"]
+
+[ext_resource type="Script" path="res://scripts/dev/ten_kings/TenKingsBattleActor.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://q4bjeic2ea3t" path="res://assets/dev/ten_kings/units/paladin/run/1.png" id="2_dxlim"]
+[ext_resource type="Texture2D" uid="uid://dvwnx62epludo" path="res://assets/dev/ten_kings/units/paladin/run/2.png" id="3_buphc"]
+[ext_resource type="Texture2D" uid="uid://biy7ax4a3e184" path="res://assets/dev/ten_kings/units/paladin/run/3.png" id="4_4ttlm"]
+[ext_resource type="Texture2D" uid="uid://q875uicxlvat" path="res://assets/dev/ten_kings/units/paladin/run/4.png" id="5_8agh1"]
+[ext_resource type="Texture2D" uid="uid://v5tlkrkd77wk" path="res://assets/dev/ten_kings/units/paladin/run/5.png" id="6_golyv"]
+[ext_resource type="Texture2D" uid="uid://dinpsvmg1cuxt" path="res://assets/dev/ten_kings/units/paladin/run/6.png" id="7_wv4n6"]
+[ext_resource type="Texture2D" uid="uid://cihas4063bqsf" path="res://assets/dev/ten_kings/units/paladin/attack/1.png" id="8_grypa"]
+[ext_resource type="Texture2D" uid="uid://ci5lawah68i8f" path="res://assets/dev/ten_kings/units/paladin/attack/2.png" id="9_wke1x"]
+[ext_resource type="Texture2D" uid="uid://c4yy168ejrhwq" path="res://assets/dev/ten_kings/units/paladin/attack/3.png" id="10_m3wle"]
+[ext_resource type="Texture2D" uid="uid://cweykw08urcau" path="res://assets/dev/ten_kings/units/paladin/attack/4.png" id="11_gmb84"]
+[ext_resource type="Texture2D" uid="uid://ciovkepjhi70t" path="res://assets/dev/ten_kings/units/paladin/attack/5.png" id="12_0l1ta"]
+[ext_resource type="Texture2D" uid="uid://tid7newtrig6" path="res://assets/dev/ten_kings/units/paladin/attack/6.png" id="13_mb5ve"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_51pug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dxlim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_buphc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ttlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8agh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_golyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wv4n6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hgqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_grypa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wke1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m3wle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gmb84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0l1ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_mb5ve")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="TenKingsPaladinActor" type="Node2D"]
+scale = Vector2(0.16, 0.16)
+script = ExtResource("1_script")
+actor_id = &"paladin"
+
+[node name="WalkSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-25, -18.75)
+sprite_frames = SubResource("SpriteFrames_51pug")
+
+[node name="AttackSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(68.75, -12.5)
+scale = Vector2(3.14743, 2.77214)
+sprite_frames = SubResource("SpriteFrames_2hgqg")

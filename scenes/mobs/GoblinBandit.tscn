@@ -1,0 +1,247 @@
+[gd_scene load_steps=38 format=3 uid="uid://dehu3gntr61x"]
+
+[ext_resource type="Script" path="res://scripts/mob/Mob.gd" id="1_mob"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="2_sm"]
+[ext_resource type="Texture2D" uid="uid://compqmbqfciel" path="res://assets/characters/enemies/tinyEnemies/goblin/walk/Torch_Red.png" id="2_xr77r"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMoveState.gd" id="3_move"]
+[ext_resource type="Texture2D" uid="uid://drg8plqmswlxj" path="res://assets/characters/enemies/tinyEnemies/goblin/attack/Torch_Red.png" id="3_txmxw"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackState.gd" id="4_attack"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="5_death"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToWallState.gd" id="6_towall"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToHeroState.gd" id="7_tohero"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackWallState.gd" id="8_attackwall"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="9_aggro"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="10_hurt"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="11_hit"]
+[ext_resource type="Script" path="res://scripts/components/AttackComponent.gd" id="12_ac"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="13_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="14_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="15_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="16_click"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pel1"]
+atlas = ExtResource("2_xr77r")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldqb5"]
+atlas = ExtResource("2_xr77r")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntd8i"]
+atlas = ExtResource("2_xr77r")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjx8g"]
+atlas = ExtResource("2_xr77r")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_famdu"]
+atlas = ExtResource("2_xr77r")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuybn"]
+atlas = ExtResource("2_xr77r")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pel1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldqb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntd8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjx8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_famdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuybn")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swbak"]
+atlas = ExtResource("3_txmxw")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js0fh"]
+atlas = ExtResource("3_txmxw")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcsrv"]
+atlas = ExtResource("3_txmxw")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp4ur"]
+atlas = ExtResource("3_txmxw")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_og2bl"]
+atlas = ExtResource("3_txmxw")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lmft"]
+atlas = ExtResource("3_txmxw")
+region = Rect2(960, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_attack"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swbak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js0fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcsrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp4ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_og2bl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lmft")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 180.0
+
+[sub_resource type="RectangleShape2D" id="CircleShape2D_hurt"]
+size = Vector2(140, 140)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wallcol"]
+radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(50, 60)
+
+[node name="GoblinBandit" type="CharacterBody2D"]
+scale = Vector2(0.625, 0.625)
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_mob")
+mob_damage = 7.0
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+z_index = 1
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_attack")
+animation = &"attack"
+z_index = 1
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 25.0
+offset_bottom = -55.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("9_aggro")
+required_group = "hero"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("10_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("11_hit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hit")
+
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("MobMoveState")
+
+[node name="MobMoveState" type="Node" parent="MobStateMachine"]
+script = ExtResource("3_move")
+
+[node name="MobAttackState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_attack")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("5_death")
+
+[node name="MobMovingToWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("6_towall")
+
+[node name="MobMovingToHeroState" type="Node" parent="MobStateMachine"]
+script = ExtResource("7_tohero")
+
+[node name="MobAttackWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("8_attackwall")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("13_health")
+fixed_max_health = 50.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("14_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("15_slots")
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("16_click")

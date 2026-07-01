@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6r6r6r6r6r6s"]
+
+[ext_resource type="Script" path="res://scripts/ui/components/OptionsSlider.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://options/slider_left.png" id="2_left"]
+[ext_resource type="Texture2D" path="res://options/musicandsfx_indicator.png" id="3_track"]
+[ext_resource type="Texture2D" path="res://options/musicandsfx_indicator_fullfill.png" id="4_fill"]
+[ext_resource type="Texture2D" path="res://options/slider_right.png" id="5_right"]
+[ext_resource type="FontFile" uid="uid://b1w36vwmi538s" path="res://assets/ui/fonts/ThaleahFat.ttf" id="6_font"]
+
+[node name="OptionsSlider" type="Control"]
+custom_minimum_size = Vector2(500, 40)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_script")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = -2.0
+offset_right = 180.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("6_font")
+theme_override_font_sizes/font_size = 24
+text = "Volume"
+
+[node name="LeftButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 190.0
+offset_top = -2.0
+offset_right = 214.0
+offset_bottom = 22.0
+texture_normal = ExtResource("2_left")
+
+[node name="Track" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 0.0
+offset_right = 422.0
+offset_bottom = 20.0
+texture = ExtResource("3_track")
+
+[node name="FillClip" type="Control" parent="Track"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 100.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Fill" type="TextureRect" parent="Track/FillClip"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 20.0
+texture = ExtResource("4_fill")
+expand_mode = 1
+
+[node name="RightButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = -2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture_normal = ExtResource("5_right")
+
+[node name="ValueLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = -2.0
+offset_right = 504.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("6_font")
+theme_override_font_sizes/font_size = 24
+text = "50"
+horizontal_alignment = 2
+
+[connection signal="button_down" from="LeftButton" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="LeftButton" to="." method="_on_left_button_up"]
+[connection signal="gui_input" from="Track" to="." method="_on_track_gui_input"]
+[connection signal="button_down" from="RightButton" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="RightButton" to="." method="_on_right_button_up"]

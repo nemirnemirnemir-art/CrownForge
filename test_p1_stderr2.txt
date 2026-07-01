@@ -1,0 +1,17 @@
+SCRIPT ERROR: Compile Error: Identifier not found: HeroCore
+          at: GDScript::reload (res://core/buildings/special/ExecutionGround.gd:52)
+SCRIPT ERROR: Compile Error: Identifier not found: SpellCore
+          at: GDScript::reload (res://core/buildings/special/MagicSchool.gd:79)
+SCRIPT ERROR: Compile Error: Identifier not found: CastleCore
+          at: GDScript::reload (res://core/buildings/special/BrickFactory.gd:49)
+SCRIPT ERROR: Compile Error: 
+          at: GDScript::reload (res://scripts/dev/tests/test_phase1_bugfixes.gd:-1)
+ERROR: Failed to load script "res://scripts/dev/tests/test_phase1_bugfixes.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript.cpp:2936)
+WARNING: 82 RIDs of type "CanvasItem" were leaked.
+     at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2485)
+ERROR: 10 RID allocations of type 'PN13RendererDummy14TextureStorage12DummyTextureE' were leaked at exit.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2284)
+ERROR: 11 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:604)

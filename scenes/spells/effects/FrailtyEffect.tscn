@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/FrailtyEffect.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/001.png" id="2_fall_1"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/002.png" id="3_fall_2"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/003.png" id="4_fall_3"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/004.png" id="5_fall_4"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/005.png" id="6_fall_5"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/006.png" id="7_impact_1"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/007.png" id="8_impact_2"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/008.png" id="9_impact_3"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/009.png" id="10_impact_4"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Frailty/010.png" id="11_impact_5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_frailty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fall_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fall_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fall_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fall_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fall_5")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_impact_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_impact_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_impact_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_impact_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_impact_5")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 18.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_frailty"]
+radius = 80.0
+
+[node name="FrailtyEffect" type="Node2D"]
+script = ExtResource("1")
+
+[node name="FrailtyAnim" type="AnimatedSprite2D" parent="."]
+z_index = 180
+sprite_frames = SubResource("SpriteFrames_frailty")
+animation = &"fall"
+centered = true
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_frailty")

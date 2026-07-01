@@ -1,0 +1,208 @@
+ARTIFACT IMPLEMENTATION READINESS ANALYSIS
+==========================================
+
+KEY FINDINGS:
+- 57 unimplemented artifacts (50 placeholders + 7 placeholder extras)
+- 36 implemented effect_kinds
+- 8 unit classes (NO Infernal class - these are temp spell summons)
+- READY NOW: 2 artifacts can be done immediately
+- PARTIAL: ~25 artifacts need minor system extensions
+- BLOCKED: ~30 artifacts need significant new systems
+
+IMMEDIATE IMPLEMENTATIONS (Ready Now)
+=====================================
+
+1. IRON_HELMET - "Increases max unit HP by 30"
+   - System: troop_all_hp_percent FULLY EXISTS
+   - Implementation: Add to catalog with effect_kind="troop_all_hp_percent", value=0.30
+   - Blocker: NONE
+   - Effort: 2 minutes
+
+2. MEDAL - "Increases max unit HP by 75"
+   - System: Same system as iron_helmet  
+   - Implementation: effect_kind="troop_all_hp_percent", value=0.75
+   - Blocker: NONE
+   - Effort: 2 minutes
+
+HIGH PRIORITY (5-8 artifacts achievable with minor changes)
+============================================================
+
+3. BROKEN_PENNY - "Gain 3 Gold per damage to castle"
+   - Current: castle_core.take_damage() exists
+   - Need: Add callback hook on_castle_damaged
+   - New effect_kind: on_castle_damage_add_resource
+   - Blocker: Minor - just need event hook
+
+4. WINE_CUP - "Every 30 wine spent = +1 morale"
+   - Current: MoraleSystem and resource consumption exist separately
+   - Need: on_resource_consumed event in resource_core
+   - New effect_kind: on_resource_consumed_threshold_bonus
+   - Blocker: Minor - just need event hook
+
+5. GOLDEN_ARROW - "Enemies take 10% max HP damage on intro"
+   - Current: Castle damage tracking exists
+   - Need: on_enemy_spawned hook + damage calculation
+   - Blocker: Need to emit event when enemy appears
+
+6. GOLDEN_BALL - "Heal 10 HP when building depleted (5 uses)"
+   - Current: Castle healing exists
+   - Need: on_building_depleted hook + use counter
+   - Blocker: Need to expose building depletion event
+
+7. MOON_TALISMAN - "3 Healer Mages on gaze upgrade"
+   - Current: gaze_core.gd emits gaze_level_changed signal
+   - Need: on_gaze_upgraded_summon_units effect_kind
+   - Need: Unit spawning system (same as family_crossbow)
+   - Blocker: Need to implement temp unit spawning
+
+8. HAND_OF_THE_AVENGED - "Random unit enraged on friendly death"
+   - Current: on_troop_died hook exists
+   - Current: Wrath spell implements enrage
+   - Need: on_troop_died_apply_enrage effect
+   - Blocker: Need probability-based effect system
+
+9. HEALING_BANNER - "25% chance unit dies → healing pool"
+   - Current: on_troop_died hook exists, healing pool spell exists
+   - Need: Probability-based effect execution
+   - Blocker: Need probability in artifact effect system
+
+MEDIUM PRIORITY (10-15 artifacts with system extensions)
+========================================================
+
+10. GOLDEN_WINGS - "Flying troops +30% attack/move speed"
+    - Current: Unit class FLYING exists, attack_speed bonus exists
+    - Missing: Movement speed bonus in ArtifactClassBonuses
+    - Fix: Add TROOP_STAT_MOVE_SPEED constant (like TROOP_STAT_ATTACK_SPEED)
+    - Blocker: Moderate
+
+11. POOR_MANS_RELIC - "Each Grunt on field: +2% HP, +3% damage to Grunts"
+    - Current: Class bonuses are static multipliers
+    - Need: Dynamic recalc based on active unit count
+    - Current artifact: mages_robe uses per-class-count for spells
+    - Blocker: Moderate - different scale
+
+12. CHI_FAN - "+5 HP bonus per spell cast (accumulating)"
+    - Current: on_spell_cast hook exists
+    - Current: troop_all_hp_percent is static
+    - Need: Stackable/accumulating HP bonus system
+    - Blocker: Moderate
+
+13. ROYAL_RUNE / RUNE_SHARDS - Cooldown reduction on King abilities
+    - Current: skill_core handles hero cooldowns
+    - Need: Effect_kind for skill_cooldown_reduction_percent
+    - Blocker: Moderate
+
+14. CUPBEARERS_VESSEL - "1 wine per well every 10s"
+    - Current: Building detection possible
+    - Need: periodic_per_building_type effect_kind  
+    - Blocker: Moderate
+
+15. IRON_HOE - "+100% production limits for starter buildings"
+    - Current: Production speed multiplier exists (all_production_speed_percent)
+    - Current: No per-building-type filtering
+    - Need: Filter artifacts by building category
+    - Blocker: Moderate
+
+16. FAMILY_CROSSBOW / RUSTY_BELL - "Temp units at wave start"
+    - Current: on_wave_started_add_resource exists
+    - Need: on_wave_started_add_units effect_kind
+    - Need: Generic unit spawning system (works for all wave-start units)
+    - Blocker: Moderate
+
+17. MAGIC_ACORN / ROYAL_ORDER - "1000 resource produced → bonus"
+    - Current: Production speed exists but not total tracking
+    - Need: on_resource_produced_amount_threshold trigger
+    - Blocker: Moderate-High
+
+18. TWIN_PROJECTILES - "+4% projectile chance per Warrior ally"
+    - Current: Projectile system exists
+    - Need: Real-time unit count → projectile multiplier
+    - Blocker: Moderate-High
+
+LOW PRIORITY (Large implementation required)
+=============================================
+
+19. SCARECROW_HAT / INDESCRIBABLE_FIGURINE / UGLY_APPLE
+    - Need: Unit summoning on event system (not just wave start)
+    - Need: on_troop_died_summon_unit effect_kind
+    - Need: on_building_depleted_summon_unit effect_kind
+    - Blocker: HIGH - need multiple event hooks + unit spawn system
+
+20. SECOND_CHANCE / STURDY_CANDLE / TOME_OF_RESTLESS_SOULS
+    - Need: Temporary unit lifecycle modification
+    - Need: Unit resurrection/re-summon system
+    - Blocker: HIGH
+
+21. UNEXPECTED_FINDING - "Undead on excavation"
+    - Current: MineCore.gd exists
+    - Need: on_excavation_completed hook
+    - Blocker: HIGH
+
+22. STUNNING_MACE - "Champion unit stun every 20 attacks"
+    - Need: Per-unit-class ability trigger system
+    - Blocker: HIGH
+
+23. CLAY_TREASURE / ROYAL_ORDER (Legendary reward variant)
+    - Need: Legendary artifact/spell reward distribution
+    - Blocker: HIGH - new system
+
+24. FREE_COUPON / SUSPICIOUS_PILE - Trader system
+    - Need: Complete Trader implementation
+    - Blocker: CRITICAL - doesn't exist
+
+25. NETHER_CONTRACT - "Gain Nether Rune on death"
+    - Need: New resource type "nether_rune"
+    - Need: on_troop_died_add_resource variant
+    - Blocker: LOW if rune is just a resource
+
+26. INDESTRUCTIBLE_SHIELD - "10% chance complete damage block"
+    - Need: Damage blocking mechanic in unit system
+    - Blocker: HIGH
+
+27. FILTERED_FUEL / FLOUR_DEITY / SUPER_METAL
+    - Need: Production ratio tracking (1 water → fuel, etc)
+    - Need: Dynamic stat scaling on production threshold
+    - Blocker: HIGH - complex system
+
+28. SWEEPING_BLADE - "Buildings damage enemies while working"
+    - Current: Cannon exists with damage
+    - Need: Apply behavior per building type, not custom logic
+    - Blocker: HIGH - architectural mismatch
+
+29. WOODEN_KEY - "Gain 3 wood on unit creation"
+    - Current: on_wave_started_add_unit works
+    - Need: General on_unit_created hook (all sources)
+    - Blocker: HIGH
+
+30. VOODOO_BEADS - "First reroll free"
+    - Need: Reward system reroll integration
+    - Blocker: HIGH
+
+31. ENCHANTED_TOTEM / TRUSTY_COMPASS - "Place seals"
+    - Current: SealConfig resources exist
+    - Need: Seal placement UI/logic system
+    - Blocker: HIGH
+
+UNIMPLEMENTED PLACEHOLDERS (Skip These)
+=======================================
+- extra_103 through extra_109 (7 artifacts)
+- These are intentional placeholders with no expected functionality
+
+SUMMARY TABLE
+=============
+
+Readiness | Count | Examples
+-----------|-------|----------
+READY NOW | 2 | iron_helmet, medal
+TIER 1 (minor) | 7 | broken_penny, wine_cup, golden_arrow, golden_ball
+TIER 2 (moderate) | 8 | golden_wings, poor_mans_relic, chi_fan
+TIER 3 (significant) | 15+ | scarecrow_hat, tome_restless_souls, sealed_totem
+TIER 4 (major) | 10+ | trader system, unit spawn system, production tracking
+BLOCKED/FUTURE | 7 | Placeholders (extra_103-109)
+
+MISSING CORE SYSTEMS (Priority Order)
+====================================
+
+HIGH:
+1. Event hooks: on_castle_damaged, on_building_depleted, on_unit_created (general)
+2. Unit spawning system (temp units outside of spe

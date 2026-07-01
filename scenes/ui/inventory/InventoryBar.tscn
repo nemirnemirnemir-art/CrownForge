@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcbculmntxka"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory/InventoryBar.gd" id="1_bar"]
+[ext_resource type="PackedScene" uid="uid://dl4u3xl1gpqa7" path="res://scenes/ui/widgets/ScaleButton.tscn" id="2_scale_button"]
+[ext_resource type="Texture2D" uid="uid://c213wftqmi5x8" path="res://assets/ui/icons/destroy.png" id="3_destroy_icon"]
+[ext_resource type="Texture2D" uid="uid://osgev63ecpp8" path="res://assets/ui/icons/equip.png" id="4_equip_icon"]
+
+[node name="InventoryBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 510.0
+offset_bottom = 80.0
+mouse_filter = 2
+script = ExtResource("1_bar")
+
+[node name="SlotsContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 342.5
+offset_bottom = 72.5
+mouse_filter = 1
+theme_override_constants/separation = 5
+
+[node name="Actions" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 332.5
+offset_top = 15.0
+offset_right = 472.5
+offset_bottom = 55.0
+mouse_filter = 1
+theme_override_constants/separation = 10
+
+[node name="EquipButton" parent="Actions" instance=ExtResource("2_scale_button")]
+layout_mode = 2
+texture_normal = ExtResource("4_equip_icon")
+
+[node name="DestroyButton" parent="Actions" instance=ExtResource("2_scale_button")]
+layout_mode = 2
+texture_normal = ExtResource("3_destroy_icon")

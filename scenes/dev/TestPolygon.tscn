@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0ufldyndnch"]
+
+[ext_resource type="Texture2D" uid="uid://1uey17mnmxh73" path="res://assets/characters/character_faces/head/1.png" id="2_255um"]
+[ext_resource type="Texture2D" uid="uid://0wshv8mhf405" path="res://assets/characters/character_faces/mouth/1.png" id="3_e3672"]
+[ext_resource type="Script" path="res://scripts/dev/TestPolygon.gd" id="3_script"]
+
+[node name="TestPolygon" type="Node2D"]
+script = ExtResource("3_script")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="."]
+texture = ExtResource("2_255um")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(104, 104)
+
+[node name="Mouth" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(-16, 8)
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Mouth_L1" type="Bone2D" parent="Skeleton2D/Mouth"]
+position = Vector2(-20, 0)
+rest = Transform2D(1, 0, 0, 1, -20, 0)
+
+[node name="Mouth_L2" type="Bone2D" parent="Skeleton2D/Mouth"]
+position = Vector2(-40, 0)
+rest = Transform2D(1, 0, 0, 1, -40, 0)
+
+[node name="Mouth_R1" type="Bone2D" parent="Skeleton2D/Mouth"]
+position = Vector2(20, 0)
+rest = Transform2D(1, 0, 0, 1, 20, 0)
+
+[node name="Mouth_R2" type="Bone2D" parent="Skeleton2D/Mouth"]
+position = Vector2(40, 0)
+rest = Transform2D(1, 0, 0, 1, 40, 0)
+
+[node name="MouthPolygon" type="Polygon2D" parent="Skeleton2D/Mouth"]
+position = Vector2(-56, 8)
+texture = ExtResource("3_e3672")
+skeleton = NodePath("../..")
+polygon = PackedVector2Array(50.4581, 31.6941, 57.3652, 31.9597, 65.6005, 31.9597, 73.3046, 32.4911, 81.0086, 32.4911, 89.2439, 32.4911, 96.151, 32.4911, 105.183, 32.7567, 112.09, 32.7567, 122.185, 33.0224, 128.561, 33.0224, 138.39, 33.0224, 145.563, 31.4284, 151.165, 27.9845, 151.165, 22.9947, 149.967, 18.0049, 146.375, 13.0151, 137.792, 11.0192, 131.206, 10.62, 117.234, 10.62, 104.46, 9.82168, 96.8759, 9.62209, 79.711, 9.62209, 70.3302, 9.4225, 51.9678, 9.4225, 43.1858, 9.82168, 31.0107, 9.82168, 18.2369, 12.4164, 16.6402, 18.4041, 19.2348, 26.7869, 28.416, 31.5771, 38.5952, 31.7767)
+uv = PackedVector2Array(50.4581, 31.6941, 57.3652, 31.9597, 65.6005, 31.9597, 73.3046, 32.4911, 81.0086, 32.4911, 89.2439, 32.4911, 96.151, 32.4911, 105.183, 32.7567, 112.09, 32.7567, 122.185, 33.0224, 128.561, 33.0224, 138.39, 33.0224, 145.563, 31.4284, 151.165, 27.9845, 151.165, 22.9947, 149.967, 18.0049, 146.375, 13.0151, 137.792, 11.0192, 131.206, 10.62, 117.234, 10.62, 104.46, 9.82168, 96.8759, 9.62209, 79.711, 9.62209, 70.3302, 9.4225, 51.9678, 9.4225, 43.1858, 9.82168, 31.0107, 9.82168, 18.2369, 12.4164, 16.6402, 18.4041, 19.2348, 26.7869, 28.416, 31.5771, 38.5952, 31.7767)
+bones = ["Mouth", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 0.6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0), "Mouth/Mouth_L1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.6, 0.4, 0.2, 0.2, 0.4, 0.6), "Mouth/Mouth_L2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0.6, 0.4, 0.2, 0.6, 1), "Mouth/Mouth_R1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0.4, 0.4, 0.4, 0.6, 0.8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "Mouth/Mouth_R2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0.8, 0.4, 0.6, 0.4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=7 format=3 uid="uid://cnie6hd0l63o3"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="SpriteFrames" uid="uid://dv12xgokbh76m" path="res://data/buildings/basic_production/big_well_vzor_frames.tres" id="4_vzor_frames"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 20
+
+[sub_resource type="Resource" id="Prod_0"]
+script = ExtResource("3_prod")
+resource_id = "water"
+amount = 2
+
+[resource]
+script = ExtResource("1_script")
+building_id = "big_well"
+display_name = "Big Well"
+description = "Upgraded well. Produces 2 Water per 0.8s cycle. Capacity: 200."
+use_vzor_animation = true
+vzor_frames = ExtResource("4_vzor_frames")
+vzor_animation_name = &"default"
+building_type = 1
+building_category = 0
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 0.8
+produces = Array[ExtResource("3_prod")]([SubResource("Prod_0")])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 200
+has_special_behavior = false
+special_script_path = ""

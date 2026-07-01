@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://cupgrade_madman"]
+
+[ext_resource type="Script" path="res://core/units/UnitUpgradeConfig.gd" id="1_script"]
+
+[sub_resource type="Resource" id="Upgrade_Evasion"]
+script = ExtResource("1_script")
+upgrade_id = "madman_evasion"
+display_name = "Madman Evasion"
+description = "Grants Madmen 35% evasion chance."
+required_building_level = 1
+
+[sub_resource type="Resource" id="Upgrade_Capacity"]
+script = ExtResource("1_script")
+upgrade_id = "madman_capacity"
+display_name = "Madman Capacity"
+description = "Increases capacity by 2."
+required_building_level = 2
+
+[sub_resource type="Resource" id="Upgrade_Alcohol"]
+script = ExtResource("1_script")
+upgrade_id = "madman_alcohol_needles"
+display_name = "Alcohol Needles"
+description = "Madmen inflict drunk on enemies. Drunk enemies move slower and have trouble tracking targets."
+required_building_level = 3
+
+[resource]
+script = ExtResource("1_script")
+upgrade_id = "madman_upgrades_container"
+display_name = "Madman Upgrades"
+description = ""

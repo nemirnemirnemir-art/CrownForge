@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=7 format=3 uid="uid://m3rqg8abgqkw"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://di3vjc2sh4l42" path="res://assets/environment/buildings/ram_pasture.png" id="3_j32x6"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 700
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "gold"
+amount = 100
+
+[resource]
+script = ExtResource("1_script")
+building_id = "ram_pasture"
+display_name = "Ram Pasture"
+description = "Recruits Ram units. 10s cycle. Capacity: 2. Consumes 100 Gold. Requires 1 Black Sheep."
+icon = ExtResource("3_j32x6")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 5
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 10.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = "ram"
+max_units = 2
+has_special_behavior = false
+special_script_path = ""

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwyljkgvuhmcy"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/GameSpeedUI.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/settings.png" id="2_pkdwm"]
+
+[node name="GameSpeedUI" type="HBoxContainer"]
+offset_right = 140.0
+offset_bottom = 32.0
+script = ExtResource("1_script")
+settings_icon = ExtResource("2_pkdwm")

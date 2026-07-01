@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_healer_mage"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "healer_mage"
+display_name = "Healer Mage"
+hp = 70
+dps = 19
+unit_classes = [6]
+trait_description = "+5% HP to Arcane troops per Healer Mage (up to 100%)."

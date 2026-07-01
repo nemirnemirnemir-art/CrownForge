@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://6kd50pt3wue1"]
+
+[ext_resource type="Script" path="res://scripts/ui/building/BuildingMenu.gd" id="1_building_menu"]
+[ext_resource type="PackedScene" uid="uid://dgglwihj4bh01" path="res://scenes/ui/widgets/SliderButton.tscn" id="2_slider_button"]
+[ext_resource type="Texture2D" uid="uid://c2mom4ri3i7b1" path="res://assets/ui/sliders/default_slider_left.png" id="3_a78tt"]
+[ext_resource type="Texture2D" uid="uid://c81w4ah234k5q" path="res://assets/ui/icons/Icon_09.png" id="3_aden0"]
+[ext_resource type="PackedScene" path="res://scenes/ui/town/BuildingsTooltip.tscn" id="3_details_panel"]
+[ext_resource type="Texture2D" uid="uid://bbkfgmq1mp0m" path="res://assets/ui/icons/G_Idle_(NoShadow).png" id="4_2xi38"]
+[ext_resource type="Texture2D" uid="uid://c7acfvmapujlb" path="res://assets/ui/sliders/default_slider_mouse_focus.png" id="4_do8ks"]
+[ext_resource type="Texture2D" uid="uid://dxxxdgq3mdktj" path="res://assets/ui/sliders/default_slider_mouse_pressed_hold.png" id="5_7gl5m"]
+[ext_resource type="Texture2D" uid="uid://dnet5ppbdowoy" path="res://assets/ui/sliders/default_slider_mouse_pressed_unhold.png" id="6_h4vam"]
+[ext_resource type="PackedScene" uid="uid://djpebfuv2hkaa" path="res://scenes/ui/town/BuildingToolButton.tscn" id="9_tool_button"]
+
+[node name="BuildingMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 100.0
+scale = Vector2(1.23773, 1.47152)
+script = ExtResource("1_building_menu")
+
+[node name="DestroyTool" parent="." instance=ExtResource("9_tool_button")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 355.489
+offset_top = -38.0559
+offset_right = 423.489
+offset_bottom = 29.9441
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("3_aden0")
+
+[node name="SellTool" parent="." instance=ExtResource("9_tool_button")]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 316.709
+offset_top = -38.0559
+offset_right = 384.709
+offset_bottom = 29.9441
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_2xi38")
+
+[node name="Content" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GridContainer" type="GridContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 5
+
+[node name="DetailsPanel" parent="Content" instance=ExtResource("3_details_panel")]
+visible = false
+layout_mode = 0
+offset_left = -372.0
+offset_top = -6.0
+offset_right = -12.0
+offset_bottom = 204.0
+
+[node name="PrevButton" parent="." instance=ExtResource("2_slider_button")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = -27.0
+offset_top = 48.0
+offset_right = 33.0
+offset_bottom = 148.0
+scale = Vector2(0.45511, 0.431379)
+texture_normal_state = ExtResource("3_a78tt")
+texture_hover_state = ExtResource("4_do8ks")
+texture_pressed_state = ExtResource("5_7gl5m")
+texture_unhold_state = ExtResource("6_h4vam")
+
+[node name="NextButton" parent="." instance=ExtResource("2_slider_button")]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 384.0
+offset_top = 48.0
+offset_right = 444.0
+offset_bottom = 148.0
+scale = Vector2(0.405859, 0.419477)
+flip_h = true
+texture_normal_state = ExtResource("3_a78tt")
+texture_hover_state = ExtResource("4_do8ks")
+texture_pressed_state = ExtResource("5_7gl5m")
+texture_unhold_state = ExtResource("6_h4vam")

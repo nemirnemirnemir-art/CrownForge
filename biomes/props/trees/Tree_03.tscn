@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://elbpu7l8cadw"]
+
+[ext_resource type="Texture2D" uid="uid://b76whxnjrgei0" path="res://assets/environment/biomes/trees/Tree3.png" id="1_0f56l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os118"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdoxp"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5lrn"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isdlk"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em0p1"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sk8f"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiqxm"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jugpp"]
+atlas = ExtResource("1_0f56l")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_empty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os118")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdoxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5lrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isdlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em0p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sk8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiqxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jugpp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tree_03" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_empty")
+autoplay = "default"

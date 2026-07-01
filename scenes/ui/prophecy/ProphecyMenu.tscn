@@ -1,0 +1,273 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8y3s4ksostnk"]
+
+[ext_resource type="Script" path="res://scripts/ui/prophecy/ProphecyMenu.gd" id="1_menu_script"]
+[ext_resource type="PackedScene" uid="uid://djs1sj8ripejo" path="res://scenes/ui/prophecy/ProphecySelectedSlot.tscn" id="2_slot_scene"]
+[ext_resource type="Texture2D" uid="uid://djw2pvd4g4krs" path="res://assets/ui/prophecy/heroes.png" id="3_heroes"]
+[ext_resource type="Texture2D" uid="uid://balbmrt6xoegm" path="res://assets/ui/prophecy/enemies.png" id="4_enemies"]
+[ext_resource type="Texture2D" uid="uid://do5fjpdrvsavo" path="res://assets/ui/icons/info_icon.png" id="5_info_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/prophecy/Cursor_prophecy.png" id="6_cursor"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.1, 0.08, 0.06, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92, 0.6, 0.25, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_action"]
+bg_color = Color(0.12, 0.1, 0.08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92, 0.6, 0.25, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_info_popup"]
+bg_color = Color(0.86, 0.8, 0.68, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.25, 0.15, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ProphecyMenu" type="Control"]
+process_mode = 3
+z_index = 210
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.78)
+
+[node name="Root" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Content" type="VBoxContainer" parent="Root"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="OptionsScroll" type="ScrollContainer" parent="Root/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+
+[node name="Options" type="VBoxContainer" parent="Root/Content/OptionsScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="SelectedBar" type="VBoxContainer" parent="Root"]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -300.0
+offset_right = -20.0
+offset_bottom = -140.0
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Root/SelectedBar"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.9, 0.85, 1)
+theme_override_font_sizes/font_size = 22
+text = "Next 3 waves"
+horizontal_alignment = 1
+
+[node name="SlotsWrapper" type="CenterContainer" parent="Root/SelectedBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Slots" type="HBoxContainer" parent="Root/SelectedBar/SlotsWrapper"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Slot1" parent="Root/SelectedBar/SlotsWrapper/Slots" instance=ExtResource("2_slot_scene")]
+layout_mode = 2
+
+[node name="Slot2" parent="Root/SelectedBar/SlotsWrapper/Slots" instance=ExtResource("2_slot_scene")]
+layout_mode = 2
+
+[node name="Slot3" parent="Root/SelectedBar/SlotsWrapper/Slots" instance=ExtResource("2_slot_scene")]
+layout_mode = 2
+
+[node name="SelectionCursor" type="TextureRect" parent="Root"]
+visible = false
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+mouse_filter = 2
+z_index = 30
+texture = ExtResource("6_cursor")
+expand_mode = 1
+stretch_mode = 5
+scale = Vector2(2, 2)
+
+[node name="ContinueButton" type="Button" parent="Root"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -76.0
+offset_right = 130.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.98, 0.9, 0.8, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/disabled = SubResource("StyleBoxFlat_action")
+theme_override_styles/hover = SubResource("StyleBoxFlat_action")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_action")
+theme_override_styles/normal = SubResource("StyleBoxFlat_action")
+text = "Continue"
+
+[node name="Decor" type="Control" parent="Root"]
+anchors_preset = 0
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -240.0
+mouse_filter = 2
+
+[node name="HeroesArt" type="TextureRect" parent="Root/Decor"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -352.0
+offset_right = 406.0
+offset_bottom = -2.0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("3_heroes")
+stretch_mode = 4
+
+[node name="EnemiesArt" type="TextureRect" parent="Root/Decor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1616.0
+offset_top = -344.0
+offset_right = 1966.0
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("4_enemies")
+stretch_mode = 4
+
+[node name="InfoButton" type="TextureButton" parent="Root"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 22.0
+offset_right = -28.0
+offset_bottom = 66.0
+texture_normal = ExtResource("5_info_icon")
+texture_pressed = ExtResource("5_info_icon")
+texture_hover = ExtResource("5_info_icon")
+stretch_mode = 5
+
+[node name="HoverInfoPanel" type="PanelContainer" parent="Root"]
+visible = false
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -620.0
+offset_top = -360.0
+offset_right = -20.0
+offset_bottom = -240.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_info_popup")
+
+[node name="Margin" type="MarginContainer" parent="Root/HoverInfoPanel"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="Root/HoverInfoPanel/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="RewardsInfoPopup" type="PanelContainer" parent="."]
+visible = false
+top_level = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_info_popup")
+
+[node name="Margin" type="MarginContainer" parent="RewardsInfoPopup"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="RewardsInfoPopup/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="RewardsInfoPopup/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.15, 0.05, 1)
+theme_override_font_sizes/font_size = 22
+text = "Possible Rewards:"
+
+[node name="Rows" type="VBoxContainer" parent="RewardsInfoPopup/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 6

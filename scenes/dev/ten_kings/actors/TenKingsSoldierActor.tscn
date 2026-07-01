@@ -1,0 +1,135 @@
+[gd_scene load_steps=21 format=3 uid="uid://ckpg26lwd8sx5"]
+
+[ext_resource type="Script" path="res://scripts/dev/ten_kings/TenKingsBattleActor.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b03ednehbkhy8" path="res://assets/dev/ten_kings/units/soldier/run/Warrior_Run.png" id="2_osxoa"]
+[ext_resource type="Texture2D" uid="uid://c0nkfrc8sn7qx" path="res://assets/dev/ten_kings/units/soldier/attack/Warrior_Attack1.png" id="3_lb2n7"]
+[ext_resource type="Texture2D" uid="uid://cf5qp0kmn703q" path="res://assets/dev/ten_kings/units/soldier/attack/Warrior_Attack2.png" id="4_6msl5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27swv"]
+atlas = ExtResource("2_osxoa")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcxod"]
+atlas = ExtResource("2_osxoa")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g31e2"]
+atlas = ExtResource("2_osxoa")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgmm5"]
+atlas = ExtResource("2_osxoa")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yacu0"]
+atlas = ExtResource("2_osxoa")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnkm2"]
+atlas = ExtResource("2_osxoa")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1wrk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27swv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcxod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g31e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgmm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yacu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnkm2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ffgv"]
+atlas = ExtResource("3_lb2n7")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7exf8"]
+atlas = ExtResource("3_lb2n7")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4xyq"]
+atlas = ExtResource("3_lb2n7")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qai07"]
+atlas = ExtResource("3_lb2n7")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rke0g"]
+atlas = ExtResource("4_6msl5")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh25t"]
+atlas = ExtResource("4_6msl5")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inpvy"]
+atlas = ExtResource("4_6msl5")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4xn3"]
+atlas = ExtResource("4_6msl5")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4m0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ffgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7exf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qai07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rke0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh25t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inpvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xn3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="TenKingsSoldierActor" type="Node2D"]
+scale = Vector2(0.65, 0.65)
+script = ExtResource("1_script")
+actor_id = &"soldier"
+
+[node name="WalkSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_q1wrk")
+frame_progress = 0.553142
+
+[node name="AttackSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_p4m0d")

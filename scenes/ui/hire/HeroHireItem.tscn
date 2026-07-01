@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://hero_hire_item"]
+
+[ext_resource type="Script" path="res://scripts/ui/hire/HeroHireItem.gd" id="1_script"]
+
+[node name="HeroHireItem" type="TextureButton"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("1_script")

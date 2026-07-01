@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_fairy"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "fairy"
+display_name = "Fairy"
+hp = 200
+dps = 20
+unit_classes = [6, 5]
+trait_description = "Poisons enemies if 6+ Fairies present."

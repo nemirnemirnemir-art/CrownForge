@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_explosive_cart"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "explosive_cart"
+display_name = "Explosive Cart"
+hp = 200
+dps = 200
+unit_classes = [0]
+trait_description = "Explodes on death."

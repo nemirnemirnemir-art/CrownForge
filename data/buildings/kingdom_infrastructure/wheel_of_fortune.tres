@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=5 format=3 uid="uid://ca3royi0b6n0i"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 100
+
+[resource]
+script = ExtResource("1_script")
+building_id = "wheel_of_fortune"
+display_name = "Wheel of Fortune"
+description = "Creates a pending 45-resource reward pack every 110s."
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 2
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 110.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/WheelOfFortune.gd"

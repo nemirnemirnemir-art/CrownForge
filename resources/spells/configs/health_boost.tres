@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=2 format=3 uid="uid://legendary_health_boost"]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "health_boost"
+spell_name = "Health Boost"
+icon = null
+description = "Permanently increases friendly units' HP in an area by 40."
+target_radius = 100.0
+target_type = "area"
+effect_scene = null
+duration = 0.0
+damage = 0.0
+damage_per_second = 0.0
+max_stacks = 99

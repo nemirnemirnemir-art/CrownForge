@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://ce4pyd6e3tm16"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "metal"
+amount = 50
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "fuel"
+amount = 50
+
+[sub_resource type="Resource" id="Cost_2"]
+script = ExtResource("2_cost")
+resource_id = "water"
+amount = 250
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "fuel"
+amount = 4
+
+[resource]
+script = ExtResource("1_script")
+building_id = "cannon"
+display_name = "Cannon"
+description = "Fires Cannonballs. 10s cycle. Consumes 4 Fuel."
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1"), SubResource("Cost_2")])
+cycle_time = 10.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/Cannon.gd"

@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://ctgcmuj4s8k11"]
+
+[ext_resource type="Texture2D" uid="uid://cmkv0sdtnvb2m" path="res://assets/environment/biomes/trees/Tree1.png" id="1_dp4fr"]
+[ext_resource type="Texture2D" uid="uid://doyr2a8phthua" path="res://assets/vfx/animations/tree_stump/Stump 1.png" id="2_dpr26"]
+[ext_resource type="Texture2D" uid="uid://dwpcr8wgasgnp" path="res://assets/vfx/animations/tree_stump/Stump 2.png" id="3_etn2l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofg6k"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(0, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo46o"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(192, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux6lm"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(384, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whn4i"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(576, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2wq4"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(768, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8otvt"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(960, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp0s7"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(1152, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ahi5"]
+atlas = ExtResource("1_dp4fr")
+region = Rect2(1344, 0, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_empty"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofg6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo46o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux6lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whn4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2wq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8otvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp0s7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ahi5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dpr26")
+}],
+"loop": true,
+"name": &"stump1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_etn2l")
+}],
+"loop": true,
+"name": &"stump2",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="TreeCollisionShape"]
+radius = 30.0
+
+[node name="Tree_01" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_empty")
+animation = &"stump1"
+autoplay = "default"
+
+[node name="TreeCollision" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeCollision"]
+shape = SubResource("TreeCollisionShape")

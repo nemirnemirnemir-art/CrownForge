@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://dox8m133ay05d"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://cqerxgf4rk2u5" path="res://assets/environment/buildings/hive.png" id="3_gcgq3"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wheat"
+amount = 150
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "grapes"
+amount = 200
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "grapes"
+amount = 50
+
+[resource]
+script = ExtResource("1_script")
+building_id = "hive"
+display_name = "Hive"
+description = "Recruits Bumblebee units. 10s cycle. Capacity: 4. Consumes 50 Grapes."
+icon = ExtResource("3_gcgq3")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 4
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 10.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = "bumblebee"
+max_units = 4
+has_special_behavior = false
+special_script_path = ""

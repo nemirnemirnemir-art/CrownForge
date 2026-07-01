@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_musketeer"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "musketeer"
+display_name = "Musketeer"
+hp = 120
+dps = 19
+attack_range = 350.0
+max_range = 350.0
+projectile_speed = 500.0
+projectile_type = "arrow"
+projectile_spin_speed_deg = 0.0
+unit_classes = [2]
+trait_description = "+10% attack speed of Champion troops per Musketeer (up to 100%)."

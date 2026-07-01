@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/town/BuildingIconTile.gd" id="1_tile_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1"]
+bg_color = Color(0.25, 0.25, 0.25, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2"]
+bg_color = Color(0.32, 0.32, 0.32, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="BuildingIconTile" type="Button"]
+custom_minimum_size = Vector2(72, 72)
+text = ""
+script = ExtResource("1_tile_script")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3")
+
+[node name="Icon" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+stretch_mode = 5
+
+[node name="UpgradeStripe" type="TextureRect" parent="."]
+visible = false
+offset_left = 38.0
+offset_top = -6.0
+offset_right = 78.0
+offset_bottom = 34.0
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="RecipeBadge" type="Label" parent="."]
+visible = false
+offset_left = 2.0
+offset_top = 38.0
+offset_right = 38.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 27
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

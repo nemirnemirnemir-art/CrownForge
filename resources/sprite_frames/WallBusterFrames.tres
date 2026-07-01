@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://jcn7im21xgky"]
+
+[ext_resource type="Texture2D" uid="uid://j81wiaaq81qc" path="res://assets/characters/enemies/tinyEnemies/wallbuster/Barrel_Purple.png" id="1_ti507"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip1ak"]
+atlas = ExtResource("1_ti507")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfu6l"]
+atlas = ExtResource("1_ti507")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqro8"]
+atlas = ExtResource("1_ti507")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t65i8"]
+atlas = ExtResource("1_ti507")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70ab0"]
+atlas = ExtResource("1_ti507")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2niye"]
+atlas = ExtResource("1_ti507")
+region = Rect2(640, 128, 128, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip1ak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfu6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t65i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70ab0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2niye")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

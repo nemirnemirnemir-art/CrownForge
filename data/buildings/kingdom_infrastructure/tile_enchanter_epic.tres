@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=5 format=3 uid="uid://unq0kwabwbv0"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "crystal"
+amount = 200
+
+[resource]
+script = ExtResource("1_script")
+building_id = "tile_enchanter_epic"
+display_name = "Tile Enchanter (Epic)"
+description = "Provides +35% Tile Production Speed. 15s cycle. Build Cost: 200 Crystal."
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 15.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/TileEnchanterEpic.gd"

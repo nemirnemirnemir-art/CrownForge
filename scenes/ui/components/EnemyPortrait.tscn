@@ -1,0 +1,41 @@
+[gd_scene load_steps=17 format=3 uid="uid://bha8kl4mkafxn"]
+
+[ext_resource type="Script" path="res://scripts/ui/components/EnemyPortrait.gd" id="1_portrait_script"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/14.png" id="2_dupfb"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/4.png" id="2_p26c6"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/12.png" id="3_5sl2a"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/2.png" id="4_bnguq"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/11.png" id="5_kx7gf"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/3.png" id="6_6i88x"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/7.png" id="7_bms6u"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/8.png" id="8_ei0re"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/9.png" id="9_o8l4p"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/15.png" id="10_2wf82"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/6.png" id="11_5tuqc"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/10.png" id="12_62bmn"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/1.png" id="13_wntlg"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/5.png" id="14_yrhr6"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/enemies/13.png" id="15_odvpa"]
+
+[node name="EnemyPortrait" type="TextureRect"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1_portrait_script")
+goblin_bandit_face = ExtResource("2_p26c6")
+blue_slime_face = ExtResource("3_5sl2a")
+goblin_crossbowman_face = ExtResource("4_bnguq")
+goblin_swordsman_face = ExtResource("2_dupfb")
+goblin_shaman_face = ExtResource("5_kx7gf")
+goblin_fire_mage_face = ExtResource("6_6i88x")
+goblin_lightning_mage_face = ExtResource("7_bms6u")
+goblin_lizard_face = ExtResource("8_ei0re")
+goblin_giant_face = ExtResource("9_o8l4p")
+wall_buster_face = ExtResource("10_2wf82")
+goblin_bat_rider_face = ExtResource("11_5tuqc")
+goblin_pig_face = ExtResource("12_62bmn")
+crab_rider_face = ExtResource("13_wntlg")
+stone_golem_face = ExtResource("14_yrhr6")
+sunfaced_face = ExtResource("15_odvpa")

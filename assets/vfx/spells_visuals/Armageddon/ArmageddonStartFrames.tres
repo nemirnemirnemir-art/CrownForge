@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Armageddon/001.png" id="1_frame1"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Armageddon/002.png" id="2_frame2"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Armageddon/003.png" id="3_frame3"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Armageddon/004.png" id="4_frame4"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells_visuals/Armageddon/005.png" id="5_frame5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_frame1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_frame2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frame3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frame4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frame5")
+}],
+"loop": false,
+"name": &"start",
+"speed": 14.0
+}]

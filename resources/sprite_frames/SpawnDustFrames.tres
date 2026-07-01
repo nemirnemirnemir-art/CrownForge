@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://d35rpf80f77u6"]
+
+[ext_resource type="Texture2D" uid="uid://ca2qog2bfvjbi" path="res://assets/vfx/Particle FX/Dust1/Dust_01.png" id="1_d1"]
+[ext_resource type="Texture2D" uid="uid://l6wyp1u6ecfp" path="res://assets/vfx/Particle FX/Dust1/Dust_02.png" id="2_d2"]
+[ext_resource type="Texture2D" uid="uid://bqdj7q6auktr1" path="res://assets/vfx/Particle FX/Dust1/Dust_03.png" id="3_d3"]
+[ext_resource type="Texture2D" uid="uid://bab2ha6sddx3e" path="res://assets/vfx/Particle FX/Dust1/Dust_04.png" id="4_d4"]
+[ext_resource type="Texture2D" uid="uid://bsejpclr62h6x" path="res://assets/vfx/Particle FX/Dust1/Dust_05.png" id="5_d5"]
+[ext_resource type="Texture2D" uid="uid://dcauk5f43l57n" path="res://assets/vfx/Particle FX/Dust1/Dust_06.png" id="6_d6"]
+[ext_resource type="Texture2D" uid="uid://bevlnogo44syp" path="res://assets/vfx/Particle FX/Dust1/Dust_07.png" id="7_d7"]
+[ext_resource type="Texture2D" uid="uid://dyskc2bxv6fsl" path="res://assets/vfx/Particle FX/Dust1/Dust_08.png" id="8_d8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]

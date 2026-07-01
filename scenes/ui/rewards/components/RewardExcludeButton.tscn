@@ -1,0 +1,22 @@
+
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/banishment_Button.png" id="1_exclude_normal"]
+[ext_resource type="Texture2D" path="res://assets/ui/buttons/banishment_Button_focus.png" id="2_exclude_hover"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exclude_normal"]
+texture = ExtResource("1_exclude_normal")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_exclude_hover"]
+texture = ExtResource("2_exclude_hover")
+
+[node name="RewardExcludeButton" type="Button"]
+custom_minimum_size = Vector2(64, 64)
+focus_mode = 0
+text = ""
+flat = false
+theme_override_styles/normal = SubResource("StyleBoxTexture_exclude_normal")
+theme_override_styles/hover = SubResource("StyleBoxTexture_exclude_hover")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_exclude_hover")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_exclude_hover")
+theme_override_styles/focus = SubResource("StyleBoxTexture_exclude_normal")

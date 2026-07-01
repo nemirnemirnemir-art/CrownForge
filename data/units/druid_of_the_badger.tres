@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_druid_of_the_badger"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "druid_of_the_badger"
+display_name = "Druid of the Badger"
+hp = 100
+dps = 16
+unit_classes = [6, 1]
+trait_description = "Transforms into Badger."

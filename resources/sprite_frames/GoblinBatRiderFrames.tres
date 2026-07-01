@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://do6w0vfym8ib7"]
+
+[ext_resource type="Texture2D" uid="uid://bp0k8qupggrvl" path="res://assets/characters/enemies/tinyEnemies/Lancer_goblin_letun/Lancer_Run.png" id="1_xgjb0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkd8e"]
+atlas = ExtResource("1_xgjb0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68p2x"]
+atlas = ExtResource("1_xgjb0")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yv12v"]
+atlas = ExtResource("1_xgjb0")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2pi3"]
+atlas = ExtResource("1_xgjb0")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_popbw"]
+atlas = ExtResource("1_xgjb0")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kav0s"]
+atlas = ExtResource("1_xgjb0")
+region = Rect2(1280, 0, 256, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkd8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68p2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yv12v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2pi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_popbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kav0s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

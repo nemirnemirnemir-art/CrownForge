@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://bcjfvuwl5t4na"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 40
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "wheat"
+amount = 40
+
+[sub_resource type="Resource" id="Prod_0"]
+script = ExtResource("3_prod")
+resource_id = "gold"
+amount = 1
+
+[sub_resource type="Resource" id="Prod_1"]
+script = ExtResource("3_prod")
+resource_id = "clay"
+amount = 5
+
+[resource]
+script = ExtResource("1_script")
+building_id = "clay_gold_mine"
+display_name = "Clay Gold Mine"
+description = "Produces 1 Gold, 5 Clay. 10s cycle. Capacity: 500. Hybrid building."
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 1
+building_category = 7
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 10.0
+produces = Array[ExtResource("3_prod")]([SubResource("Prod_0"), SubResource("Prod_1")])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 500
+has_special_behavior = false
+special_script_path = ""

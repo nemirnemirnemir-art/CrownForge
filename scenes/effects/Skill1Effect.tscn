@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://skill1_effect"]
+
+[ext_resource type="Script" path="res://scripts/effects/Skill1Effect.gd" id="1_skill1_effect"]
+
+[node name="Skill1Effect" type="Node2D"]
+script = ExtResource("1_skill1_effect")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+

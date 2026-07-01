@@ -1,0 +1,178 @@
+[gd_scene load_steps=30 format=3 uid="uid://bj0umpw0bbvq"]
+
+[ext_resource type="Script" path="res://scripts/hero/HeroOnField.gd" id="1_hero_on_field"]
+[ext_resource type="Texture2D" uid="uid://c4g1g76c0inr0" path="res://assets/characters/tinyHeroes/Slinger/run/1.png" id="2_run_1"]
+[ext_resource type="Texture2D" uid="uid://cpw1lrual4qxx" path="res://assets/characters/tinyHeroes/Slinger/run/2.png" id="3_run_2"]
+[ext_resource type="Texture2D" uid="uid://camb4k50gpkb8" path="res://assets/characters/tinyHeroes/Slinger/run/3.png" id="4_run_3"]
+[ext_resource type="Texture2D" uid="uid://bnlo4gk75pel3" path="res://assets/characters/tinyHeroes/Slinger/run/4.png" id="5_run_4"]
+[ext_resource type="Texture2D" uid="uid://dcn12ks52280n" path="res://assets/characters/tinyHeroes/Slinger/attack/1.png" id="6_attack_1"]
+[ext_resource type="Texture2D" uid="uid://de30jipc7m4v2" path="res://assets/characters/tinyHeroes/Slinger/attack/2.png" id="7_attack_2"]
+[ext_resource type="Texture2D" uid="uid://cbx38omxjuodk" path="res://assets/characters/tinyHeroes/Slinger/attack/3.png" id="8_attack_3"]
+[ext_resource type="Texture2D" uid="uid://cfyvpbjp45amd" path="res://assets/characters/tinyHeroes/Slinger/attack/4.png" id="9_attack_4"]
+[ext_resource type="Texture2D" uid="uid://wtrllav70eat" path="res://assets/characters/tinyHeroes/Slinger/attack/5.png" id="10_attack_5"]
+[ext_resource type="Texture2D" uid="uid://dli750wnavnwy" path="res://assets/characters/tinyHeroes/Slinger/attack/6.png" id="11_attack_6"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroStateMachine.gd" id="12_state_machine"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroIdleState.gd" id="13_idle_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToCombatState.gd" id="14_moving_to_combat_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToPortalState.gd" id="15_moving_to_portal_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroReturningHomeState.gd" id="16_returning_home_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroAttackingState.gd" id="17_attacking_state"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="18_aggro_area"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="19_hurtbox"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroSaveFromStackState.gd" id="20_save_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroDeathState.gd" id="21_death_state"]
+[ext_resource type="Texture2D" uid="uid://nld6pvfl73my" path="res://assets/ui/unit_selection_outline/back.png" id="22_outline_back"]
+[ext_resource type="Texture2D" uid="uid://f1jtv0gcocpc" path="res://assets/ui/unit_selection_outline/face.png" id="23_outline_face"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/StoneProjectile.tscn" id="24_stone_projectile"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_feet"]
+radius = 15.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_run_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_run_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_run_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_run_4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_attack"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_attack_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_attack_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_attack_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_attack_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_attack_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_attack_6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 250.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hurt"]
+radius = 22.0
+
+[node name="Slinger" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(-1, 35)
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_hero_on_field")
+default_projectile_scene = ExtResource("24_stone_projectile")
+
+[node name="SelectionOutlineBack" type="Sprite2D" parent="."]
+position = Vector2(1.8, -35.2)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("22_outline_back")
+
+[node name="SelectionOutlineFront" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1.8, -35.2)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("23_outline_face")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_feet")
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -35)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+frame_progress = 0.983201
+offset = Vector2(0, -30)
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -37)
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_attack")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+offset = Vector2(0, -30)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -22.3529
+offset_top = -88.2353
+offset_right = 27.6471
+offset_bottom = -83.2353
+theme_override_styles/background = SubResource("StyleBoxFlat_health")
+value = 100.0
+show_percentage = false
+
+[node name="AggroArea" type="Area2D" parent="."]
+position = Vector2(7.66177, -23.2353)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("18_aggro_area")
+required_group = "enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(1.17647, -35.2941)
+scale = Vector2(1, 2)
+collision_mask = 0
+script = ExtResource("19_hurtbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurt")
+
+[node name="HeroStateMachine" type="Node" parent="."]
+script = ExtResource("12_state_machine")
+
+[node name="HeroIdleState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("13_idle_state")
+
+[node name="HeroMovingToCombatState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("14_moving_to_combat_state")
+
+[node name="HeroMovingToPortalState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("15_moving_to_portal_state")
+
+[node name="HeroReturningHomeState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("16_returning_home_state")
+
+[node name="HeroAttackingState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("17_attacking_state")
+
+[node name="HeroSaveFromStackState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("20_save_state")
+
+[node name="HeroDeathState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("21_death_state")

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PerkData" load_steps=2 format=3 uid="uid://best_friend_perk"]
+
+[ext_resource type="Script" path="res://core/perk_data.gd" id="1_perk_data"]
+
+[resource]
+script = ExtResource("1_perk_data")
+id = "best_friend"
+display_name = "Best Friend"
+description = "Spawns a loyal dog that fights alongside the hero."
+is_positive = true
+potion_heal_bonus_percent = 0.0
+max_potions_bonus = 0
+armor_bonus = 0
+damage_bonus_percent = 0.0
+speed_bonus_percent = 0.0
+fatigue_rest_reduction_percent = 0.0
+block_chance_percent = 0.0
+damage_bonus_flat = 0
+xp_bonus_percent = 0.0
+team_xp_bonus_percent = 0.0
+damage_bonus_percent_conditional = 0.0
+conditional_check_range = 0.0

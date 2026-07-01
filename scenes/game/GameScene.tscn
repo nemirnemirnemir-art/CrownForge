@@ -1,0 +1,266 @@
+[gd_scene load_steps=37 format=3 uid="uid://c2jtp28w6oqgb"]
+
+[ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_game_scene"]
+[ext_resource type="PackedScene" uid="uid://d1520mf8nl8i" path="res://scenes/ui/hud/MainUI.tscn" id="2_main_ui"]
+[ext_resource type="PackedScene" path="res://scenes/map/BattlefieldBounds2D.tscn" id="3_battlefield_bounds"]
+[ext_resource type="PackedScene" uid="uid://d1x8q2m3n4p5r" path="res://scenes/map/MapLayout.tscn" id="9_wba7l"]
+[ext_resource type="PackedScene" uid="uid://b8x7k2m3n4p5q" path="res://scenes/ui/hud/HeroBar.tscn" id="10_hero_bar"]
+[ext_resource type="Texture2D" uid="uid://dred7xtlg01po" path="res://assets/ui/icons/wall_hp.png" id="12_6wxm6"]
+[ext_resource type="PackedScene" uid="uid://6kd50pt3wue1" path="res://scenes/ui/building/BuildingMenu.tscn" id="12_building_menu"]
+[ext_resource type="PackedScene" uid="uid://bnxw8pqc3q4v7" path="res://scenes/ui/town/BuildingCategoryFilter.tscn" id="13_category_filter"]
+[ext_resource type="PackedScene" uid="uid://1kie13vjidhg" path="res://scenes/ui/gaze/VzorZone.tscn" id="13_vzor_zone"]
+[ext_resource type="PackedScene" uid="uid://bj6m70s0i1ag0" path="res://scenes/ui/hud/WallHealthUI.tscn" id="14_wall_health_ui"]
+[ext_resource type="PackedScene" uid="uid://yq8nig3dwj2p" path="res://scenes/day_night/NightLight.tscn" id="14_xd84e"]
+[ext_resource type="PackedScene" uid="uid://bwyljkgvuhmcy" path="res://scenes/ui/hud/GameSpeedUI.tscn" id="15_game_speed_ui"]
+[ext_resource type="PackedScene" path="res://scenes/day_night/DayNightCanvas.tscn" id="16_day_night_canvas"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/WaveTimerBar.tscn" id="17_wave_timer_bar"]
+[ext_resource type="PackedScene" uid="uid://0jj3tdddt265" path="res://scenes/ui/rewards/RewardMenuBaseProduction.tscn" id="18_reward_menu_bp"]
+[ext_resource type="Texture2D" uid="uid://djb2d8xuvqqc" path="res://assets/environment/backgrounds/main_screen_ui_background.png" id="19_20tff"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/RewardMenuArtifacts.tscn" id="19_reward_menu_artifacts"]
+[ext_resource type="PackedScene" uid="uid://bugepjqem41l" path="res://scenes/ui/rewards/RewardMenuTroopBonuses.tscn" id="20_reward_menu_troop_bonuses"]
+[ext_resource type="PackedScene" uid="uid://blrcph5xqjtxm" path="res://scenes/ui/morale/MoraleTooltip.tscn" id="21_morale_tooltip"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/RewardMenuBuildingUpgrades.tscn" id="22_reward_menu_building_upgrades"]
+[ext_resource type="PackedScene" uid="uid://ovp6a45aevga" path="res://scenes/ui/rewards/WaveRewardMenu.tscn" id="23_wave_reward_menu"]
+[ext_resource type="PackedScene" uid="uid://ck7fhj3lm1ap" path="res://scenes/ui/rewards/RewardMenuLevyBarracks.tscn" id="24_reward_menu_levy"]
+[ext_resource type="PackedScene" uid="uid://c8y3s4ksostnk" path="res://scenes/ui/prophecy/ProphecyMenu.tscn" id="25_prophecy_menu"]
+[ext_resource type="Script" path="res://scripts/resources/ProphecyPatternPool.gd" id="26_prophecy_pool_script"]
+[ext_resource type="PackedScene" uid="uid://ve3b2ybpitm0" path="res://scenes/ui/rewards/RewardMenuResources.tscn" id="27_reward_menu_resources"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/RewardMenuSpells.tscn" id="28_reward_menu_spells"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/RewardMenuTrader.tscn" id="29_reward_menu_trader"]
+[ext_resource type="Script" path="res://scripts/systems/WorldShake.gd" id="30_world_shake"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/HomeseekerArrivalOverlay.tscn" id="31_homeseeker_overlay"]
+[ext_resource type="PackedScene" uid="uid://c2q4mpttjl70p" path="res://scenes/ui/hud/BossHpBar.tscn" id="32_boss_hp_bar"]
+[ext_resource type="Script" path="res://scripts/systems/CameraShake2D.gd" id="33_camera_shake"]
+[ext_resource type="PackedScene" path="res://scenes/ui/town/BarracksTroopMenu.tscn" id="34_barracks_troop_menu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/encounters/EncounterMenu.tscn" id="35_encounter_menu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/MinotaurArrivalOverlay.tscn" id="36_minotaur_overlay"]
+[ext_resource type="PackedScene" uid="uid://b2smwh7w4w884" path="res://scenes/ui/town/TownMenu.tscn" id="37_town_menu"]
+[ext_resource type="PackedScene" uid="uid://day801a2b3c4d" path="res://scenes/ui/overlays/HeroCard.tscn" id="38_hero_card"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_game_scene")
+pause_day_night = true
+release_mode_enabled = false
+skip_character_creation_setup = true
+wall_attack_range = 0.0
+
+[node name="DayNightCanvas" parent="." instance=ExtResource("16_day_night_canvas")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="CenterMarker" type="ColorRect" parent="UILayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 0.85)
+
+[node name="WaveTimerBar" parent="UILayer" instance=ExtResource("17_wave_timer_bar")]
+layout_mode = 3
+anchors_preset = -1
+offset_top = 1.0
+offset_bottom = 49.0
+wave_interval = 30.0
+
+[node name="MainUI" parent="UILayer" instance=ExtResource("2_main_ui")]
+offset_left = 2.0
+offset_top = -43.0
+offset_right = 2.0
+offset_bottom = -43.0
+
+[node name="BarracksTroopMenu" parent="UILayer/MainUI" instance=ExtResource("34_barracks_troop_menu")]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 777.0
+offset_right = 1123.0
+offset_bottom = 865.0
+
+[node name="MoraleTooltip" parent="UILayer" instance=ExtResource("21_morale_tooltip")]
+offset_left = 838.0
+offset_top = 604.0
+offset_right = 1138.0
+offset_bottom = 916.0
+
+[node name="BuildingMenu" parent="UILayer" instance=ExtResource("12_building_menu")]
+offset_left = 32.0
+offset_top = 797.0
+offset_right = 932.0
+offset_bottom = 1127.0
+scale = Vector2(1.37571, 1.4537)
+category_filter_path = NodePath("../BuildingCategoryFilter")
+
+[node name="BuildingCategoryFilter" parent="UILayer" instance=ExtResource("13_category_filter")]
+offset_left = 1769.0
+offset_top = 137.0
+offset_right = 1869.0
+offset_bottom = 287.0
+
+[node name="Sprite2D" type="Sprite2D" parent="UILayer"]
+visible = false
+z_index = 5
+position = Vector2(833, 55)
+scale = Vector2(0.917423, 0.526243)
+
+[node name="HeroBar" parent="UILayer" instance=ExtResource("10_hero_bar")]
+offset_left = -427.0
+offset_top = -105.0
+offset_right = 193.0
+offset_bottom = 14.9999
+scale = Vector2(0.694823, 0.839925)
+
+[node name="WallHealthUI" parent="UILayer" instance=ExtResource("14_wall_health_ui")]
+offset_left = -552.0
+offset_top = 39.0
+offset_right = -252.0
+offset_bottom = 99.0
+icon_texture = ExtResource("12_6wxm6")
+
+[node name="GameSpeedUI" parent="UILayer" instance=ExtResource("15_game_speed_ui")]
+offset_left = 1772.0
+offset_top = 10.0
+offset_right = 1912.0
+offset_bottom = 42.0
+metadata/_edit_use_anchors_ = true
+
+[node name="RewardMenuBaseProduction" parent="UILayer" instance=ExtResource("18_reward_menu_bp")]
+
+[node name="RewardMenuEstablishedProduction" parent="UILayer" instance=ExtResource("18_reward_menu_bp")]
+building_category = 1
+menu_title = "Choose established production building"
+
+[node name="RewardMenuKingdomInfrastructure" parent="UILayer" instance=ExtResource("18_reward_menu_bp")]
+building_category = 6
+menu_title = "Choose kingdom infrastructure building"
+
+[node name="RewardMenuArtifacts" parent="UILayer" instance=ExtResource("19_reward_menu_artifacts")]
+layout_mode = 3
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RewardMenuTroopBonuses" parent="UILayer" instance=ExtResource("20_reward_menu_troop_bonuses")]
+
+[node name="RewardMenuBuildingUpgrades" parent="UILayer" instance=ExtResource("22_reward_menu_building_upgrades")]
+
+[node name="RewardMenuLevyBarracks" parent="UILayer" instance=ExtResource("24_reward_menu_levy")]
+
+[node name="WaveRewardMenu" parent="UILayer" instance=ExtResource("23_wave_reward_menu")]
+
+[node name="RewardMenuResources" parent="UILayer" instance=ExtResource("27_reward_menu_resources")]
+
+[node name="RewardMenuSpells" parent="UILayer" instance=ExtResource("28_reward_menu_spells")]
+layout_mode = 3
+
+[node name="RewardMenuLegendarySpells" parent="UILayer" instance=ExtResource("28_reward_menu_spells")]
+layout_mode = 3
+legendary_only = true
+
+[node name="RewardMenuTrader" parent="UILayer" instance=ExtResource("29_reward_menu_trader")]
+layout_mode = 3
+
+[node name="ProphecyPatternPool" type="Node" parent="UILayer"]
+script = ExtResource("26_prophecy_pool_script")
+
+[node name="ProphecyMenu" parent="UILayer" instance=ExtResource("25_prophecy_menu")]
+visible = false
+
+[node name="EncounterMenu" parent="UILayer" instance=ExtResource("35_encounter_menu")]
+
+[node name="HomeseekerArrivalOverlay" parent="UILayer" instance=ExtResource("31_homeseeker_overlay")]
+visible = false
+layout_mode = 3
+
+[node name="MinotaurArrivalOverlay" parent="UILayer" instance=ExtResource("36_minotaur_overlay")]
+visible = false
+layout_mode = 3
+
+[node name="BossHpBar" parent="UILayer" instance=ExtResource("32_boss_hp_bar")]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -420.0
+offset_top = 60.0
+offset_right = -20.0
+offset_bottom = 140.0
+grow_horizontal = 0
+
+[node name="TownMenu" parent="UILayer" instance=ExtResource("37_town_menu")]
+
+[node name="HeroCard" parent="UILayer" instance=ExtResource("38_hero_card")]
+offset_left = -867.0
+offset_top = -260.0
+offset_right = -432.0
+offset_bottom = 80.0
+scale = Vector2(0.52, 0.52)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(0, 2)
+
+[node name="WorldYSort" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(59, -34)
+
+[node name="BiomeLayer" type="Node2D" parent="WorldYSort"]
+
+[node name="MapContainer" type="Node2D" parent="WorldYSort"]
+y_sort_enabled = true
+position = Vector2(34, 638)
+
+[node name="MobPivot" type="Node2D" parent="WorldYSort/MapContainer"]
+y_sort_enabled = true
+
+[node name="HeroPivot" type="Node2D" parent="WorldYSort/MapContainer"]
+y_sort_enabled = true
+
+[node name="BossPivot" type="Node2D" parent="WorldYSort/MapContainer"]
+y_sort_enabled = true
+
+[node name="BattlefieldBounds2D" parent="WorldYSort/MapContainer" instance=ExtResource("3_battlefield_bounds")]
+position = Vector2(1202, -219)
+scale = Vector2(0.948303, 0.544161)
+input_pickable = false
+monitoring = false
+monitorable = false
+
+[node name="MapLayout" parent="WorldYSort/MapContainer" instance=ExtResource("9_wba7l")]
+position = Vector2(-29, -444)
+scale = Vector2(1.35779, 1.29593)
+spawn_markers_offset = Vector2(400, -50)
+
+[node name="VzorZone" parent="WorldYSort/MapContainer/MapLayout" instance=ExtResource("13_vzor_zone")]
+position = Vector2(0.736492, 0)
+
+[node name="WorldShake" type="Node" parent="."]
+script = ExtResource("30_world_shake")
+target_path = NodePath("WorldYSort/MapContainer")
+
+[node name="CameraShake" type="Camera2D" parent="."]
+position = Vector2(1113, 502)
+script = ExtResource("33_camera_shake")
+
+[node name="NightLight" parent="." instance=ExtResource("14_xd84e")]
+position = Vector2(-2127, -1158)
+offset = Vector2(1720, 763)
+
+[node name="UI_main_background" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(1112, 911)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("19_20tff")
+
+[node name="UI_main_background2" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(2013, -107)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("19_20tff")
+flip_v = true

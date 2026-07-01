@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=4 format=3 uid="uid://cmlh84wi2v4wc"]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxuyc5nakb8px" path="res://assets/vfx/spells/2.png" id="1_5w28s"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/ArmageddonEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "armageddon"
+spell_name = "Armageddon"
+icon = ExtResource("1_5w28s")
+description = "Summons 9 meteors in 3 waves. Each meteor deals 200 impact damage."
+target_radius = 300.0
+target_type = "area"
+effect_scene = ExtResource("2")
+duration = 3.0
+damage = 200.0
+damage_per_second = 0.0
+max_stacks = 99

@@ -1,0 +1,41 @@
+# Godot 4+ cache
+.godot/
+*.translation
+
+# Godot Android export folder
+/android/
+
+# Exports / builds
+exported/
+build/
+dist/
+*.exe
+*.apk
+*.aab
+*.pck
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / AI tools
+.idea/
+.vscode/
+.windsurf/
+.agents/
+
+# Temporary tests / reports
+.test/
+qa_reports/
+
+# Logs / test outputs
+*_stdout.txt
+*_stderr.txt
+audit_stdout.txt
+audit_stderr.txt
+*.log
+
+# OS garbage
+Thumbs.db
+.DS_Store

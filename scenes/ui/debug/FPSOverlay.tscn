@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://fps_overlay_001"]
+
+[ext_resource type="Script" path="res://scripts/ui/debug/FPSOverlay.gd" id="1_fps_overlay_script"]
+
+[node name="FPSOverlay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 170.0
+offset_bottom = 40.0
+mouse_filter = 2
+z_index = 1500
+script = ExtResource("1_fps_overlay_script")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FPS: 60"
+vertical_alignment = 1

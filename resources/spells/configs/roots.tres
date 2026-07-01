@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/RootsEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "roots"
+spell_name = "Roots"
+description = "Spawns roots that push enemies and deal 60 impact + 56 poison damage."
+icon = null
+target_radius = 60.0
+target_type = "area"
+effect_scene = ExtResource("2")
+duration = 4.0
+damage = 60.0
+damage_per_second = 14.0
+max_stacks = 99

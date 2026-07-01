@@ -1,0 +1,122 @@
+[gd_scene load_steps=20 format=3 uid="uid://cxpj254o3axsl"]
+
+[ext_resource type="Script" path="res://scripts/hero/HeroOnField.gd" id="1_hero_on_field"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroStateMachine.gd" id="2_state_machine"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroIdleState.gd" id="3_idle_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToCombatState.gd" id="4_moving_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroAttackingState.gd" id="5_attacking_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToPortalState.gd" id="11_moving_to_portal_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroReturningHomeState.gd" id="12_returning_home_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroSaveFromStackState.gd" id="13_save_from_stack_state"]
+[ext_resource type="Script" path="res://scripts/components/KnockbackComponent.gd" id="6_knockback"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="7_aggro_area"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="8_hurtbox"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="9_hit_component"]
+[ext_resource type="Script" path="res://scripts/components/AttackComponent.gd" id="10_attack_component"]
+[ext_resource type="Texture2D" path="res://assets/ui/unit_selection_outline/back.png" id="14_outline_back"]
+[ext_resource type="Texture2D" path="res://assets/ui/unit_selection_outline/face.png" id="15_outline_face"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 180.0
+
+[sub_resource type="RectangleShape2D" id="CircleShape2D_hurt"]
+size = Vector2(44, 44)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe0uk"]
+radius = 18.7883
+
+[node name="HeroOnField" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_hero_on_field")
+
+[node name="SelectionOutlineBack" type="Sprite2D" parent="."]
+visible = false
+z_index = 0
+texture = ExtResource("14_outline_back")
+
+[node name="SelectionOutlineFront" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+texture = ExtResource("15_outline_face")
+
+[node name="AnimationSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = -35.0
+theme_override_styles/background = SubResource("StyleBoxFlat_health")
+value = 100.0
+show_percentage = false
+
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_aggro_area")
+required_group = "enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, 12)
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("8_hurtbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("9_hit_component")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_pe0uk")
+
+[node name="AttackComponent" type="Node" parent="."]
+script = ExtResource("10_attack_component")
+animation_sprite_path = NodePath("AnimationSprite2D")
+hit_component_path = NodePath("Hitbox")
+attack_cooldown = null
+attack_duration = null
+hit_start_time = null
+hit_end_time = null
+damage = null
+hit_offset = null
+hit_length = null
+hit_width = null
+
+[node name="HeroStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_state_machine")
+initial_state = NodePath("HeroMovingToPortalState")
+
+[node name="HeroIdleState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("3_idle_state")
+
+[node name="HeroMovingToPortalState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("11_moving_to_portal_state")
+
+[node name="HeroMovingToCombatState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("4_moving_state")
+
+[node name="HeroAttackingState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("5_attacking_state")
+
+[node name="HeroReturningHomeState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("12_returning_home_state")
+
+[node name="HeroSaveFromStackState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("13_save_from_stack_state")
+

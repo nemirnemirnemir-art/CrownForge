@@ -1,0 +1,303 @@
+[gd_scene load_steps=14 format=3 uid="uid://day801a2b3c4d"]
+
+[ext_resource type="Script" path="res://scripts/ui/overlays/HeroCard.gd" id="1_hero_card"]
+[ext_resource type="Texture2D" uid="uid://b1kw3d6x3n884" path="res://assets/ui/heroui/20240707dragonHeaderA.png" id="6_header_bg"]
+[ext_resource type="PackedScene" uid="uid://ctfjh5207gnyd" path="res://scenes/ui/widgets/BuffGrid.tscn" id="8_buff_grid_scene"]
+[ext_resource type="PackedScene" uid="uid://b8yddampehp2q" path="res://scenes/ui/hud/MoodPanel.tscn" id="9_mood_panel"]
+[ext_resource type="Texture2D" uid="uid://c2mom4ri3i7b1" path="res://assets/ui/sliders/default_slider_left.png" id="10_slider_left_normal"]
+[ext_resource type="Texture2D" uid="uid://c7acfvmapujlb" path="res://assets/ui/sliders/default_slider_mouse_focus.png" id="11_slider_hover"]
+[ext_resource type="Texture2D" uid="uid://dxxxdgq3mdktj" path="res://assets/ui/sliders/default_slider_mouse_pressed_hold.png" id="12_slider_pressed"]
+[ext_resource type="Texture2D" uid="uid://dnet5ppbdowoy" path="res://assets/ui/sliders/default_slider_mouse_pressed_unhold.png" id="13_slider_unhold"]
+[ext_resource type="PackedScene" uid="uid://dgglwihj4bh01" path="res://scenes/ui/widgets/SliderButton.tscn" id="14_slider_btn"]
+[ext_resource type="Texture2D" uid="uid://dgkblltdeotv5" path="res://options/cancel.png" id="15_cancel_icon"]
+[ext_resource type="Texture2D" uid="uid://ca2ttuhfku7rk" path="res://options/button.png" id="16_btn_bg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.12, 0.1, 0.18, 0.95)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.5, 0.4, 0.6, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_items_bg"]
+bg_color = Color(0.08, 0.06, 0.12, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.35, 0.5, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HeroCard" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -435.0
+offset_top = -340.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+mouse_filter = 2
+script = ExtResource("1_hero_card")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 1.0
+offset_right = 26.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="MoodPanel" parent="." instance=ExtResource("9_mood_panel")]
+layout_mode = 1
+offset_left = 61.0
+offset_top = 159.0
+offset_right = 111.0
+offset_bottom = 209.0
+mouse_filter = 2
+
+[node name="MainContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 30.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="LeftPanel" type="VBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="Spacer" type="Control" parent="MainContainer/LeftPanel"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="RightPanel" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderContainer" type="Control" parent="MainContainer/RightPanel"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HeaderBackground" type="NinePatchRect" parent="MainContainer/RightPanel/HeaderContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -14.0
+offset_right = 25.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.973014, 1.64024)
+texture = ExtResource("6_header_bg")
+patch_margin_left = 40
+patch_margin_top = 10
+patch_margin_right = 40
+patch_margin_bottom = 10
+
+[node name="NameLabel" type="Label" parent="MainContainer/RightPanel/HeaderContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 21
+text = "Hero"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="MainContainer/RightPanel/HeaderContainer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -24.0
+offset_top = -76.0
+offset_right = 60.0
+offset_bottom = 8.0
+grow_horizontal = 0
+texture_normal = ExtResource("16_btn_bg")
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="MainContainer/RightPanel/HeaderContainer/CloseButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_cancel_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PrevButton" parent="MainContainer/RightPanel/HeaderContainer" instance=ExtResource("14_slider_btn")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = 44.0
+offset_right = -4.0
+offset_bottom = 84.0
+grow_vertical = 2
+texture_normal_state = ExtResource("10_slider_left_normal")
+texture_hover_state = ExtResource("11_slider_hover")
+texture_pressed_state = ExtResource("12_slider_pressed")
+texture_unhold_state = ExtResource("13_slider_unhold")
+
+[node name="NextButton" parent="MainContainer/RightPanel/HeaderContainer" instance=ExtResource("14_slider_btn")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 42.0
+offset_top = 44.0
+offset_right = 82.0
+offset_bottom = 84.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(20, 20)
+texture_normal_state = ExtResource("10_slider_left_normal")
+texture_hover_state = ExtResource("11_slider_hover")
+texture_pressed_state = ExtResource("12_slider_pressed")
+texture_unhold_state = ExtResource("13_slider_unhold")
+
+[node name="ItemsBackgroundContainer" type="Control" parent="MainContainer/RightPanel"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ItemsBackground" type="Panel" parent="MainContainer/RightPanel/ItemsBackgroundContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_items_bg")
+
+[node name="EquipmentContainer" type="GridContainer" parent="MainContainer/RightPanel/ItemsBackgroundContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.5
+offset_top = -47.0
+offset_right = 210.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 5
+columns = 4
+
+[node name="StatsPanel" type="Panel" parent="MainContainer/RightPanel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="StatsContainer" type="VBoxContainer" parent="MainContainer/RightPanel/StatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="HPLabel" type="Label" parent="MainContainer/RightPanel/StatsPanel/StatsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "HP: 0 / 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DamageLabel" type="Label" parent="MainContainer/RightPanel/StatsPanel/StatsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Damage: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelLabel" type="Label" parent="MainContainer/RightPanel/StatsPanel/StatsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Level: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XPLabel" type="Label" parent="MainContainer/RightPanel/StatsPanel/StatsContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "XP: 0 / 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPanel2" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+
+[node name="BuffGrid" parent="." instance=ExtResource("8_buff_grid_scene")]
+visible = false
+layout_mode = 2
+offset_left = -52.0
+offset_top = 7.0
+offset_right = 28.0
+offset_bottom = 267.0
+
+[editable path="MoodPanel"]
+[editable path="BuffGrid"]

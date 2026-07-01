@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=10 format=3 uid="uid://cds0b6g3e4cg"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="SpriteFrames" path="res://data/buildings/levy_barracks/hunters_vzor_frames.tres" id="4_frames"]
+[ext_resource type="Texture2D" uid="uid://dvove24hofnx6" path="res://assets/environment/buildings/Levy_barracks/Hunters/Hunters.png" id="5_icon"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 100
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "wheat"
+amount = 50
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "wheat"
+amount = 15
+
+[sub_resource type="Resource" id="Cons_1"]
+script = ExtResource("3_prod")
+resource_id = "wood"
+amount = 5
+
+[resource]
+script = ExtResource("1_script")
+building_id = "hunters"
+display_name = "Hunters"
+description = "Recruits Hunter units. 20s cycle. Capacity: 3. Consumes 20 Wheat."
+icon = ExtResource("5_icon")
+use_vzor_animation = true
+vzor_frames = ExtResource("4_frames")
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 3
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 15.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0"), SubResource("Cons_1")])
+produced_unit_id = "hunter"
+max_units = 2
+has_special_behavior = false
+special_script_path = ""

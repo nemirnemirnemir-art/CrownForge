@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/town/BuildingDetailsPanel.gd" id="1_panel_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tooltip"]
+bg_color = Color(0.15, 0.15, 0.15, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.3, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[node name="BuildingDetailsPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(280, 240)
+theme_override_styles/panel = SubResource("StyleBoxFlat_tooltip")
+script = ExtResource("1_panel_script")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NameLabel" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.9, 0.8, 1)
+theme_override_font_sizes/font_size = 22
+text = "Building Name"
+horizontal_alignment = 1
+
+[node name="BuildingStats" type="HBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="TimerInfo" type="HBoxContainer" parent="Margin/VBox/BuildingStats"]
+layout_mode = 2
+
+[node name="TimerIcon" type="Label" parent="Margin/VBox/BuildingStats/TimerInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "⌛"
+
+[node name="TimerLabel" type="Label" parent="Margin/VBox/BuildingStats/TimerInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "1.00s"
+
+[node name="CapacityInfo" type="HBoxContainer" parent="Margin/VBox/BuildingStats"]
+layout_mode = 2
+
+[node name="CapacityIcon" type="TextureRect" parent="Margin/VBox/BuildingStats/CapacityInfo"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CapacityLabel" type="Label" parent="Margin/VBox/BuildingStats/CapacityInfo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "/ 3"
+
+[node name="HSeparator" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="ProvidesHeader" type="Label" parent="Margin/VBox"]
+visible = false
+layout_mode = 2
+text = "Provides"
+
+[node name="ProvidesList" type="VBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="DescriptionHeader" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_font_sizes/font_size = 12
+text = "Description"
+
+[node name="DescriptionText" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Building description here..."
+autowrap_mode = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Margin/VBox"]
+layout_mode = 2
+
+[node name="CostLabel" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 0.4, 1)
+theme_override_font_sizes/font_size = 14
+text = "BUILD COST:"
+autowrap_mode = 3
+
+[node name="NextCostList" type="VBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="RequirementsHeader" type="Label" parent="Margin/VBox"]
+visible = false
+layout_mode = 2
+text = "Required (Owned / Required)"
+
+[node name="RequirementsList" type="VBoxContainer" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="UpgradesHeader" type="Label" parent="Margin/VBox"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+text = "Upgrades"
+
+[node name="UpgradesList" type="VBoxContainer" parent="Margin/VBox"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 6

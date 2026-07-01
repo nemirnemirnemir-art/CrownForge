@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=4 format=3 uid="uid://mru48gs8ejq3"]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/BladefallEffect.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://che8cpvll2rhd" path="res://assets/vfx/spells/7.png" id="2_bgy0y"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "bladefall"
+spell_name = "Bladefall"
+icon = ExtResource("2_bgy0y")
+description = "Drops 15 blades in a vertical line (300px). Each blade deals 60 damage."
+target_radius = 25.0
+target_type = "area"
+effect_scene = ExtResource("2")
+duration = 3.0
+damage = 60.0
+damage_per_second = 0.0
+max_stacks = 99

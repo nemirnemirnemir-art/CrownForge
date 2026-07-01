@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=3 format=3 uid="uid://qddk3dqbijio"]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/SummonInfernalsEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "summon_infernals"
+spell_name = "Summon Infernals"
+description = "Summons an infernal creature to fight for you."
+target_radius = 50.0
+target_type = "point"
+effect_scene = ExtResource("2")
+duration = 30.0
+damage = 25.0
+damage_per_second = 0.0
+max_stacks = 99

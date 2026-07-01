@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqy3h5jvm8xlr"]
+
+[ext_resource type="Script" path="res://scripts/effects/DeforestationEffect.gd" id="1_deforest"]
+
+[node name="DeforestationEffect" type="Node2D"]
+script = ExtResource("1_deforest")
+
+[node name="EffectArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitoring = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EffectArea"]

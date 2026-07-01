@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://yq8nig3dwj2p"]
+
+[ext_resource type="Script" path="res://scenes/day_night/NightLight.gd" id="1_script"]
+
+[node name="NightLight" type="PointLight2D"]
+color = Color(1, 0.9, 0.7, 1)
+energy = 0.0
+blend_mode = 1
+range_layer_min = -1
+range_layer_max = 1
+script = ExtResource("1_script")

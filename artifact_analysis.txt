@@ -1,0 +1,47 @@
+SYSTEMS TO CHECK:
+1. Infernal unit system - search for "Infernal" class or summon_infernals
+2. Gold gain tracking for castle damage - track castle damage -> gold resource
+3. Spell cast tracking per unit - count spell casts
+4. Legendary reward system - grant legendary artifacts
+5. Building unit capacity - per-building unit limit
+6. Wine production from wells - wells produce wine
+7. Infernal unit damage boost - damage bonus for Infernal
+8. Seal placement on tiles - place seals
+9. Temporary unit summoning at wave start - summon units at wave
+10. Water to fuel conversion - production trigger
+11. Flour unit HP conversion - flour -> unit HP
+12. Building attack damage boost - buildings attack enemies
+13. Trader discount system - market/trader with discounts
+14. Enemy max HP damage tracking - damage by % max HP
+15. Castle heal on building depletion - depleted buildings heal castle
+16. Flying troop boost - flying unit bonuses
+17. Unit enrage on friendly death - enrage mechanic
+18. Healing pool on unit death - pool spawned
+19. Creature summon on death - summon on troop death
+20. Damage block chance - % chance to block
+21. Max unit HP bonus - unit HP stat bonus
+22. Production limit increase - production cap
+23. Wood production trigger - wood bonus
+24. Healer Mage summon - summon unit
+25. Nether Rune generation - special resource
+26. Grunt unit class bonus - grunt bonuses
+27. Crystal production trigger - crystal bonus
+28. King ability cooldown - cooldown reduction
+29. Red/Blue/Green ability cooldown - individual ability cooldown
+30. Temporary Goose Riders - summon units
+31. Scarecrow summon on death - summon on death
+32. Temporary unit re-summon - resurrect temp units
+33. Central cell passive work - gaze mechanic
+34. Champion stun effect - champion ability
+35. Temporary unit lifetime boost - extend duration
+36. Metal to unit damage - metal -> damage
+37. Market trading unlock - trading system
+38. Building damage to enemies - building attack
+39. Troop ghost resurrection - ghost unit on death
+40. Legendary seal placement - place legendary seal
+41. Ranged troop projectile chance - extra projectiles
+42. Undead unit on excavation - unit spawn
+43. Toad summon on depletion - unit spawn
+44. Free reward reroll - reroll mechanic
+45. Morale from wine spending - resource spending -> morale
+46. Wood generation on unit creation - unit spawn -> resource

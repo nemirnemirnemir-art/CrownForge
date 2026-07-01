@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "pangolin"
+display_name = "Pangolin"
+hp = 520
+dps = 36
+unit_classes = [1, 4]
+trait_description = "+8% armor-style survivability for Champion troops per Pangolin (up to 80%)."

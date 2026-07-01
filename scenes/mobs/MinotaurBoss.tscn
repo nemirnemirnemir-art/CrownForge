@@ -1,0 +1,166 @@
+[gd_scene load_steps=24 format=3 uid="uid://bfkp3cr0n0hxi"]
+
+[ext_resource type="Script" path="res://scripts/bosses/MinotaurBoss.gd" id="1_boss"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="2_sm"]
+[ext_resource type="Script" path="res://scripts/bosses/states/MinotaurIdleState.gd" id="3_idle"]
+[ext_resource type="Script" path="res://scripts/bosses/states/MinotaurWalkState.gd" id="4_walk"]
+[ext_resource type="Script" path="res://scripts/bosses/states/MinotaurAttackState.gd" id="5_attack"]
+[ext_resource type="Script" path="res://scripts/bosses/states/MinotaurChargeState.gd" id="6_charge"]
+[ext_resource type="Script" path="res://scripts/bosses/states/MinotaurPointState.gd" id="7_point"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="8_death"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="9_aggro"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="10_hurt"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="11_hitbox"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="12_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="13_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="14_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="15_click"]
+[ext_resource type="Texture2D" path="res://assets/characters/bosses/minotaur/Invincible.png" id="16_inv"]
+[ext_resource type="FontFile" uid="uid://b1w36vwmi538s" path="res://assets/ui/fonts/ThaleahFat.ttf" id="17_font"]
+[ext_resource type="SpriteFrames" uid="uid://c1dwibjwu24ur" path="res://resources/sprite_frames/MinotaurBossFrames.tres" id="18_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 55.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 320.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurt"]
+size = Vector2(150, 190)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 60.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(150, 220)
+
+[node name="MinotaurBoss" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_boss")
+move_speed = 35.0
+attack_range = 120.0
+aggro_range = 450.0
+mob_damage = 35.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -88)
+shape = SubResource("CircleShape2D_body")
+
+[node name="AnimationSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -122)
+sprite_frames = ExtResource("18_frames")
+animation = &"walk"
+frame = 7
+frame_progress = 0.872879
+
+[node name="InvincibleBanner" type="Node2D" parent="."]
+position = Vector2(0, -228)
+
+[node name="Panel" type="Sprite2D" parent="InvincibleBanner"]
+texture = ExtResource("16_inv")
+
+[node name="Text" type="Label" parent="InvincibleBanner"]
+offset_left = -76.0
+offset_top = -13.0
+offset_right = 76.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("17_font")
+theme_override_font_sizes/font_size = 24
+text = "Invincible"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -40.0
+offset_top = -180.0
+offset_right = 40.0
+offset_bottom = -172.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("9_aggro")
+required_group = "hero"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 0
+script = ExtResource("10_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -92)
+shape = SubResource("RectangleShape2D_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("11_hitbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -90)
+shape = SubResource("CircleShape2D_hit")
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("MinotaurIdleState")
+
+[node name="MinotaurIdleState" type="Node" parent="MobStateMachine"]
+script = ExtResource("3_idle")
+
+[node name="MinotaurWalkState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_walk")
+
+[node name="MinotaurAttackState" type="Node" parent="MobStateMachine"]
+script = ExtResource("5_attack")
+
+[node name="MinotaurChargeState" type="Node" parent="MobStateMachine"]
+script = ExtResource("6_charge")
+
+[node name="MinotaurPointState" type="Node" parent="MobStateMachine"]
+script = ExtResource("7_point")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("8_death")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -96)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("12_health")
+fixed_max_health = 2000.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("13_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("14_slots")
+MAX_SLOTS = 6
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("15_click")

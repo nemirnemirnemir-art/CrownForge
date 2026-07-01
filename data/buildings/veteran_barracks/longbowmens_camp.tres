@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=9 format=3 uid="uid://c5ot14crykoaf"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://doprdjmmmg534" path="res://assets/environment/buildings/longbowmens_camp.png" id="3_c6uyc"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "metal"
+amount = 50
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 200
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "wheat"
+amount = 20
+
+[sub_resource type="Resource" id="Cons_1"]
+script = ExtResource("3_prod")
+resource_id = "gold"
+amount = 30
+
+[resource]
+script = ExtResource("1_script")
+building_id = "longbowmens_camp"
+display_name = "Longbowmen's Camp"
+description = "Recruits Longbowman units. 15s cycle. Capacity: 3. Consumes 20 Wheat, 30 Gold."
+icon = ExtResource("3_c6uyc")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 4
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 15.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0"), SubResource("Cons_1")])
+produced_unit_id = "longbowman"
+max_units = 3
+has_special_behavior = false
+special_script_path = ""

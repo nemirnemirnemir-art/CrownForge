@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/FireballEffect.gd" id="1"]
+
+[node name="FireballEffect" type="Node2D"]
+script = ExtResource("1")
+
+[node name="FlightSprite" type="Sprite2D" parent="."]
+z_index = 20
+
+[node name="ImpactAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 21
+scale = Vector2(0.65, 0.65)

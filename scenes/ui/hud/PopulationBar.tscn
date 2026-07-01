@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6y7w8oam0p1a"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/PopulationBar.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b4pyhph4g4nij" path="res://assets/ui/population_ui_icon.png" id="2_apkvj"]
+[ext_resource type="PackedScene" path="res://scenes/ui/overlays/PopulationTooltip.tscn" id="3_tooltip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gray"]
+bg_color = Color(0.3, 0.3, 0.3, 0.8)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[node name="PopulationBar" type="PanelContainer"]
+offset_right = 225.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gray")
+script = ExtResource("1_script")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+texture = ExtResource("2_apkvj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CurrentLabel" type="Label" parent="HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Separator" type="ColorRect" parent="HBox"]
+custom_minimum_size = Vector2(2, 20)
+layout_mode = 2
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="MaxLabel" type="Label" parent="HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "5"
+
+[node name="UpgradeButton" type="Button" parent="HBox"]
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+size_flags_vertical = 4
+text = "+"
+
+[node name="HoverRegion" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 240.0
+offset_bottom = 68.0
+mouse_filter = 2
+focus_mode = 0
+z_index = 5
+
+[node name="PopulationTooltip" parent="HoverRegion" instance=ExtResource("3_tooltip")]
+visible = false
+position = Vector2(0, 0)

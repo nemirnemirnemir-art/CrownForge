@@ -1,0 +1,101 @@
+[gd_scene load_steps=9 format=3 uid="uid://blrcph5xqjtxm"]
+
+[ext_resource type="Script" path="res://scripts/ui/morale/MoraleTooltip.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bpl5bkaw2nk45" path="res://assets/ui/morale/m0_20.png" id="2_m1ywj"]
+[ext_resource type="Texture2D" uid="uid://bxhvxgawjbs2o" path="res://assets/ui/morale/m20_40.png" id="3_5n3xk"]
+[ext_resource type="Texture2D" uid="uid://d2qgaa61siss" path="res://assets/ui/morale/m40_60.png" id="4_3rwjt"]
+[ext_resource type="Texture2D" uid="uid://bl54g1faooamv" path="res://assets/ui/morale/m60-80.png" id="5_btyad"]
+[ext_resource type="Texture2D" uid="uid://bxwcd1iyfvosd" path="res://assets/ui/morale/m80-100.png" id="6_8g3xd"]
+[ext_resource type="Texture2D" uid="uid://b82e7dg8vy6fv" path="res://assets/ui/morale/m101+.png" id="7_84jid"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg"]
+bg_color = Color(0.85, 0.78, 0.65, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.35, 0.2, 0.1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="MoraleTooltip" type="TextureRect"]
+offset_right = 160.0
+offset_bottom = 80.0
+texture = ExtResource("2_m1ywj")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("1_script")
+texture_0_20 = ExtResource("2_m1ywj")
+texture_21_40 = ExtResource("3_5n3xk")
+texture_41_60 = ExtResource("4_3rwjt")
+texture_61_80 = ExtResource("5_btyad")
+texture_81_100 = ExtResource("6_8g3xd")
+texture_101_plus = ExtResource("7_84jid")
+
+[node name="HoverArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HoverArea"]
+position = Vector2(81, 73)
+scale = Vector2(0.942524, 1.83631)
+polygon = PackedVector2Array(-3.18294, 6.53482, 6.36588, 21.7828, -7.42686, 31.0404, -14.8537, 40.8427, 0, 68.6157, 9.54883, 77.8734, 29.7075, 83.3191, 65.7808, 79.5071, 107.159, 78.9625, 142.171, 76.7842, 171.879, 66.982, 167.635, 57.7243, 174.001, 51.1895, 153.842, 20.1491, 140.049, 9.80224, 122.013, 15.2479, 107.159, 12.5251, 84.8784, 8.16853, 74.2686, 2.17827, 41.3782, -8.16854)
+
+[node name="TooltipPanel" type="PanelContainer" parent="."]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = -70.0
+offset_top = -280.0
+offset_right = 300.0
+offset_bottom = -20.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bg")
+
+[node name="Margin" type="MarginContainer" parent="TooltipPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="TooltipPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="Label" parent="TooltipPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.15, 0.05, 1)
+theme_override_font_sizes/font_size = 36
+text = "Morale"
+horizontal_alignment = 1
+
+[node name="Content" type="VBoxContainer" parent="TooltipPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Description" type="Label" parent="TooltipPanel/Margin/VBox/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_font_sizes/font_size = 21
+text = "Increases damage dealt by all units by 0.5% and
+buildings' productivity by 0.25% per morale"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="TooltipPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="FactorsTitle" type="Label" parent="TooltipPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 0.25, 0.2, 1)
+theme_override_font_sizes/font_size = 27
+text = "Current factors"
+horizontal_alignment = 1
+
+[node name="FactorsList" type="VBoxContainer" parent="TooltipPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4

@@ -1,0 +1,251 @@
+[gd_scene load_steps=39 format=3]
+
+[ext_resource type="Script" path="res://scripts/hero/HeroOnField.gd" id="1_psded"]
+[ext_resource type="Texture2D" path="res://assets/ui/unit_selection_outline/back.png" id="2_fin0p"]
+[ext_resource type="Texture2D" path="res://assets/ui/unit_selection_outline/face.png" id="3_ncoy5"]
+[ext_resource type="Texture2D" path="res://assets/characters/tinyHeroes/Lancer/Lancer_Run.png" id="4_rntni"]
+[ext_resource type="Texture2D" path="res://assets/characters/tinyHeroes/Lancer/Lancer_Right_Attack.png" id="5_jto8h"]
+[ext_resource type="Texture2D" path="res://assets/characters/tinyHeroes/Lancer/Lancer_Right_Defence.png" id="6_igovr"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="7_qvfmw"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="8_xnmeq"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="9_k3x70"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroStateMachine.gd" id="10_h13y0"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroIdleState.gd" id="11_1pmp4"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToCombatState.gd" id="12_va36n"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToPortalState.gd" id="13_sca81"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroReturningHomeState.gd" id="14_lebls"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroAttackingState.gd" id="15_pha8a"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroSaveFromStackState.gd" id="16_cow2n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_feet"]
+radius = 15.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnltc"]
+atlas = ExtResource("4_rntni")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjx2t"]
+atlas = ExtResource("4_rntni")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xfhf"]
+atlas = ExtResource("4_rntni")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy5ah"]
+atlas = ExtResource("4_rntni")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myehj"]
+atlas = ExtResource("4_rntni")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ybj4"]
+atlas = ExtResource("4_rntni")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnltc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjx2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xfhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy5ah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myehj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ybj4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 13.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edfwc"]
+atlas = ExtResource("5_jto8h")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovxv2"]
+atlas = ExtResource("5_jto8h")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g421"]
+atlas = ExtResource("5_jto8h")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgy8j"]
+atlas = ExtResource("6_igovr")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66rc1"]
+atlas = ExtResource("6_igovr")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tp28"]
+atlas = ExtResource("6_igovr")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wicuk"]
+atlas = ExtResource("6_igovr")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvgdp"]
+atlas = ExtResource("6_igovr")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imow5"]
+atlas = ExtResource("6_igovr")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_attack"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edfwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovxv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g421")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgy8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66rc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tp28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wicuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvgdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imow5")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 7.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 180.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hurt"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pe0uk"]
+radius = 18.7883
+
+[node name="militia" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_psded")
+
+[node name="SelectionOutlineBack" type="Sprite2D" parent="."]
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("2_fin0p")
+
+[node name="SelectionOutlineFront" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_ncoy5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_feet")
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+offset = Vector2(0, -30)
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_attack")
+animation = &"attack"
+frame = 7
+frame_progress = 0.167574
+offset = Vector2(0, -30)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -17.9411
+offset_top = -94.7059
+offset_right = 32.0589
+offset_bottom = -89.7059
+theme_override_styles/background = SubResource("StyleBoxFlat_health")
+value = 100.0
+show_percentage = false
+
+[node name="AggroArea" type="Area2D" parent="."]
+position = Vector2(0.882353, -38.2353)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("7_qvfmw")
+max_targets = 8
+required_group = "enemy"
+target_root_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(7.94117, -40.5882)
+scale = Vector2(1.0245, 2.04)
+collision_mask = 0
+script = ExtResource("8_xnmeq")
+health_target_path = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(0.882353, -38.2353)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("9_k3x70")
+damage = 1.0
+owner_node_path = NodePath("")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_pe0uk")
+
+[node name="HeroStateMachine" type="Node" parent="."]
+script = ExtResource("10_h13y0")
+
+[node name="HeroIdleState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("11_1pmp4")
+
+[node name="HeroMovingToCombatState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("12_va36n")
+
+[node name="HeroMovingToPortalState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("13_sca81")
+
+[node name="HeroReturningHomeState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("14_lebls")
+
+[node name="HeroAttackingState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("15_pha8a")
+
+[node name="HeroSaveFromStackState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("16_cow2n")

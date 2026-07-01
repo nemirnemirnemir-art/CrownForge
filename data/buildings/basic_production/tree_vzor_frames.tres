@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://d4cayhdw5pp1f"]
+
+[ext_resource type="Texture2D" uid="uid://8hgrgsclfv7n" path="res://assets/environment/buildings/buildingsAnim/tree/wood1.png" id="1_brf1a"]
+[ext_resource type="Texture2D" uid="uid://c343sbvspuqxu" path="res://assets/environment/buildings/buildingsAnim/tree/wood2.png" id="2_6n0wu"]
+[ext_resource type="Texture2D" uid="uid://dqchh4ludc8i4" path="res://assets/environment/buildings/buildingsAnim/tree/wood3.png" id="3_pl18c"]
+[ext_resource type="Texture2D" uid="uid://bssjvdlw3japa" path="res://assets/environment/buildings/buildingsAnim/tree/wood4.png" id="4_cic1y"]
+[ext_resource type="Texture2D" uid="uid://dge63pjiixj2y" path="res://assets/environment/buildings/buildingsAnim/tree/wood5.png" id="5_ghl5l"]
+[ext_resource type="Texture2D" uid="uid://b2iiotfc25nby" path="res://assets/environment/buildings/buildingsAnim/tree/wood6.png" id="6_6tirp"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_brf1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6n0wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pl18c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cic1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ghl5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6tirp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]

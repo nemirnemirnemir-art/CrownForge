@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_paladin_mage"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "paladin_mage"
+display_name = "Paladin Mage"
+hp = 195
+dps = 17
+unit_classes = [6, 1]
+trait_description = "Spell damage bonuses also apply to Paladin damage."

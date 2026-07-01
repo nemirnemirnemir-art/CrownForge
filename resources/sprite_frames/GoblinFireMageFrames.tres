@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://mi35usgupdqr"]
+
+[ext_resource type="Texture2D" uid="uid://cymc5qqhee30w" path="res://assets/characters/enemies/tinyEnemies/fire_mag/TNT_Purple.png" id="1_inxba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rs53"]
+atlas = ExtResource("1_inxba")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45lv6"]
+atlas = ExtResource("1_inxba")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ha3s"]
+atlas = ExtResource("1_inxba")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5axc"]
+atlas = ExtResource("1_inxba")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6hdl"]
+atlas = ExtResource("1_inxba")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo4ok"]
+atlas = ExtResource("1_inxba")
+region = Rect2(960, 192, 192, 192)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rs53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45lv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ha3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5axc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6hdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo4ok")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]

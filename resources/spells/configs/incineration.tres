@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SpellConfig" load_steps=4 format=3 uid="uid://3imjevywc5x8"]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cjfjiwdev04m4" path="res://assets/vfx/spells/Incineration.png" id="2_icon"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/IncinerationEffect.tscn" id="3_effect"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "incineration"
+spell_name = "Incineration"
+icon = ExtResource("2_icon")
+description = "Calls down a fiery burst that burns all enemies in the target area for heavy instant damage."
+target_radius = 80.0
+target_type = "area"
+effect_scene = ExtResource("3_effect")
+duration = 0.3
+damage = 600.0
+damage_per_second = 0.0
+max_stacks = 99

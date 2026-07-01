@@ -1,0 +1,357 @@
+[gd_scene load_steps=14 format=3 uid="uid://0171e1kupuui"]
+
+[ext_resource type="Script" path="res://scripts/ui/settings/OptionsMenu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c8udw0tguw4vf" path="res://options/under_reload_and_continue.png" id="2_bottom"]
+[ext_resource type="Texture2D" uid="uid://colfx0nh0dufn" path="res://options/options_background.png" id="3_bg"]
+[ext_resource type="Texture2D" uid="uid://bbrjxygqw3k00" path="res://options/options_header.png" id="4_header"]
+[ext_resource type="Texture2D" uid="uid://cljik135sb155" path="res://options/settings.png" id="5_icon_set"]
+[ext_resource type="Texture2D" uid="uid://bgnj4vpvdj7uv" path="res://options/music.png" id="6_icon_mus"]
+[ext_resource type="Texture2D" uid="uid://ca2ttuhfku7rk" path="res://options/button.png" id="7_btn"]
+[ext_resource type="Texture2D" uid="uid://dgkblltdeotv5" path="res://options/cancel.png" id="8_cancel"]
+[ext_resource type="PackedScene" uid="uid://c6r6r6r6r6r6s" path="res://scenes/ui/components/OptionsSlider.tscn" id="9_slider"]
+[ext_resource type="Texture2D" uid="uid://dcbpvuyjsijyk" path="res://options/checkmark.png" id="10_check"]
+[ext_resource type="Texture2D" uid="uid://ba2irav015p8j" path="res://options/continue.png" id="11_cont"]
+[ext_resource type="Texture2D" uid="uid://m80jsphaa3g" path="res://options/reload.png" id="12_rel"]
+[ext_resource type="FontFile" uid="uid://b1w36vwmi538s" path="res://assets/ui/fonts/ThaleahFat.ttf" id="13_font"]
+
+[node name="OptionsMenu" type="Control"]
+top_level = true
+z_index = 2000
+mouse_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="DimOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="CenterRoot" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -280.0
+offset_right = 320.0
+offset_bottom = 280.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="MainPanel" type="TextureRect" parent="CenterRoot"]
+layout_mode = 2
+custom_minimum_size = Vector2(600, 440)
+texture = ExtResource("3_bg")
+expand_mode = 1
+
+[node name="BottomBar" type="TextureRect" parent="CenterRoot"]
+z_index = -1
+layout_mode = 2
+custom_minimum_size = Vector2(600, 80)
+texture = ExtResource("2_bottom")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ContinueBtn" type="TextureButton" parent="BottomBar"]
+layout_mode = 0
+offset_left = 345.0
+offset_top = 16.0
+offset_right = 395.0
+offset_bottom = 66.0
+texture_normal = ExtResource("11_cont")
+
+[node name="ReloadBtn" type="TextureButton" parent="BottomBar"]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 16.0
+offset_right = 255.0
+offset_bottom = 66.0
+texture_normal = ExtResource("12_rel")
+
+[node name="Header" type="TextureRect" parent="CenterRoot/MainPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("4_header")
+
+[node name="IconSet" type="TextureRect" parent="CenterRoot/MainPanel/Header"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 48.0
+texture = ExtResource("5_icon_set")
+expand_mode = 1
+
+[node name="IconMus" type="TextureRect" parent="CenterRoot/MainPanel/Header"]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 16.0
+offset_right = 268.0
+offset_bottom = 48.0
+texture = ExtResource("6_icon_mus")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterRoot/MainPanel/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6, 0.9, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 48
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelBtn" type="TextureButton" parent="CenterRoot/MainPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 148.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_btn")
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="CenterRoot/MainPanel/CancelBtn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -32.0
+offset_right = 10.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("8_cancel")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterRoot/MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -120.0
+offset_right = 250.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="MusicSlider" parent="CenterRoot/MainPanel/VBoxContainer" instance=ExtResource("9_slider")]
+layout_mode = 2
+title = "Music Volume"
+
+[node name="SfxSlider" parent="CenterRoot/MainPanel/VBoxContainer" instance=ExtResource("9_slider")]
+layout_mode = 2
+title = "SFX"
+
+[node name="ResolutionSlider" parent="CenterRoot/MainPanel/VBoxContainer" instance=ExtResource("9_slider")]
+layout_mode = 2
+title = "Resolution Scale"
+min_value = 60
+current_value = 75
+
+[node name="FpsToggle" type="Control" parent="CenterRoot/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Btn" type="TextureButton" parent="CenterRoot/MainPanel/VBoxContainer/FpsToggle"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 118.0
+offset_bottom = 112.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_btn")
+stretch_mode = 0
+
+[node name="Checkmark" type="TextureRect" parent="CenterRoot/MainPanel/VBoxContainer/FpsToggle"]
+visible = false
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 49.0
+offset_bottom = 49.0
+texture = ExtResource("10_check")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterRoot/MainPanel/VBoxContainer/FpsToggle"]
+layout_mode = 0
+offset_left = 28.0
+offset_right = 300.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 24
+text = "Show FPS Counter"
+
+[node name="DmgToggle" type="Control" parent="CenterRoot/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Btn" type="TextureButton" parent="CenterRoot/MainPanel/VBoxContainer/DmgToggle"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 118.0
+offset_bottom = 120.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_btn")
+stretch_mode = 0
+
+[node name="Checkmark" type="TextureRect" parent="CenterRoot/MainPanel/VBoxContainer/DmgToggle"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 49.0
+offset_bottom = 49.0
+texture = ExtResource("10_check")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterRoot/MainPanel/VBoxContainer/DmgToggle"]
+layout_mode = 0
+offset_left = 28.0
+offset_right = 300.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 24
+text = "Show Damage Numbers"
+
+[node name="DamageFlashToggle" type="Control" parent="CenterRoot/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Btn" type="TextureButton" parent="CenterRoot/MainPanel/VBoxContainer/DamageFlashToggle"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 118.0
+offset_bottom = 120.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_btn")
+stretch_mode = 0
+
+[node name="Checkmark" type="TextureRect" parent="CenterRoot/MainPanel/VBoxContainer/DamageFlashToggle"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 49.0
+offset_bottom = 49.0
+texture = ExtResource("10_check")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterRoot/MainPanel/VBoxContainer/DamageFlashToggle"]
+layout_mode = 0
+offset_left = 28.0
+offset_right = 360.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 24
+text = "Red Damage Flash"
+
+[node name="PauseAfterProphecyToggle" type="Control" parent="CenterRoot/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="Btn" type="TextureButton" parent="CenterRoot/MainPanel/VBoxContainer/PauseAfterProphecyToggle"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -8.0
+offset_right = 118.0
+offset_bottom = 120.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("7_btn")
+stretch_mode = 0
+
+[node name="Checkmark" type="TextureRect" parent="CenterRoot/MainPanel/VBoxContainer/PauseAfterProphecyToggle"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 49.0
+offset_bottom = 49.0
+texture = ExtResource("10_check")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CenterRoot/MainPanel/VBoxContainer/PauseAfterProphecyToggle"]
+layout_mode = 0
+offset_left = 28.0
+offset_right = 360.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 24
+text = "Pause After Prophecy"
+
+[node name="StartModeButton" type="Button" parent="CenterRoot/MainPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 24
+text = "Next Start"
+
+[node name="StartModeLabel" type="Label" parent="CenterRoot/MainPanel/VBoxContainer/StartModeButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_font")
+theme_override_font_sizes/font_size = 24
+text = "Next Start"
+
+[node name="StartWithCharacterCreationCheckBox" type="CheckBox" parent="CenterRoot/MainPanel/VBoxContainer"]
+visible = false
+layout_mode = 2
+button_pressed = true
+text = "Start with Character Creation"
+
+[node name="ReturnToMainMenuButton" type="Button" parent="CenterRoot/MainPanel/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+
+[connection signal="pressed" from="CenterRoot/BottomBar/ContinueBtn" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CenterRoot/BottomBar/ReloadBtn" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="CenterRoot/MainPanel/CancelBtn" to="." method="_on_cancel_pressed"]
+[connection signal="value_changed" from="CenterRoot/MainPanel/VBoxContainer/MusicSlider" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="CenterRoot/MainPanel/VBoxContainer/SfxSlider" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="CenterRoot/MainPanel/VBoxContainer/ResolutionSlider" to="." method="_on_resolution_value_changed"]
+[connection signal="pressed" from="CenterRoot/MainPanel/VBoxContainer/FpsToggle/Btn" to="." method="_on_fps_toggle_pressed"]
+[connection signal="pressed" from="CenterRoot/MainPanel/VBoxContainer/DmgToggle/Btn" to="." method="_on_dmg_toggle_pressed"]
+[connection signal="pressed" from="CenterRoot/MainPanel/VBoxContainer/DamageFlashToggle/Btn" to="." method="_on_damage_flash_toggle_pressed"]
+[connection signal="pressed" from="CenterRoot/MainPanel/VBoxContainer/PauseAfterProphecyToggle/Btn" to="." method="_on_pause_after_prophecy_toggle_pressed"]

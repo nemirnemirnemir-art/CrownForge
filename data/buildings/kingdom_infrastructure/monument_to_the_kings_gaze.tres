@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://ct46e11yeumgx"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://pwk5fpnxvalf" path="res://assets/environment/buildings/monument_to_the_kings_gaze.png" id="3_if7cq"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "crystal"
+amount = 200
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "metal"
+amount = 100
+
+[sub_resource type="Resource" id="Cost_2"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 500
+
+[resource]
+script = ExtResource("1_script")
+building_id = "monument_to_the_kings_gaze"
+display_name = "Monument to the King's Gaze"
+description = "Activates the 4 surrounding tiles while active."
+icon = ExtResource("3_if7cq")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 2
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1"), SubResource("Cost_2")])
+cycle_time = 0.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/MonumentToKingsGaze.gd"

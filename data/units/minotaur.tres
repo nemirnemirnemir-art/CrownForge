@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_minotaur"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "minotaur"
+display_name = "Minotaur"
+hp = 210
+dps = 25
+unit_classes = [1]
+trait_description = "+3% evasion for Flying troops per Minotaur (up to 30%)."

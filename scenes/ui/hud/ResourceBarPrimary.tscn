@@ -1,0 +1,301 @@
+[gd_scene load_steps=12 format=3 uid="uid://primary_resource_bar"]
+
+[ext_resource type="Texture2D" uid="uid://c7080q1pibksf" path="res://assets/items/resources/water_-1.png" id="1_water"]
+[ext_resource type="Texture2D" uid="uid://jrov0pmfp80n" path="res://assets/items/resources/wheat_7.png" id="2_wheat"]
+[ext_resource type="Texture2D" uid="uid://65btootedvqm" path="res://assets/items/resources/wood_1.png" id="3_wood"]
+[ext_resource type="Texture2D" uid="uid://chf8pgyray68r" path="res://assets/items/resources/clay_3.png" id="4_clay"]
+[ext_resource type="Texture2D" uid="uid://blm8cx43eu2c" path="res://assets/items/resources/iron_ore_5.png" id="5_iron_ore"]
+[ext_resource type="Texture2D" path="res://assets/items/resources/crystal.png" id="6_crystal"]
+[ext_resource type="Texture2D" uid="uid://dpclmr1sg84rb" path="res://assets/items/resources/grapes.png" id="7_grapes"]
+[ext_resource type="Texture2D" path="res://assets/items/resources/wine.png" id="8_wine"]
+[ext_resource type="Texture2D" uid="uid://7moyrq8f86g6" path="res://assets/items/resources/gold_4.png" id="9_gold"]
+[ext_resource type="Script" path="res://scripts/ui/hud/ResourceBarPrimary.gd" id="10_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transparent"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+
+[node name="ResourceBarPrimary" type="PanelContainer"]
+offset_left = 20.0
+offset_top = 10.0
+mouse_filter = 2
+script = ExtResource("10_script")
+theme_override_styles/panel = SubResource("StyleBoxFlat_transparent")
+water_icon = ExtResource("1_water")
+wheat_icon = ExtResource("2_wheat")
+wood_icon = ExtResource("3_wood")
+clay_icon = ExtResource("4_clay")
+iron_ore_icon = ExtResource("5_iron_ore")
+crystal_icon = ExtResource("6_crystal")
+grapes_icon = ExtResource("7_grapes")
+wine_icon = ExtResource("8_wine")
+gold_icon = ExtResource("9_gold")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Resource_water" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_water"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_water")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_water"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_water/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_wheat" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_wheat"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_wheat")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_wheat"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_wheat/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_wood" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_wood"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_wood")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_wood"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_wood/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_clay" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_clay"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_clay")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_clay"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_clay/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_iron_ore" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_iron_ore"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("5_iron_ore")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_iron_ore"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_iron_ore/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_crystal" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_crystal"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("6_crystal")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_crystal"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_crystal/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_grapes" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_grapes"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_grapes")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_grapes"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_grapes/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_wine" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_wine"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_wine")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_wine"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_wine/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_gold" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_gold"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_gold")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_gold"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_gold/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

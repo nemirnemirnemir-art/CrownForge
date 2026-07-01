@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://drcdg2vqb8sbm"]
+
+[ext_resource type="Texture2D" uid="uid://1s2rff1awou7" path="res://assets/characters/enemies/tinyEnemies/shaman/walk/1.png" id="1_df2rk"]
+[ext_resource type="Texture2D" uid="uid://cdgb71pm4e1nw" path="res://assets/characters/enemies/tinyEnemies/shaman/walk/2.png" id="2_dvtbw"]
+[ext_resource type="Texture2D" uid="uid://dlwnbthyhdcqf" path="res://assets/characters/enemies/tinyEnemies/shaman/walk/3.png" id="3_foaty"]
+[ext_resource type="Texture2D" uid="uid://cumxkfjlsopnn" path="res://assets/characters/enemies/tinyEnemies/shaman/walk/4.png" id="4_b3527"]
+[ext_resource type="Texture2D" uid="uid://doxx7n6rdn3ya" path="res://assets/characters/enemies/tinyEnemies/shaman/walk/5.png" id="5_rofco"]
+[ext_resource type="Texture2D" uid="uid://5ew3gk2lwpmb" path="res://assets/characters/enemies/tinyEnemies/shaman/walk/6.png" id="6_myrs5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_df2rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dvtbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_foaty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b3527")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rofco")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_myrs5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]

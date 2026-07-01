@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/rewards/TraderOfferTile.gd" id="1_tile_script"]
+
+[node name="TraderOfferTile" type="Control"]
+custom_minimum_size = Vector2(130, 170)
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_tile_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+size_flags_horizontal = 4
+
+[node name="Icon" type="TextureRect" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(96, 96)
+expand_mode = 2
+size_flags_horizontal = 4
+stretch_mode = 5
+
+[node name="BuyButton" type="Button" parent="VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(96, 32)
+text = ""
+size_flags_horizontal = 4
+
+[node name="Row" type="HBoxContainer" parent="VBox/BuyButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = -6.0
+offset_bottom = -3.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="Coin" type="TextureRect" parent="VBox/BuyButton/Row"]
+layout_mode = 2
+custom_minimum_size = Vector2(20, 20)
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="VBox/BuyButton/Row"]
+layout_mode = 2
+text = "0"
+vertical_alignment = 1

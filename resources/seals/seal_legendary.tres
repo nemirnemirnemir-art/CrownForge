@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SealConfig" load_steps=3 format=3 uid="uid://cw2w3bayps64y"]
+
+[ext_resource type="Texture2D" uid="uid://bxo07m1gbmb7w" path="res://assets/items/seals/legendary_seal.png" id="1_nxymn"]
+[ext_resource type="Script" path="res://core/seals/SealConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "seal_legendary"
+display_name = "Legendary Seal"
+description = "Production increased by 50%."
+tier = 3
+production_modifier = 0.5
+cost = {
+"oil": 50
+}
+icon = ExtResource("1_nxymn")
+color = Color(1, 0.8, 0, 1)

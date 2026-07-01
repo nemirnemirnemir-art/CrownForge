@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dqg71q5qynxmf"]
+
+[ext_resource type="Texture2D" uid="uid://cigapdyvjlk7q" path="res://assets/characters/enemies/tinyEnemies/lightingmag/Shaman_Run.png" id="1_wc2iy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u21hh"]
+atlas = ExtResource("1_wc2iy")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6n5i"]
+atlas = ExtResource("1_wc2iy")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii032"]
+atlas = ExtResource("1_wc2iy")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70cwf"]
+atlas = ExtResource("1_wc2iy")
+region = Rect2(576, 0, 192, 192)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u21hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6n5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ii032")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70cwf")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]

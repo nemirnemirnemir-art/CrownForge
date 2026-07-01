@@ -1,0 +1,180 @@
+[gd_scene load_steps=29 format=3 uid="uid://c2mqpv16cg3y4"]
+
+[ext_resource type="Script" path="res://scripts/mob/Mob.gd" id="1_mob"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="2_sm"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobHealState.gd" id="3_heal"]
+[ext_resource type="Texture2D" uid="uid://cfago6y7b87c3" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/1.png" id="4_i2f5l"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMoveState.gd" id="4_move"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackState.gd" id="5_attack"]
+[ext_resource type="Texture2D" uid="uid://w1suxq21gcsi" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/2.png" id="5_va5x4"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="6_death"]
+[ext_resource type="Texture2D" uid="uid://tcy35kcvirku" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/3.png" id="6_sds4c"]
+[ext_resource type="Texture2D" uid="uid://cytfmr0u0ghs8" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/4.png" id="7_5k2xe"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToWallState.gd" id="7_towall"]
+[ext_resource type="Texture2D" uid="uid://dain6gye5uqn7" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/5.png" id="8_cbari"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToHeroState.gd" id="8_tohero"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackWallState.gd" id="9_attackwall"]
+[ext_resource type="Texture2D" uid="uid://db2cnwvaqfr3e" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/6.png" id="9_yllua"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="10_aggro"]
+[ext_resource type="Texture2D" uid="uid://4050dmvc0n0t" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/7.png" id="10_l480l"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="11_hurt"]
+[ext_resource type="Texture2D" uid="uid://dqvsyj2bdcpyw" path="res://assets/characters/enemies/tinyEnemies/shaman/heal/8.png" id="11_n1mlp"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="12_hit"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="14_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="15_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="16_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="17_click"]
+[ext_resource type="SpriteFrames" uid="uid://drcdg2vqb8sbm" path="res://resources/sprite_frames/GoblinShamanFrames.tres" id="19_frames"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skw8h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i2f5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_va5x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sds4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5k2xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cbari")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yllua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l480l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n1mlp")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurtbox"]
+size = Vector2(140, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(50, 60)
+
+[node name="GoblinShaman" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(0.725, 0.725)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_mob")
+mob_damage = 12.0
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.2, -40)
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("19_frames")
+animation = &"walk"
+frame_progress = 0.370765
+z_index = 1
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(8, -52.8)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_skw8h")
+animation = &"attack"
+z_index = 1
+frame = 7
+frame_progress = 0.653692
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 25.0
+offset_bottom = -55.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("10_aggro")
+required_group = "hero"
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("11_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("12_hit")
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("MobMoveState")
+
+[node name="MobHealState" type="Node" parent="MobStateMachine"]
+script = ExtResource("3_heal")
+
+[node name="MobMoveState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_move")
+
+[node name="MobAttackState" type="Node" parent="MobStateMachine"]
+script = ExtResource("5_attack")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("6_death")
+
+[node name="MobMovingToWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("7_towall")
+
+[node name="MobMovingToHeroState" type="Node" parent="MobStateMachine"]
+script = ExtResource("8_tohero")
+
+[node name="MobAttackWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("9_attackwall")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("14_health")
+fixed_max_health = 120.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("15_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("16_slots")
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("17_click")

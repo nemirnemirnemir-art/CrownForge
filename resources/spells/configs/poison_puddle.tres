@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/PoisonPuddleEffect.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells/Poison Puddle.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "poison_puddle"
+spell_name = "Poison Puddle"
+description = "Creates a poison puddle that deals 24 DPS for 9 seconds."
+icon = ExtResource("3")
+target_radius = 80.0
+target_type = "area"
+effect_scene = ExtResource("2")
+duration = 9.0
+damage = 0.0
+damage_per_second = 24.0
+max_stacks = 99

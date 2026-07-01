@@ -1,0 +1,246 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/KingSpellHud.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/KingSpellSlot.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/king_abilities/Button_Blue.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/ui/king_abilities/Button_Blue_Pressed.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/ui/king_abilities/Button_Disable.png" id="5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_king_tooltip"]
+bg_color = Color(0.12, 0.12, 0.16, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.78, 0.67, 0.37, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
+
+[node name="KingSpellHud" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ActiveSection" type="VBoxContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/ActiveSection"]
+layout_mode = 2
+text = "King Active Abilities"
+
+[node name="ActiveSlots" type="HBoxContainer" parent="Panel/Margin/VBox/ActiveSection"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PassiveSection" type="VBoxContainer" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox/PassiveSection"]
+layout_mode = 2
+text = "King Passive Abilities"
+
+[node name="PassiveSlots" type="GridContainer" parent="Panel/Margin/VBox/PassiveSection"]
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="UpgradeAbilityButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_top = -72.0
+offset_right = 0.0
+offset_bottom = -8.0
+texture_normal = ExtResource("3")
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+texture_disabled = ExtResource("5")
+ignore_texture_size = false
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="UpgradeAbilityButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 16
+text = "1/4"
+horizontal_alignment = 1
+vertical_alignment = 1
+mouse_filter = 2
+
+[node name="UpgradeTooltip" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 1
+offset_left = -272.0
+offset_top = -450.0
+offset_right = 28.0
+offset_bottom = -340.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_king_tooltip")
+
+[node name="Margin" type="MarginContainer" parent="UpgradeTooltip"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UpgradeTooltip/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.74, 1)
+theme_override_font_sizes/font_size = 24
+text = "Upgrade Active Abilities"
+
+[node name="Summary" type="Label" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.84, 0.84, 0.9, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Improves all king abilities (up to four times)."
+
+[node name="Level" type="Label" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Current Level"
+
+[node name="Cost" type="Label" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.95, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Next Cost"
+
+[node name="CostRows" type="VBoxContainer" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AbilityTooltip" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 0
+offset_left = -320.0
+offset_top = -560.0
+offset_right = 0.0
+offset_bottom = -410.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_king_tooltip")
+
+[node name="Margin" type="MarginContainer" parent="AbilityTooltip"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="AbilityTooltip/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.74, 1)
+theme_override_font_sizes/font_size = 24
+text = "Ability"
+
+[node name="Type" type="Label" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.82, 1, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Active Ability"
+
+[node name="DescriptionHeader" type="Label" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.74, 1)
+theme_override_font_sizes/font_size = 16
+text = "Description"
+
+[node name="DescriptionBody" type="RichTextLabel" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+autowrap_mode = 3
+fit_content = true
+scroll_active = false
+bbcode_enabled = false
+text = "Description"
+
+[node name="EffectHeader" type="Label" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.74, 1)
+theme_override_font_sizes/font_size = 16
+text = "Effect"
+
+[node name="EffectBody" type="Label" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.88, 0.93, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+text = "Effect"
+
+[node name="StatusHeader" type="Label" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.92, 0.74, 1)
+theme_override_font_sizes/font_size = 16
+text = "Status"
+
+[node name="StatusBody" type="RichTextLabel" parent="AbilityTooltip/Margin/VBox"]
+layout_mode = 2
+autowrap_mode = 3
+fit_content = true
+scroll_active = false
+bbcode_enabled = false
+text = "Status"

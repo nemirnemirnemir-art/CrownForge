@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/ChainLightningEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "chain_lightning"
+spell_name = "Chain Lightning"
+description = "Fast lightning chain that hits up to 5 enemies for 75 damage each."
+icon = null
+target_radius = 100.0
+target_type = "point"
+effect_scene = ExtResource("2")
+duration = 0.5
+damage = 75.0
+damage_per_second = 0.0
+max_stacks = 99

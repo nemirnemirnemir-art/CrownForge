@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://resource_popup_scene"]
+
+[ext_resource type="Script" path="res://scripts/ui/overlays/ResourcePopup.gd" id="1_resource_popup"]
+
+[node name="ResourcePopup" type="Node2D"]
+z_index = 200
+script = ExtResource("1_resource_popup")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-25, 0)
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 10.0
+offset_top = -12.0
+offset_right = 110.0
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0.6, 1, 0.4, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 24
+text = "+40 Wood"
+vertical_alignment = 1

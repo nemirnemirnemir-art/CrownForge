@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=7 format=3 uid="uid://drs5lfjr5y7fo"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://djxkhb1fo60pq" path="res://assets/environment/buildings/white_unicorn_field.png" id="3_7irmj"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "crystal"
+amount = 400
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "crystal"
+amount = 70
+
+[resource]
+script = ExtResource("1_script")
+building_id = "white_unicorn_field"
+display_name = "White Unicorn Field"
+description = "Recruits White Unicorn units. 17s cycle. Capacity: 3. Consumes 70 Crystal."
+icon = ExtResource("3_7irmj")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 5
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 17.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = "white_unicorn"
+max_units = 3
+has_special_behavior = false
+special_script_path = ""

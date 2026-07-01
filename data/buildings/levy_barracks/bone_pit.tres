@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=9 format=3 uid="uid://duk2dbkuusn8c"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="SpriteFrames" path="res://data/buildings/levy_barracks/bone_pit_vzor_frames.tres" id="4_frames"]
+[ext_resource type="Texture2D" uid="uid://bdhehmcmq4c27" path="res://assets/environment/buildings/Levy_barracks/bone_pit/bone_pit.png" id="5_icon"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 40
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "wheat"
+amount = 40
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "water"
+amount = 13
+
+[resource]
+script = ExtResource("1_script")
+building_id = "bone_pit"
+display_name = "Bone Pit"
+description = "Recruits Small Bones units. 10s cycle. Capacity: 5. Consumes 5 Gold."
+icon = ExtResource("5_icon")
+use_vzor_animation = true
+vzor_frames = ExtResource("4_frames")
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 3
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 12.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = "small_bones"
+max_units = 3
+has_special_behavior = false
+special_script_path = ""

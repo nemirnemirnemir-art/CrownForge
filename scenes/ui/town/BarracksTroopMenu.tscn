@@ -1,0 +1,184 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/town/BarracksTroopMenu.gd" id="1_barracks_troop_menu"]
+
+[node name="BarracksTroopMenu" type="PanelContainer"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(540, 88)
+mouse_filter = 0
+script = ExtResource("1_barracks_troop_menu")
+
+[node name="Root" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="Control" parent="Root"]
+custom_minimum_size = Vector2(0, 88)
+layout_mode = 2
+mouse_filter = 0
+
+[node name="DragArea" type="Control" parent="Root/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Content" type="HBoxContainer" parent="Root/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ExpandButton" type="Button" parent="Root/Header/Content"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+text = "^"
+focus_mode = 0
+
+[node name="SpawnModeButton" type="Button" parent="Root/Header/Content"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+focus_mode = 0
+
+[node name="DeployButton" type="Button" parent="Root/Header/Content"]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+focus_mode = 0
+
+[node name="Panel" type="PanelContainer" parent="Root"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+visible = false
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Panel"]
+custom_minimum_size = Vector2(0, 330)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Rows" type="VBoxContainer" parent="Root/Panel/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 6
+
+[node name="ModeTooltip" type="Control" parent="Root"]
+layout_mode = 2
+visible = false
+mouse_filter = 2
+
+[node name="ModeTooltipBg" type="TextureRect" parent="Root/ModeTooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ModeTooltipLabel" type="Label" parent="Root/ModeTooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UnitTooltip" type="Control" parent="Root"]
+layout_mode = 2
+visible = false
+mouse_filter = 2
+
+[node name="UnitTooltipBg" type="TextureRect" parent="Root/UnitTooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="UnitTooltipContent" type="VBoxContainer" parent="Root/UnitTooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="Root/UnitTooltip/UnitTooltipContent"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BaseHeader" type="Label" parent="Root/UnitTooltip/UnitTooltipContent"]
+layout_mode = 2
+mouse_filter = 2
+text = "Base characteristics:"
+
+[node name="StatsGrid" type="GridContainer" parent="Root/UnitTooltip/UnitTooltipContent"]
+layout_mode = 2
+mouse_filter = 2
+columns = 1
+
+[node name="HPLabel" type="Label" parent="Root/UnitTooltip/UnitTooltipContent/StatsGrid"]
+layout_mode = 2
+mouse_filter = 2
+text = "HP:"
+
+[node name="HPValue" type="Label" parent="Root/UnitTooltip/UnitTooltipContent/StatsGrid"]
+layout_mode = 2
+mouse_filter = 2
+text = "?"
+visible = false
+
+[node name="DPSLabel" type="Label" parent="Root/UnitTooltip/UnitTooltipContent/StatsGrid"]
+layout_mode = 2
+mouse_filter = 2
+text = "Damage per second:"
+
+[node name="DPSValue" type="Label" parent="Root/UnitTooltip/UnitTooltipContent/StatsGrid"]
+layout_mode = 2
+mouse_filter = 2
+text = "?"
+visible = false
+
+[node name="ClassRow" type="HBoxContainer" parent="Root/UnitTooltip/UnitTooltipContent"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="ClassIcon" type="TextureRect" parent="Root/UnitTooltip/UnitTooltipContent/ClassRow"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassLabel" type="Label" parent="Root/UnitTooltip/UnitTooltipContent/ClassRow"]
+layout_mode = 2
+mouse_filter = 2
+text = "[Warrior]"
+
+[node name="TraitHeader" type="Label" parent="Root/UnitTooltip/UnitTooltipContent"]
+layout_mode = 2
+mouse_filter = 2
+text = "Unit trait"
+
+[node name="TraitDescription" type="Label" parent="Root/UnitTooltip/UnitTooltipContent"]
+layout_mode = 2
+mouse_filter = 2
+text = ""
+autowrap_mode = 3

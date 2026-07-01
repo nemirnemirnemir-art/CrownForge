@@ -1,0 +1,223 @@
+[gd_scene load_steps=30 format=3 uid="uid://djsb2ddq3pyq6"]
+
+[ext_resource type="Script" path="res://scripts/mob/Mob.gd" id="1_mob"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="2_sm"]
+[ext_resource type="Texture2D" uid="uid://j81wiaaq81qc" path="res://assets/characters/enemies/tinyEnemies/wallbuster/Barrel_Purple.png" id="3_ow72w"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobRunIdleState.gd" id="3_runidle"]
+[ext_resource type="Texture2D" uid="uid://cgio0w8vpuc8x" path="res://assets/vfx/effects/Explosions.png" id="4_755qf"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="4_death"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="5_aggro"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="6_hurt"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="9_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="10_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="11_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="12_click"]
+[ext_resource type="SpriteFrames" uid="uid://jcn7im21xgky" path="res://resources/sprite_frames/WallBusterFrames.tres" id="13_frames"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgixn"]
+atlas = ExtResource("3_ow72w")
+region = Rect2(0, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpqlt"]
+atlas = ExtResource("3_ow72w")
+region = Rect2(128, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbsl2"]
+atlas = ExtResource("3_ow72w")
+region = Rect2(256, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnm1u"]
+atlas = ExtResource("4_755qf")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0l68k"]
+atlas = ExtResource("4_755qf")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_senxc"]
+atlas = ExtResource("4_755qf")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_leco0"]
+atlas = ExtResource("4_755qf")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygha1"]
+atlas = ExtResource("4_755qf")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7locd"]
+atlas = ExtResource("4_755qf")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nc86"]
+atlas = ExtResource("4_755qf")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccdig"]
+atlas = ExtResource("4_755qf")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rpks"]
+atlas = ExtResource("4_755qf")
+region = Rect2(1536, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8071t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgixn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpqlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbsl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnm1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0l68k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_senxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_leco0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygha1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7locd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nc86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccdig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rpks")
+}],
+"loop": true,
+"name": &"death",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurtbox"]
+size = Vector2(44, 44)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wallcol"]
+radius = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(50, 60)
+
+[node name="WallBuster" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(0, 19)
+scale = Vector2(0.625, 0.625)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_mob")
+mob_damage = 0.0
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -59.2)
+sprite_frames = ExtResource("13_frames")
+animation = &"walk"
+frame_progress = 0.118315
+z_index = 1
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -59.2)
+z_index = 1
+
+[node name="AnimDead" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -59.2)
+sprite_frames = SubResource("SpriteFrames_8071t")
+animation = &"death"
+frame_progress = 0.714809
+z_index = 1
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 25.0
+offset_bottom = -55.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="AggroArea" type="Area2D" parent="."]
+position = Vector2(2.38419e-07, -59.2)
+collision_layer = 0
+monitoring = false
+script = ExtResource("5_aggro")
+required_group = "hero"
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(2.38419e-07, -59.2)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("6_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="WallCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -59.2)
+shape = SubResource("CircleShape2D_wallcol")
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("MobRunIdleState")
+
+[node name="MobRunIdleState" type="Node" parent="MobStateMachine"]
+script = ExtResource("3_runidle")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_death")
+
+[node name="ClickArea" type="Area2D" parent="."]
+position = Vector2(0, -28.8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("9_health")
+fixed_max_health = 230.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("10_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("11_slots")
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("12_click")

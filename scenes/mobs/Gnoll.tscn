@@ -1,0 +1,140 @@
+[gd_scene load_steps=22 format=3 uid="uid://ch0qm38hkt4ud"]
+
+[ext_resource type="Script" path="res://scripts/mob/types/Gnoll.gd" id="1_gnoll"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/GnollBoneProjectile.tscn" id="2_proj"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="3_sm"]
+[ext_resource type="Script" path="res://scripts/mob/types/states/GnollWalkState.gd" id="4_walk"]
+[ext_resource type="Script" path="res://scripts/mob/types/states/GnollThrowState.gd" id="5_throw"]
+[ext_resource type="Script" path="res://scripts/mob/types/states/GnollIdleState.gd" id="6_idle"]
+[ext_resource type="Script" path="res://scripts/mob/types/states/GnollHitState.gd" id="7_hit"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="8_death"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="9_aggro"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="10_hurt"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="11_hitbox"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="12_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="13_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="14_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="15_click"]
+[ext_resource type="SpriteFrames" path="res://resources/sprite_frames/GnollSpriteFrames.tres" id="16_frames"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 220.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hurt"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(48, 64)
+
+[node name="Gnoll" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_gnoll")
+attack_range = 100.0
+aggro_range = 250.0
+mob_damage = 8.0
+projectile_scene = ExtResource("2_proj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_body")
+
+[node name="AnimationSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -34)
+sprite_frames = ExtResource("16_frames")
+animation = &"idle"
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -64.0
+offset_right = 25.0
+offset_bottom = -59.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("9_aggro")
+required_group = "hero"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 0
+script = ExtResource("10_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("11_hitbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hit")
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_sm")
+initial_state = NodePath("GnollWalkState")
+
+[node name="GnollWalkState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_walk")
+
+[node name="GnollThrowState" type="Node" parent="MobStateMachine"]
+script = ExtResource("5_throw")
+
+[node name="GnollIdleState" type="Node" parent="MobStateMachine"]
+script = ExtResource("6_idle")
+
+[node name="GnollHitState" type="Node" parent="MobStateMachine"]
+script = ExtResource("7_hit")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("8_death")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("12_health")
+fixed_max_health = 35.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("13_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("14_slots")
+MAX_SLOTS = 2
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("15_click")

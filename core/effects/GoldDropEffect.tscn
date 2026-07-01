@@ -1,0 +1,119 @@
+[gd_scene load_steps=18 format=3 uid="uid://dwrlf550tih57"]
+
+[ext_resource type="Script" path="res://core/effects/GoldDropEffect.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bprag4ryamjv6" path="res://assets/vfx/effects/gold_animation.png" id="2_tex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttvbn"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrw8o"]
+atlas = ExtResource("2_tex")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve4oo"]
+atlas = ExtResource("2_tex")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll30w"]
+atlas = ExtResource("2_tex")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhagp"]
+atlas = ExtResource("2_tex")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hblp2"]
+atlas = ExtResource("2_tex")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui2sy"]
+atlas = ExtResource("2_tex")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opdg5"]
+atlas = ExtResource("2_tex")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uqih"]
+atlas = ExtResource("2_tex")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivdwn"]
+atlas = ExtResource("2_tex")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxnoi"]
+atlas = ExtResource("2_tex")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_med8x"]
+atlas = ExtResource("2_tex")
+region = Rect2(512, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsg8t"]
+atlas = ExtResource("2_tex")
+region = Rect2(640, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkbrs"]
+atlas = ExtResource("2_tex")
+region = Rect2(768, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gold"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttvbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrw8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve4oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll30w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhagp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hblp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui2sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opdg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uqih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivdwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxnoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_med8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsg8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkbrs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="GoldDropEffect" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gold")
+autoplay = "default"
+frame = 13
+frame_progress = 1.0

@@ -1,0 +1,321 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0_reward_building_upgrade_card"]
+
+[ext_resource type="Script" path="res://scripts/ui/rewards/RewardBuildingUpgradeCard.gd" id="1_card_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/components/RewardChooseButton.tscn" id="2_choose_btn"]
+[ext_resource type="FontFile" uid="uid://b1w36vwmi538s" path="res://assets/ui/fonts/ThaleahFat.ttf" id="3_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_root"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_frame_dark"]
+bg_color = Color(0.14, 0.19, 0.25, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.07, 0.1, 0.14, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plate"]
+bg_color = Color(0.84, 0.69, 0.53, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.47, 0.33, 0.22, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_body"]
+bg_color = Color(0.64, 0.49, 0.38, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.47, 0.33, 0.22, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tooltip"]
+bg_color = Color(0.92, 0.92, 0.92, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.18, 0.18, 0.18, 1.0)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="RewardBuildingUpgradeCard" type="Panel"]
+custom_minimum_size = Vector2(360, 640)
+offset_right = 360.0
+offset_bottom = 640.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_root")
+script = ExtResource("1_card_script")
+
+[node name="BuildingFrame" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 12.0
+offset_right = 300.0
+offset_bottom = 150.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_frame_dark")
+
+[node name="Icon" type="TextureRect" parent="BuildingFrame"]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = -24.0
+offset_bottom = -18.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NamePlate" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 142.0
+offset_right = 314.0
+offset_bottom = 188.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_plate")
+
+[node name="NameLabel" type="Label" parent="NamePlate"]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = -10.0
+offset_bottom = -4.0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 23
+theme_override_colors/font_color = Color(0.25, 0.2, 0.2, 1)
+text = "Building"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="UpgradesRow" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 198.0
+offset_right = 330.0
+offset_bottom = 270.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Upgrade1" type="ColorRect" parent="UpgradesRow"]
+custom_minimum_size = Vector2(72, 72)
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="SlotIcon" type="TextureRect" parent="UpgradesRow/Upgrade1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="UpgradesRow/Upgrade1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+mouse_filter = 2
+
+[node name="Upgrade2" type="ColorRect" parent="UpgradesRow"]
+custom_minimum_size = Vector2(72, 72)
+color = Color(0.45, 0.45, 0.45, 1)
+
+[node name="SlotIcon" type="TextureRect" parent="UpgradesRow/Upgrade2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="UpgradesRow/Upgrade2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+mouse_filter = 2
+
+[node name="Upgrade3" type="ColorRect" parent="UpgradesRow"]
+custom_minimum_size = Vector2(72, 72)
+color = Color(0.95, 0.95, 0.95, 1)
+
+[node name="SlotIcon" type="TextureRect" parent="UpgradesRow/Upgrade3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DimOverlay" type="ColorRect" parent="UpgradesRow/Upgrade3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.5)
+mouse_filter = 2
+
+[node name="OfferVisualFrame" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 278.0
+offset_right = 220.0
+offset_bottom = 358.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_frame_dark")
+
+[node name="OfferVisual" type="ColorRect" parent="OfferVisualFrame"]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = -12.0
+color = Color(0.85, 0.25, 0.25, 1)
+
+[node name="OfferIcon" type="TextureRect" parent="OfferVisualFrame/OfferVisual"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BodyPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 366.0
+offset_right = 342.0
+offset_bottom = 630.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_body")
+
+[node name="OfferTitleBar" type="PanelContainer" parent="BodyPanel"]
+layout_mode = 2
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_plate")
+
+[node name="OfferTitle" type="Label" parent="BodyPanel/OfferTitleBar"]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = -4.0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 23
+theme_override_colors/font_color = Color(0.25, 0.2, 0.2, 1)
+text = "Upgrade"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="OfferDescription" type="Label" parent="BodyPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 72.0
+offset_right = 308.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.15, 0.11, 0.08, 1)
+text = "Description"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ChooseButton" parent="BodyPanel" instance=ExtResource("2_choose_btn")]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 220.0
+offset_right = 236.0
+offset_bottom = 252.0
+custom_minimum_size = Vector2(148, 32)
+text = "Choose"
+
+[node name="UpgradeTooltip" type="PanelContainer" parent="."]
+visible = false
+top_level = true
+z_index = 999
+custom_minimum_size = Vector2(300, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tooltip")
+
+[node name="Margin" type="MarginContainer" parent="UpgradeTooltip"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="UpgradeTooltip/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 23
+theme_override_colors/font_color = Color(0.08, 0.08, 0.08, 1)
+text = "Upgrade"
+horizontal_alignment = 1
+
+[node name="Desc" type="Label" parent="UpgradeTooltip/Margin/VBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.15, 0.15, 0.15, 1)
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 3

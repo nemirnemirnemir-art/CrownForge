@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://dr8mvthcyid41"]
+
+[ext_resource type="Script" path="res://scripts/effects/PoisonPuddleEffect.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxf8onc8ndvhb" path="res://assets/vfx/effects/Poison_Puddle.png" id="2_6cel3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c18cm"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1obx4"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b35bh"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x76q1"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3et8h"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn0dc"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbqdd"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyq7j"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctnjn"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx5t4"]
+atlas = ExtResource("2_6cel3")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve4qn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c18cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1obx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b35bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x76q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3et8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn0dc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbqdd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyq7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctnjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx5t4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 80.0
+
+[node name="PoisonPuddleEffect" type="Node2D"]
+script = ExtResource("1")
+
+[node name="PuddleAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ve4qn")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("CircleShape2D_1")

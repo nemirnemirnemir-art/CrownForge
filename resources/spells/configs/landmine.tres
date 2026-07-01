@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/LandmineSpawner.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells/Landmine.png" id="3"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "landmine"
+spell_name = "Landmine"
+description = "Places a landmine that detonates after 1 second for 90 damage."
+icon = ExtResource("3")
+target_radius = 80.0
+target_type = "area"
+effect_scene = ExtResource("2")
+duration = 1.0
+damage = 90.0
+damage_per_second = 0.0
+max_stacks = 99

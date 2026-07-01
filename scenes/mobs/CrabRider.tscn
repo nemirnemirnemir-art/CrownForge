@@ -1,0 +1,175 @@
+[gd_scene load_steps=28 format=3 uid="uid://cpx7k5qiofuob"]
+
+[ext_resource type="Script" path="res://scripts/mob/Mob.gd" id="1_mob"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="2_sm"]
+[ext_resource type="Texture2D" uid="uid://b1eiauh31l6bn" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/1.png" id="3_75uhp"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMoveState.gd" id="3_move"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackState.gd" id="4_attack"]
+[ext_resource type="Texture2D" uid="uid://cfp0fklg0sr2m" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/2.png" id="4_smbbn"]
+[ext_resource type="Texture2D" uid="uid://cnb2tjbeog6gq" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/3.png" id="5_8ai2e"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="5_death"]
+[ext_resource type="Texture2D" uid="uid://c10mdvo637adb" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/4.png" id="6_juq5d"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToWallState.gd" id="6_towall"]
+[ext_resource type="Texture2D" uid="uid://1ecv6glu70ov" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/5.png" id="7_0p8f2"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToHeroState.gd" id="7_tohero"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackWallState.gd" id="8_attackwall"]
+[ext_resource type="Texture2D" uid="uid://fh3gwys53dtt" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/6.png" id="8_xuyci"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="9_aggro"]
+[ext_resource type="Texture2D" uid="uid://dhnk1xf4buchl" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/7.png" id="9_u3ofw"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="10_hurt"]
+[ext_resource type="Texture2D" uid="uid://dyb70cpve0mfh" path="res://assets/characters/enemies/tinyEnemies/crab_rider/attack/8.png" id="10_i4evc"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="11_hit"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="13_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="14_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="15_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="16_click"]
+[ext_resource type="SpriteFrames" uid="uid://b78tw8m23m72o" path="res://resources/sprite_frames/CrabRiderFrames.tres" id="17_frames"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxf51"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_75uhp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_smbbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8ai2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_juq5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0p8f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xuyci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u3ofw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i4evc")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurtbox"]
+size = Vector2(140, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(50, 60)
+
+[node name="CrabRider" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(0.625, 0.625)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_mob")
+mob_damage = 67.0
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.6, -54.4)
+scale = Vector2(0.45, 0.45)
+sprite_frames = ExtResource("17_frames")
+animation = &"walk"
+frame_progress = 0.30442
+z_index = 1
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+position = Vector2(12.8, -68.8)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_kxf51")
+animation = &"attack"
+frame = 2
+z_index = 1
+frame_progress = 0.394536
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 25.0
+offset_bottom = -55.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("9_aggro")
+required_group = "hero"
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("10_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("11_hit")
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("MobMoveState")
+
+[node name="MobMoveState" type="Node" parent="MobStateMachine"]
+script = ExtResource("3_move")
+
+[node name="MobAttackState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_attack")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("5_death")
+
+[node name="MobMovingToWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("6_towall")
+
+[node name="MobMovingToHeroState" type="Node" parent="MobStateMachine"]
+script = ExtResource("7_tohero")
+
+[node name="MobAttackWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("8_attackwall")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("13_health")
+fixed_max_health = 700.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("14_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("15_slots")
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("16_click")

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://dllqva50xhxfo"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "ballista"
+display_name = "Ballista"
+hp = 130
+dps = 48
+attack_range = 312.5
+max_range = 312.5
+projectile_speed = 300.0
+projectile_type = "cannonball"
+projectile_spin_speed_deg = 0.0
+unit_classes = Array[int]([2])
+trait_description = "+10% to HP of Flying troops."

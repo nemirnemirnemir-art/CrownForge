@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PerkData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/perk_data.gd" id="1_perk"]
+[ext_resource type="Texture2D" path="res://assets/ui/perks/zaglushka.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_perk")
+id = "free_movement"
+display_name = "Free Movement"
+description = "Heroes move 15% faster while the perk is active."
+icon = ExtResource("2_icon")
+is_positive = true
+speed_bonus_percent = 0.15
+

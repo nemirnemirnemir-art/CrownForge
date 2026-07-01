@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bbe40c2bswljd"]
+
+[ext_resource type="Texture2D" uid="uid://dqow0yb1lobf6" path="res://assets/characters/enemies/tinyEnemies/Sunface/Bear_Run.png" id="1_dr6il"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk0a1"]
+atlas = ExtResource("1_dr6il")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwgmp"]
+atlas = ExtResource("1_dr6il")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cauw5"]
+atlas = ExtResource("1_dr6il")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tfjl"]
+atlas = ExtResource("1_dr6il")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k26s6"]
+atlas = ExtResource("1_dr6il")
+region = Rect2(1024, 0, 256, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk0a1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwgmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cauw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tfjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k26s6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]

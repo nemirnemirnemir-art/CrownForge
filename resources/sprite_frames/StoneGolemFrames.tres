@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://c1j2h8nl2qx4n"]
+
+[ext_resource type="Texture2D" uid="uid://da5vir6obkccq" path="res://assets/characters/enemies/tinyEnemies/golem/PaddleFish_Run.png" id="1_ef3i6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41ogr"]
+atlas = ExtResource("1_ef3i6")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqa45"]
+atlas = ExtResource("1_ef3i6")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmut6"]
+atlas = ExtResource("1_ef3i6")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd1h2"]
+atlas = ExtResource("1_ef3i6")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7ktq"]
+atlas = ExtResource("1_ef3i6")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8j1d"]
+atlas = ExtResource("1_ef3i6")
+region = Rect2(960, 0, 192, 192)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41ogr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqa45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmut6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd1h2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7ktq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8j1d")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

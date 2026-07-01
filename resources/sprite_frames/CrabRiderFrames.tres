@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://b78tw8m23m72o"]
+
+[ext_resource type="Texture2D" uid="uid://d1rmoegyjgkc4" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/1.png" id="1_v2e72"]
+[ext_resource type="Texture2D" uid="uid://e8okqaxixoyg" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/2.png" id="2_awp2y"]
+[ext_resource type="Texture2D" uid="uid://fh7w0hud5w2y" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/3.png" id="3_i2j5w"]
+[ext_resource type="Texture2D" uid="uid://85m0u865fxus" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/4.png" id="4_g78am"]
+[ext_resource type="Texture2D" uid="uid://cye1yios65yeh" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/5.png" id="5_tkm00"]
+[ext_resource type="Texture2D" uid="uid://cffqtasduf385" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/6.png" id="6_ye25y"]
+[ext_resource type="Texture2D" uid="uid://cbo22cbnwihto" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/7.png" id="7_34cf8"]
+[ext_resource type="Texture2D" uid="uid://bdtxbedtsde62" path="res://assets/characters/enemies/tinyEnemies/crab_rider/walk/8.png" id="8_vuqr4"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v2e72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_awp2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i2j5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g78am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tkm00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ye25y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_34cf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vuqr4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

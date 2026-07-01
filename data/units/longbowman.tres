@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_longbowman"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "longbowman"
+display_name = "Longbowman"
+hp = 120
+dps = 25
+unit_classes = [2]
+trait_description = "+3% attack speed of Ranged troops per Longbowman (up to 30%)."

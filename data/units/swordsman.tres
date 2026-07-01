@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_swordsman"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "swordsman"
+display_name = "Swordsman"
+hp = 80
+dps = 13
+unit_classes = [1]
+trait_description = "+2% to damage dealt by Swordsman troops for each Swordsman on the battlefield."

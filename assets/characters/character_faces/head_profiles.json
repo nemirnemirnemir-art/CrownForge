@@ -1,0 +1,2466 @@
+{
+	"heads": {
+		"0": {
+			"parts": {
+				"brow": {
+					"0": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-57.5,
+								-164.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								64,
+								-105
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-69.5,
+								-16
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-67,
+								-108
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								99.5,
+								-12
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-233,
+								-140
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"0": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-139
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-33.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								47.5,
+								-198.5
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								86.5,
+								-28
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"0": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-83.4999923706055,
+								-184.999984741211
+							],
+							"rot": -0.14247941970825,
+							"scale": [
+								0.726527094841003,
+								0.779012322425842
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-82.4999923706055,
+								-177.999984741211
+							],
+							"rot": -0.14247941970825,
+							"scale": [
+								0.726527094841003,
+								0.779012322425842
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-86.0000152587891,
+								-181.5
+							],
+							"rot": 0.205327093601227,
+							"scale": [
+								0.850000023841858,
+								0.91100001335144
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-114.5,
+								-199.5
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.20313060283661,
+								1.05363798141479
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-76,
+								-152.5
+							],
+							"rot": 0,
+							"scale": [
+								1.5,
+								1.5
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-101,
+								-151
+							],
+							"rot": 0,
+							"scale": [
+								1.5,
+								1.5
+							]
+						}
+					},
+					"4": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-114.5,
+								-199.5
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.20313060283661,
+								1.05363798141479
+							]
+						}
+					},
+					"5": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-86,
+								-193.000015258789
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.5,
+								1.5
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-18.5000019073486,
+								-84.5000076293945
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"0": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-84,
+								-149
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-80,
+								-147
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-82,
+								-143
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-82,
+								-147
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		},
+		"1": {
+			"parts": {
+				"brow": {
+					"0": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-42,
+								-121.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								79.5,
+								-62
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-69.5,
+								-16
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-32,
+								-172
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								99.5,
+								-12
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-198,
+								-204
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"0": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-141
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-35.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-139
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-33.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"0": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-60.0000038146973,
+								-133.499984741211
+							],
+							"rot": 0.205327093601227,
+							"scale": [
+								0.850000023841858,
+								0.91100001335144
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-57.0000114440918,
+								-136.5
+							],
+							"rot": 0.205327093601227,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-76.5,
+								-114.5
+							],
+							"rot": 0.205327093601227,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-70,
+								-194.500015258789
+							],
+							"rot": 0,
+							"scale": [
+								1.5,
+								1.5
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-114.5,
+								-199.5
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.20313060283661,
+								1.05363798141479
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-18.5000019073486,
+								-84.5000076293945
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"0": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								43,
+								10.4999980926514
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-71,
+								-144
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								38.5,
+								-6.5
+							],
+							"rot": 0,
+							"scale": [
+								0.699999988079071,
+								0.699999988079071
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-71,
+								-144
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								20,
+								-43
+							],
+							"rot": 0,
+							"scale": [
+								0.400000005960464,
+								0.400000005960464
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-71,
+								-144
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-64,
+								-180
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		},
+		"2": {
+			"parts": {
+				"brow": {
+					"0": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-57.5,
+								-218
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-145
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-65,
+								-69.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-32,
+								-172
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								86,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-198,
+								-204
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"0": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								54.5,
+								-214.5
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								93.5,
+								-44
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								44.5,
+								-204
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								83.5,
+								-33.5
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"0": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-74.0000076293945,
+								-186.500015258789
+							],
+							"rot": 0.205327093601227,
+							"scale": [
+								0.850000023841858,
+								0.91100001335144
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-70,
+								-194.500015258789
+							],
+							"rot": 0,
+							"scale": [
+								1.5,
+								1.5
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-40.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"0": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-64,
+								-180
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		},
+		"3": {
+			"parts": {
+				"brow": {
+					"0": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-57.5,
+								-218
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-145
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-65,
+								-69.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-32,
+								-172
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								86,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-198,
+								-204
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"0": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								54.5,
+								-214.5
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								93.5,
+								-44
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-139
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-33.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"0": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-76.5,
+								-114.5
+							],
+							"rot": 0.205327093601227,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					},
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-70,
+								-194.500015258789
+							],
+							"rot": 0,
+							"scale": [
+								1.5,
+								1.5
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-40.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"0": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								11.5,
+								-59
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-64,
+								-180
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"1": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					},
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		},
+		"4": {
+			"parts": {
+				"brow": {
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-69.5,
+								-16
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-67,
+								-108
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								99.5,
+								-12
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-233,
+								-140
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-139
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-33.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-114.5,
+								-199.5
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.20313060283661,
+								1.05363798141479
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-18.5000019073486,
+								-84.5000076293945
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		},
+		"5": {
+			"parts": {
+				"brow": {
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-69.5,
+								-16
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-67,
+								-108
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								99.5,
+								-12
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-233,
+								-140
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-139
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-33.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-114.5,
+								-199.5
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.20313060283661,
+								1.05363798141479
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-18.5000019073486,
+								-84.5000076293945
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		},
+		"6": {
+			"parts": {
+				"brow": {
+					"3": {
+						"Skeleton2D/Root/Head/Brow_L": {
+							"pos": [
+								-37.5,
+								-117.5
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_L/BrowLeft": {
+							"pos": [
+								0,
+								0
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R": {
+							"pos": [
+								84,
+								-58
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Brow_R/BrowRight": {
+							"pos": [
+								-176,
+								-124
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"ear": {
+					"0": {
+						"Skeleton2D/Root/Head/Ear_L": {
+							"pos": [
+								-69.5,
+								-16
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_L/EarLeft": {
+							"pos": [
+								-67,
+								-108
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R": {
+							"pos": [
+								99.5,
+								-12
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Ear_R/EarRight": {
+							"pos": [
+								-233,
+								-140
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"eye": {
+					"1": {
+						"Skeleton2D/Root/Head/Eye_L": {
+							"pos": [
+								34.5,
+								-139
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_L/LeftEye": {
+							"pos": [
+								-128.75,
+								73.75
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R": {
+							"pos": [
+								67,
+								-33.5000038146973
+							],
+							"rot": 0,
+							"scale": [
+								0.5,
+								0.5
+							]
+						},
+						"Skeleton2D/Root/Head/Eye_R/RightEye": {
+							"pos": [
+								-136,
+								-148
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"hair": {
+					"2": {
+						"Skeleton2D/Root/Head/Hair": {
+							"pos": [
+								-53.5000038146973,
+								-107.499984741211
+							],
+							"rot": 0.0279274992644787,
+							"scale": [
+								1.27525186538696,
+								1.02431750297546
+							]
+						}
+					}
+				},
+				"hat": {
+					"0": {
+						"Skeleton2D/Root/Head/Hat": {
+							"pos": [
+								-114.5,
+								-199.5
+							],
+							"rot": -0.58516693115234,
+							"scale": [
+								1.20313060283661,
+								1.05363798141479
+							]
+						}
+					}
+				},
+				"mouth": {
+					"0": {
+						"Skeleton2D/Root/Head/Mouth": {
+							"pos": [
+								-18.5000019073486,
+								-84.5000076293945
+							],
+							"rot": 0,
+							"scale": [
+								0.800000011920929,
+								0.800000011920929
+							]
+						},
+						"Skeleton2D/Root/Head/Mouth/MouthSprite": {
+							"pos": [
+								16,
+								8
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				},
+				"nose": {
+					"4": {
+						"Skeleton2D/Root/Head/Nose": {
+							"pos": [
+								47,
+								65.5
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						},
+						"Skeleton2D/Root/Head/Nose/Nose": {
+							"pos": [
+								-36,
+								-84
+							],
+							"rot": 0,
+							"scale": [
+								1,
+								1
+							]
+						}
+					}
+				}
+			}
+		}
+	},
+	"version": 2
+}

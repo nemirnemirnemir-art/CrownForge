@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/GnollStunIconEffect.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells/Blinding Light.png" id="2_icon"]
+
+[node name="GnollStunIconEffect" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_icon")
+centered = true

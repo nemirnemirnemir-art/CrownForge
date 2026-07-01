@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/BaseProjectile.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/vfx/projectiles/slinger_stone.png" id="2_boulder"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boulder"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_boulder")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_boulder"]
+radius = 16.0
+
+[node name="CatapultBoulderProjectile" type="Area2D"]
+script = ExtResource("1_script")
+projectile_type = "default"
+spin_speed_deg = 360.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_boulder")
+animation = &"default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_boulder")

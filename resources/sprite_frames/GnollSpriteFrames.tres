@@ -1,0 +1,121 @@
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://ca3ey5divfcqi"]
+
+[ext_resource type="Texture2D" uid="uid://vujdk2rsox70" path="res://assets/characters/enemies/gnoll/Gnoll_idle/Gnoll_Idle1.png" id="1_idle1"]
+[ext_resource type="Texture2D" uid="uid://sqc41lgbdvd1" path="res://assets/characters/enemies/gnoll/Gnoll_idle/Gnoll_Idle2.png" id="2_idle2"]
+[ext_resource type="Texture2D" uid="uid://b2l1csms1v22j" path="res://assets/characters/enemies/gnoll/Gnoll_idle/Gnoll_Idle3.png" id="3_idle3"]
+[ext_resource type="Texture2D" uid="uid://1dtkgj1m1vul" path="res://assets/characters/enemies/gnoll/Gnoll_idle/Gnoll_Idle4.png" id="4_idle4"]
+[ext_resource type="Texture2D" uid="uid://c6q7208umuu80" path="res://assets/characters/enemies/gnoll/Gnoll_idle/Gnoll_Idle5.png" id="5_idle5"]
+[ext_resource type="Texture2D" uid="uid://dqm4jamyysf0m" path="res://assets/characters/enemies/gnoll/Gnoll_idle/Gnoll_Idle6.png" id="6_idle6"]
+[ext_resource type="Texture2D" uid="uid://emf1uo8owr2" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk1.png" id="7_walk1"]
+[ext_resource type="Texture2D" uid="uid://dmfdx46ksuka8" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk2.png" id="8_walk2"]
+[ext_resource type="Texture2D" uid="uid://dqd733fobwmbf" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk3.png" id="9_walk3"]
+[ext_resource type="Texture2D" uid="uid://0hjrlun2pbjb" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk4.png" id="10_walk4"]
+[ext_resource type="Texture2D" uid="uid://w03n7uvyu78d" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk5.png" id="11_walk5"]
+[ext_resource type="Texture2D" uid="uid://ce1liqy50ouoj" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk6.png" id="12_walk6"]
+[ext_resource type="Texture2D" uid="uid://uyosw613wbwn" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk7.png" id="13_walk7"]
+[ext_resource type="Texture2D" uid="uid://c03xjynbumdqt" path="res://assets/characters/enemies/gnoll/Gnoll_Walk/Gnoll_Walk8.png" id="14_walk8"]
+[ext_resource type="Texture2D" uid="uid://diuc00sycfssf" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw1.png" id="15_throw1"]
+[ext_resource type="Texture2D" uid="uid://2qipeeg8fl5s" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw2.png" id="16_throw2"]
+[ext_resource type="Texture2D" uid="uid://cr8tkhyai4fq0" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw3.png" id="17_throw3"]
+[ext_resource type="Texture2D" uid="uid://yo3gomm7bohl" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw4.png" id="18_throw4"]
+[ext_resource type="Texture2D" uid="uid://e1o0sgqalvdt" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw5.png" id="19_throw5"]
+[ext_resource type="Texture2D" uid="uid://jrb68mkkbm4d" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw6.png" id="20_throw6"]
+[ext_resource type="Texture2D" uid="uid://b7bxji1ma60gi" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw7.png" id="21_throw7"]
+[ext_resource type="Texture2D" uid="uid://bvmmo03xaosyp" path="res://assets/characters/enemies/gnoll/Gnoll_Throw/Gnoll_Throw8.png" id="22_throw8"]
+[ext_resource type="Texture2D" uid="uid://cuvjjwih3i1fr" path="res://assets/characters/enemies/gnoll/Gnoll_hit/Gnoll_Hit1.png" id="23_hit1"]
+[ext_resource type="Texture2D" uid="uid://b4j1pvdey82bf" path="res://assets/characters/enemies/gnoll/Gnoll_hit/Gnoll_Hit2.png" id="24_hit2"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_hit1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hit2")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_idle1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_idle2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idle4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idle5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_idle6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_throw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_throw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_throw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_throw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_throw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_throw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_throw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_throw8")
+}],
+"loop": false,
+"name": &"throw",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_walk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_walk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_walk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_walk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_walk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_walk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_walk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_walk8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=4 format=3 uid="uid://ce3gbxey3qt0b"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="1_4qfnb"]
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="2_ti4b6"]
+
+[resource]
+script = ExtResource("1_script")
+building_id = "wall"
+display_name = "Wall"
+description = "Defensive wall segment."
+building_type = 2
+building_category = 6
+build_costs = Array[ExtResource("1_4qfnb")]([])
+cycle_time = 0.0
+produces = Array[ExtResource("2_ti4b6")]([])
+consumes = Array[ExtResource("2_ti4b6")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = ""

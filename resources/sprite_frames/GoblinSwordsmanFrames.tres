@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bv3gm243fytjd"]
+
+[ext_resource type="Texture2D" uid="uid://cob1de6j2f2ft" path="res://assets/characters/enemies/tinyEnemies/swordman/walk/1.png" id="1_7ymqd"]
+[ext_resource type="Texture2D" uid="uid://vmv5dmorna2f" path="res://assets/characters/enemies/tinyEnemies/swordman/walk/2.png" id="2_xielx"]
+[ext_resource type="Texture2D" uid="uid://cdfhwtqdjjh21" path="res://assets/characters/enemies/tinyEnemies/swordman/walk/3.png" id="3_vp10d"]
+[ext_resource type="Texture2D" uid="uid://bsj7faid2bws2" path="res://assets/characters/enemies/tinyEnemies/swordman/walk/4.png" id="4_anmvo"]
+[ext_resource type="Texture2D" uid="uid://dyxwkvqpch47g" path="res://assets/characters/enemies/tinyEnemies/swordman/walk/5.png" id="5_02kiu"]
+[ext_resource type="Texture2D" uid="uid://ehdjv0vomvi0" path="res://assets/characters/enemies/tinyEnemies/swordman/walk/6.png" id="6_x7ofl"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7ymqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xielx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vp10d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_anmvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_02kiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x7ofl")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]

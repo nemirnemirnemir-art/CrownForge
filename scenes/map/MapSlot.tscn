@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1x8q2m3n4p5q"]
+
+[ext_resource type="Script" path="res://scripts/map/MapSlot.gd" id="1_map_slot"]
+
+[node name="MapSlot" type="Node2D"]
+script = ExtResource("1_map_slot")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+
+[node name="AnimVzor" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.4, 0.4)
+
+[node name="UpgradeStripe" type="TextureRect" parent="."]
+visible = false
+z_index = 12
+offset_left = 8.0
+offset_top = -48.0
+offset_right = 44.0
+offset_bottom = -12.0
+mouse_filter = 2
+stretch_mode = 5
+
+[node name="RadialProgress" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+position = Vector2(-22, -18)
+scale = Vector2(0.5, 0.5)
+
+[node name="HoverRadialProgress" type="Sprite2D" parent="."]
+visible = false
+z_index = 11
+position = Vector2(-22, -18)
+scale = Vector2(0.5, 0.5)
+
+[node name="Highlight" type="ColorRect" parent="."]
+visible = false
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(1, 1, 1, 0.235294)
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+
+[node name="UpgradeButton" type="Button" parent="."]
+visible = false
+offset_left = -40.0
+offset_top = 35.0
+offset_right = 40.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 10
+text = "Lvl 0
+Cost 0"
+
+[node name="ProductionProgress" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -35.0
+offset_top = -35.0
+offset_right = -15.0
+offset_bottom = -15.0
+fill_mode = 4
+nine_patch_stretch = true
+tint_progress = Color(0.1, 0.9, 0.4, 1)
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_input_event"]
+[connection signal="pressed" from="UpgradeButton" to="." method="_on_upgrade_button_pressed"]

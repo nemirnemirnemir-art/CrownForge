@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=9 format=3 uid="uid://bt0s7fbypo8rj"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="SpriteFrames" path="res://data/buildings/levy_barracks/assassins_temple_vzor_frames.tres" id="4_frames"]
+[ext_resource type="Texture2D" uid="uid://b3d0fhrpnhkik" path="res://assets/environment/buildings/Levy_barracks/Assassins_temple/Assassins_temple.png" id="5_icon"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "ore"
+amount = 100
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "wheat"
+amount = 30
+
+[sub_resource type="Resource" id="Cons_1"]
+script = ExtResource("3_prod")
+resource_id = "ore"
+amount = 10
+
+[resource]
+script = ExtResource("1_script")
+building_id = "assassins_temple"
+display_name = "Assassins' Temple"
+description = "Recruits Assassin units. 33s cycle. Capacity: 3. Consumes 30 Gold."
+icon = ExtResource("5_icon")
+use_vzor_animation = true
+vzor_frames = ExtResource("4_frames")
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 3
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 15.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0"), SubResource("Cons_1")])
+produced_unit_id = "assassin"
+max_units = 1
+has_special_behavior = false
+special_script_path = ""

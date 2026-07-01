@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://clok5lp0d64w7"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://bfqijigjlqqr7" path="res://assets/environment/buildings/magic_college.png" id="3_1tyco"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "crystal"
+amount = 250
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 250
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "crystal"
+amount = 45
+
+[resource]
+script = ExtResource("1_script")
+building_id = "magic_college"
+display_name = "Magic College"
+description = "Consumes 45 Crystal every 55s to add a random non-legendary spell. Faster than Magic School and ideal for sustained spell generation."
+icon = ExtResource("3_1tyco")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 2
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 55.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/MagicCollege.gd"

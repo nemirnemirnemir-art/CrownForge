@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3oi13c8n5oic"]
+
+[ext_resource type="Script" path="res://scripts/ui/town/UpgradeGrid.gd" id="1_script"]
+
+[node name="UpgradeGrid" type="Control"]
+custom_minimum_size = Vector2(180, 120)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_script")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 0
+columns = 3

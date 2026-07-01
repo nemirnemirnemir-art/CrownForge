@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/BurstingBunchEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "bursting_bunch"
+spell_name = "Bursting Bunch"
+description = "Summons 1 bun that rush into enemies and explode with contact after 1 second, dealing 250 aoe damage."
+icon = null
+target_radius = 50.0
+target_type = "point"
+effect_scene = ExtResource("2")
+duration = 5.0
+damage = 250.0
+damage_per_second = 0.0
+max_stacks = 99

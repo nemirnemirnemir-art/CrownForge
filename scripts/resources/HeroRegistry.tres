@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HeroRegistry" load_steps=2 format=3 uid="uid://cg4p3aebce1fv"]
+
+[ext_resource type="Script" path="res://scripts/resources/HeroRegistry.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/resources/HeroDefinition.gd" id="1_a7ahy"]
+
+[resource]
+script = ExtResource("1")
+available_heroes = Array[ExtResource("1_a7ahy")]([])

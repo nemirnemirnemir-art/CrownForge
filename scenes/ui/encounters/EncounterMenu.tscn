@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/encounters/EncounterMenu.gd" id="1_encounter_menu_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_encounter_panel"]
+bg_color = Color(0.11, 0.09, 0.07, 0.96)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.74, 0.58, 0.34, 1)
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_size = 14
+shadow_color = Color(0, 0, 0, 0.45)
+
+[node name="EncounterMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_encounter_menu_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.62)
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.0
+offset_top = -280.0
+offset_right = 430.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_encounter_panel")
+
+[node name="Margin" type="VBoxContainer" parent="Root/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TopAccent" type="ColorRect" parent="Root/Panel/Margin"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+color = Color(0.86, 0.68, 0.34, 1)
+
+[node name="Title" type="Label" parent="Root/Panel/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.84, 0.66, 1)
+theme_override_font_sizes/font_size = 44
+text = "Encounter"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Root/Panel/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.75, 0.7, 1)
+theme_override_font_sizes/font_size = 22
+text = "Lore description goes here..."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SubTitle" type="Label" parent="Root/Panel/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.64, 0.54, 1)
+theme_override_font_sizes/font_size = 20
+text = "Choose one option"
+horizontal_alignment = 1
+
+[node name="Divider" type="ColorRect" parent="Root/Panel/Margin"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.4, 0.31, 0.2, 1)
+
+[node name="Options" type="VBoxContainer" parent="Root/Panel/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=5 format=3 uid="uid://dvt8q58fql14v"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 12
+
+[resource]
+script = ExtResource("1_script")
+building_id = "phoenix_cannon"
+display_name = "Phoenix Cannon"
+description = "Phoenix Cannon. 3s cycle. Build Cost: 12 Wood."
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 7
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 3.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/PhoenixCannon.gd"

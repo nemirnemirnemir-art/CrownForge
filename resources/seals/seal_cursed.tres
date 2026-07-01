@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SealConfig" load_steps=3 format=3 uid="uid://c6f24o12mvowo"]
+
+[ext_resource type="Script" path="res://core/seals/SealConfig.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bh4spstpll8f7" path="res://assets/items/seals/cursed_seal.png" id="1_uk4ae"]
+
+[resource]
+script = ExtResource("1_script")
+id = "seal_cursed"
+display_name = "Cursed Seal"
+description = "Production reduced by 25%."
+tier = 0
+production_modifier = -0.25
+cost = {}
+icon = ExtResource("1_uk4ae")
+color = Color(0.3, 0, 0.3, 1)

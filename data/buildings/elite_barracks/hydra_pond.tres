@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://bewv03bhnkpyg"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://c1pfh4ky4s0e7" path="res://assets/environment/buildings/hydra_pond.png" id="3_d3emq"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "water"
+amount = 400
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "meat"
+amount = 80
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "meat"
+amount = 30
+
+[resource]
+script = ExtResource("1_script")
+building_id = "hydra_pond"
+display_name = "Hydra Pond"
+description = "Recruits Hydra units. 20s cycle. Capacity: 1. Consumes 30 Meat."
+icon = ExtResource("3_d3emq")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 5
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 20.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = "hydra"
+max_units = 1
+has_special_behavior = false
+special_script_path = ""

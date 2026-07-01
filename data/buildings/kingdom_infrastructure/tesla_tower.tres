@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://dnqjhgincs5au"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="Texture2D" uid="uid://cy2l87h3w1sx1" path="res://assets/environment/buildings/tesla_tower.png" id="3_rm6y0"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "metal"
+amount = 100
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "crystal"
+amount = 45
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "crystal"
+amount = 4
+
+[resource]
+script = ExtResource("1_script")
+building_id = "tesla_tower"
+display_name = "Tesla Tower"
+description = "Consumes 4 Crystal every 6s to strike up to 3 enemies with chain lightning. While active, spells deal 50% more damage."
+icon = ExtResource("3_rm6y0")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 2
+building_category = 6
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 6.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/TeslaTower.gd"

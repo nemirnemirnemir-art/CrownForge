@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://q3wv3cback3u"]
+
+[ext_resource type="Texture2D" uid="uid://dih0ugcgq1186" path="res://assets/environment/backgrounds/forest.png" id="1_forest"]
+
+[node name="Biome_Base" type="Node2D"]
+
+[node name="Ground" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("1_forest")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="BattleAnchor" type="Node2D" parent="."]

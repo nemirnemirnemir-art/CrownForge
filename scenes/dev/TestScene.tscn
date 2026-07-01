@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dspmm2rcovt4a"]
+
+[ext_resource type="Script" path="res://scripts/dev/TestScene.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/debug/TestDebugPanel.tscn" id="2_panel"]
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Heroes" type="Node2D" parent="World"]
+
+[node name="Mobs" type="Node2D" parent="World"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TestDebugPanel" parent="UI" instance=ExtResource("2_panel")]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dta5w3ylfuxds"]
+
+[ext_resource type="Script" path="res://scripts/ui/overlays/HealingPopup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ptgwjs3ppq8a" path="res://assets/ui/status_icons/heart.png" id="2_icon"]
+
+[node name="HealingPopup" type="Node2D"]
+z_index = 100
+script = ExtResource("1_script")
+
+[node name="Icon" type="TextureRect" parent="."]
+offset_left = -30.0
+offset_top = -15.0
+offset_bottom = 15.0
+texture = ExtResource("2_icon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="."]
+offset_left = 5.0
+offset_top = -18.0
+offset_right = 65.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0.2, 1, 0.2, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "+1"

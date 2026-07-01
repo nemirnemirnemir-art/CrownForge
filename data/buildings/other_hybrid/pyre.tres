@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=6 format=3 uid="uid://pavwdupgjukd"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 30
+
+[sub_resource type="Resource" id="Prod_0"]
+script = ExtResource("3_prod")
+resource_id = "pyre_spell"
+amount = 1
+
+[resource]
+script = ExtResource("1_script")
+building_id = "pyre"
+display_name = "Pyre"
+description = "Produces 1 Pyre Spell. 10s cycle. Build Cost: 30 Gold."
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 7
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 10.0
+produces = Array[ExtResource("3_prod")]([SubResource("Prod_0")])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/Pyre.gd"

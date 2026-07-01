@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3 uid="uid://debug_menu_001"]
+
+[ext_resource type="Script" path="res://scripts/ui/debug/DebugMenu.gd" id="1_script"]
+
+[node name="DebugMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "DEBUG MENU"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DayNightSection" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "DAY/NIGHT CYCLE"
+horizontal_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Time: 00:00 (0%)"
+horizontal_alignment = 1
+
+[node name="SliderBox" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection/SliderBox"]
+layout_mode = 2
+text = "Set Time:"
+
+[node name="TimeSlider" type="HSlider" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection/SliderBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+
+[node name="PhaseButtons" type="HBoxContainer" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnDawn" type="Button" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection/PhaseButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Dawn"
+
+[node name="BtnDay" type="Button" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection/PhaseButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Day"
+
+[node name="BtnDusk" type="Button" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection/PhaseButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Dusk"
+
+[node name="BtnNight" type="Button" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection/PhaseButtons"]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "Night"
+
+[node name="PauseCheck" type="CheckBox" parent="Panel/ScrollContainer/VBoxContainer/DayNightSection"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pause Day/Night Cycle"
+
+[node name="HSeparator2" type="HSeparator" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2

@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=10 format=3 uid="uid://dcceuj7ka4kng"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="Texture2D" uid="uid://ccfx8rp1e5uki" path="res://assets/environment/buildings/mill.png" id="3_xl2d3"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "gold"
+amount = 40
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 70
+
+[sub_resource type="Resource" id="Cost_2"]
+script = ExtResource("2_cost")
+resource_id = "wheat"
+amount = 25
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "wheat"
+amount = 1
+
+[sub_resource type="Resource" id="Prod_0"]
+script = ExtResource("3_prod")
+resource_id = "flour"
+amount = 1
+
+[resource]
+script = ExtResource("1_script")
+building_id = "mill"
+display_name = "Mill"
+description = "Flour production. Produces 1 Flour per 1.5s. Consumes 1 Wheat."
+icon = ExtResource("3_xl2d3")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 1
+building_category = 2
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1"), SubResource("Cost_2")])
+cycle_time = 1.5
+produces = Array[ExtResource("3_prod")]([SubResource("Prod_0")])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = false
+special_script_path = ""

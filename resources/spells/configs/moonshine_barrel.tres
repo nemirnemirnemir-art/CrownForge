@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/MoonshineBarrelEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "moonshine_barrel"
+spell_name = "Moonshine Barrel"
+description = "Drops a barrel dealing 75 damage and making enemies drunk (-30% attack speed) for 8 seconds."
+icon = null
+target_radius = 60.0
+target_type = "point"
+effect_scene = ExtResource("2")
+duration = 8.0
+damage = 75.0
+damage_per_second = 0.0
+max_stacks = 99

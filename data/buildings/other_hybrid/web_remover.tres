@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[resource]
+script = ExtResource("1_script")
+building_id = "web_remover"
+display_name = "Web Remover"
+description = "Removes Web. 20s cycle. Build Cost: Free."
+building_type = 0
+building_category = 7
+build_costs = Array[ExtResource("2_cost")]([])
+cycle_time = 20.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = true
+special_script_path = "res://core/buildings/special/WebRemover.gd"

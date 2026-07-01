@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8x7k2m3n4p5q"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/HeroBar.gd" id="1_hero_bar"]
+[ext_resource type="PackedScene" uid="uid://dgglwihj4bh01" path="res://scenes/ui/widgets/SliderButton.tscn" id="3_slider_btn"]
+[ext_resource type="Texture2D" uid="uid://c2mom4ri3i7b1" path="res://assets/ui/sliders/default_slider_left.png" id="4_slider_left_normal"]
+[ext_resource type="Texture2D" uid="uid://c7acfvmapujlb" path="res://assets/ui/sliders/default_slider_mouse_focus.png" id="5_slider_hover"]
+[ext_resource type="Texture2D" uid="uid://dxxxdgq3mdktj" path="res://assets/ui/sliders/default_slider_mouse_pressed_hold.png" id="6_slider_pressed"]
+[ext_resource type="Texture2D" uid="uid://dnet5ppbdowoy" path="res://assets/ui/sliders/default_slider_mouse_pressed_unhold.png" id="7_slider_unhold"]
+
+[node name="HeroBar" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -252.0
+offset_top = -64.0
+offset_right = 248.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_hero_bar")
+
+[node name="HPBarTemplate" type="Control" parent="."]
+custom_minimum_size = Vector2(50, 10)
+anchors_preset = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 80.0
+offset_bottom = 15.0
+mouse_filter = 2
+
+[node name="Outline" type="ColorRect" parent="HPBarTemplate"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Inner" type="ColorRect" parent="HPBarTemplate/Outline"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.8, 0.2, 1)
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.8873
+offset_right = 38.8873
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.3, 0.95)
+
+[node name="NavigationContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PrevButton" parent="NavigationContainer" instance=ExtResource("3_slider_btn")]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal_state = ExtResource("4_slider_left_normal")
+texture_hover_state = ExtResource("5_slider_hover")
+texture_pressed_state = ExtResource("6_slider_pressed")
+texture_unhold_state = ExtResource("7_slider_unhold")
+
+[node name="SlotsGrid" type="GridContainer" parent="NavigationContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+columns = 5
+
+[node name="NextButtonWrapper" type="Control" parent="NavigationContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="NextButton" parent="NavigationContainer/NextButtonWrapper" instance=ExtResource("3_slider_btn")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(20, 20)
+texture_normal_state = ExtResource("4_slider_left_normal")
+texture_hover_state = ExtResource("5_slider_hover")
+texture_pressed_state = ExtResource("6_slider_pressed")
+texture_unhold_state = ExtResource("7_slider_unhold")

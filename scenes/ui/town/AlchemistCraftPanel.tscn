@@ -1,0 +1,606 @@
+[gd_scene load_steps=31 format=3 uid="uid://cxtk6rxibcw1p"]
+
+[ext_resource type="Script" path="res://scripts/ui/town/AlchemistCraftPanel.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://dgglwihj4bh01" path="res://scenes/ui/widgets/SliderButton.tscn" id="2_slider_btn"]
+[ext_resource type="Texture2D" uid="uid://40ljyh73hey4" path="res://assets/ui/buttons/button_close.png" id="3_close_atlas"]
+[ext_resource type="Texture2D" uid="uid://cqypra0477q8n" path="res://assets/ui/buttons/Button_minus.png" id="4_minus_atlas"]
+[ext_resource type="Texture2D" uid="uid://7srjwlnyyfxk" path="res://assets/ui/buttons/Button_plus.png" id="5_plus_atlas"]
+[ext_resource type="Texture2D" uid="uid://dikdlgwk2ll0i" path="res://assets/ui/craft_panel/background.png" id="6_bg"]
+[ext_resource type="Texture2D" uid="uid://bfc2a653utuu7" path="res://assets/ui/craft_panel/Button_Red.png" id="7_btn_red"]
+[ext_resource type="Texture2D" uid="uid://db66yffl4350h" path="res://assets/ui/craft_panel/Button_Red_Pressed.png" id="8_btn_red_pressed"]
+[ext_resource type="Texture2D" uid="uid://hayoahemul3k" path="res://assets/ui/craft_panel/Button_Blue.png" id="9_btn_blue"]
+[ext_resource type="Texture2D" uid="uid://boymegb4a5is" path="res://assets/ui/craft_panel/Button_Blue_Pressed.png" id="10_btn_blue_pressed"]
+[ext_resource type="Texture2D" uid="uid://cstjlsici0dkg" path="res://assets/ui/craft_panel/Button_Yellow.png" id="11_btn_yellow"]
+[ext_resource type="Texture2D" uid="uid://ctqeeotyuyxks" path="res://assets/ui/craft_panel/Button_Yellow_Pressed.png" id="12_btn_yellow_pressed"]
+[ext_resource type="Texture2D" uid="uid://bfb7dotupr6yt" path="res://assets/ui/craft_panel/minor_heal_potion.png" id="13_potion_heal"]
+[ext_resource type="Texture2D" uid="uid://daddgp2i0l0d4" path="res://assets/ui/craft_panel/minor_block_potion.png" id="15_potion_block"]
+[ext_resource type="Texture2D" uid="uid://cntqqi65o1k4k" path="res://assets/ui/craft_panel/1.png" id="16_card_base"]
+[ext_resource type="Texture2D" uid="uid://b5q3khydo2ean" path="res://assets/ui/craft_panel/2.png" id="17_timer_bg"]
+[ext_resource type="Texture2D" uid="uid://c43u8xfbcd5k0" path="res://assets/ui/craft_panel/3.png" id="18_queue_slot"]
+[ext_resource type="Texture2D" uid="uid://dsbuf0db0ylyq" path="res://assets/ui/craft_panel/4.png" id="19_card_header"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_minus_normal"]
+atlas = ExtResource("4_minus_atlas")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_minus_hover"]
+atlas = ExtResource("4_minus_atlas")
+region = Rect2(25, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_minus_pressed"]
+atlas = ExtResource("4_minus_atlas")
+region = Rect2(50, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_minus_unhold"]
+atlas = ExtResource("4_minus_atlas")
+region = Rect2(75, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plus_normal"]
+atlas = ExtResource("5_plus_atlas")
+region = Rect2(0, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plus_hover"]
+atlas = ExtResource("5_plus_atlas")
+region = Rect2(25, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plus_pressed"]
+atlas = ExtResource("5_plus_atlas")
+region = Rect2(50, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plus_unhold"]
+atlas = ExtResource("5_plus_atlas")
+region = Rect2(75, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_close_normal"]
+atlas = ExtResource("3_close_atlas")
+region = Rect2(0, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_close_hover"]
+atlas = ExtResource("3_close_atlas")
+region = Rect2(25, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_close_pressed"]
+atlas = ExtResource("3_close_atlas")
+region = Rect2(50, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_close_unhold"]
+atlas = ExtResource("3_close_atlas")
+region = Rect2(75, 0, 25, 0)
+
+[node name="AlchemistCraftPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -162.0
+offset_right = -102.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Canvas" type="Control" parent="."]
+custom_minimum_size = Vector2(694, 272)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -347.0
+offset_top = -136.0
+offset_right = 347.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Canvas"]
+custom_minimum_size = Vector2(178, 177)
+layout_mode = 1
+offset_right = 178.0
+offset_bottom = 177.0
+texture = ExtResource("6_bg")
+stretch_mode = 2
+
+[node name="PotionHeal" type="TextureButton" parent="Canvas"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 70.0
+offset_bottom = 75.0
+toggle_mode = true
+texture_normal = ExtResource("7_btn_red")
+texture_pressed = ExtResource("8_btn_red_pressed")
+
+[node name="Icon" type="TextureRect" parent="Canvas/PotionHeal"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_potion_heal")
+
+[node name="PotionBlock" type="TextureButton" parent="Canvas"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_left = 108.0
+offset_top = 12.0
+offset_right = 172.0
+offset_bottom = 76.0
+toggle_mode = true
+texture_normal = ExtResource("11_btn_yellow")
+texture_pressed = ExtResource("12_btn_yellow_pressed")
+
+[node name="Icon" type="TextureRect" parent="Canvas/PotionBlock"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("15_potion_block")
+
+[node name="Minus" parent="Canvas" instance=ExtResource("2_slider_btn")]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+offset_left = 14.0
+offset_top = 92.0
+offset_right = 39.0
+offset_bottom = 117.0
+texture_normal_state = SubResource("AtlasTexture_minus_normal")
+texture_hover_state = SubResource("AtlasTexture_minus_hover")
+texture_pressed_state = SubResource("AtlasTexture_minus_pressed")
+texture_unhold_state = SubResource("AtlasTexture_minus_unhold")
+
+[node name="Plus" parent="Canvas" instance=ExtResource("2_slider_btn")]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 1
+offset_left = 47.0
+offset_top = 92.0
+offset_right = 72.0
+offset_bottom = 117.0
+texture_normal_state = SubResource("AtlasTexture_plus_normal")
+texture_hover_state = SubResource("AtlasTexture_plus_hover")
+texture_pressed_state = SubResource("AtlasTexture_plus_pressed")
+texture_unhold_state = SubResource("AtlasTexture_plus_unhold")
+
+[node name="CraftCard" type="Control" parent="Canvas"]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 128.0
+offset_top = -35.0
+offset_right = 320.0
+offset_bottom = 157.0
+
+[node name="Base" type="TextureRect" parent="Canvas/CraftCard"]
+custom_minimum_size = Vector2(192, 192)
+layout_mode = 1
+offset_left = -23.6667
+offset_top = -23.6667
+offset_right = 168.333
+offset_bottom = 168.333
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_card_base")
+stretch_mode = 2
+
+[node name="Header" type="TextureRect" parent="Canvas/CraftCard"]
+custom_minimum_size = Vector2(192, 64)
+layout_mode = 1
+offset_left = 73.0
+offset_top = 36.3333
+offset_right = 265.0
+offset_bottom = 100.333
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("19_card_header")
+stretch_mode = 2
+
+[node name="Title" type="Label" parent="Canvas/CraftCard/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.5556
+offset_top = 6.66666
+offset_right = 45.5556
+offset_bottom = 6.66666
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+text = "Potion"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="Canvas/CraftCard"]
+layout_mode = 1
+offset_left = 89.6667
+offset_top = 73.0
+offset_right = 249.667
+offset_bottom = 158.0
+scale = Vector2(0.615327, 0.537719)
+text = "no Description"
+autowrap_mode = 3
+
+[node name="IngredientsRows" type="VBoxContainer" parent="Canvas/CraftCard"]
+layout_mode = 1
+offset_left = 61.0
+offset_top = 129.0
+offset_right = 221.0
+offset_bottom = 213.0
+scale = Vector2(0.77573, 0.649481)
+theme_override_constants/separation = 6
+
+[node name="TimerBlock" type="Control" parent="Canvas"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 157.0
+offset_top = 176.667
+offset_right = 221.0
+offset_bottom = 240.667
+
+[node name="TimerBg" type="TextureRect" parent="Canvas/TimerBlock"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("17_timer_bg")
+stretch_mode = 2
+
+[node name="Timer" type="Label" parent="Canvas/TimerBlock"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -10.0
+offset_right = 32.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "--:--"
+horizontal_alignment = 1
+
+[node name="QueueSlots" type="Control" parent="Canvas"]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 102.333
+offset_top = 178.0
+offset_right = 796.333
+offset_bottom = 242.0
+
+[node name="Slot0" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot0"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot0"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot1" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot1"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot1"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot2" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot2"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot3" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot3"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot3"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot4" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot4"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot4"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot5" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot5"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot5"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot6" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot6"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot6"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot7" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot7"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot7"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot8" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot8"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot8"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="Slot9" type="Control" parent="Canvas/QueueSlots"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Frame" type="TextureRect" parent="Canvas/QueueSlots/Slot9"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("18_queue_slot")
+stretch_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Canvas/QueueSlots/Slot9"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 5
+
+[node name="CloseButton" parent="Canvas" instance=ExtResource("2_slider_btn")]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -341.667
+offset_top = 30.6667
+offset_right = -311.667
+offset_bottom = 55.6667
+grow_horizontal = 0
+texture_normal_state = SubResource("AtlasTexture_close_normal")
+texture_hover_state = SubResource("AtlasTexture_close_hover")
+texture_pressed_state = SubResource("AtlasTexture_close_pressed")
+texture_unhold_state = SubResource("AtlasTexture_close_unhold")

@@ -1,0 +1,447 @@
+[gd_scene load_steps=35 format=3 uid="uid://kdou3acim6sv"]
+
+[ext_resource type="Script" path="res://scripts/dev/FaceRigTest.gd" id="1_face_rig_test"]
+[ext_resource type="Texture2D" uid="uid://d3a1r1aje3ql4" path="res://assets/characters/character_faces/head/1.png" id="2_face"]
+[ext_resource type="Texture2D" uid="uid://ccxjqp6sn06d5" path="res://assets/characters/character_faces/eyes/1_left.png" id="3_left_eye"]
+[ext_resource type="Texture2D" uid="uid://c61tj0caxf5vx" path="res://assets/characters/character_faces/nose/2.png" id="4_peadw"]
+[ext_resource type="Texture2D" uid="uid://6u8i5uslk608" path="res://assets/characters/character_faces/eyes/1_right.png" id="4_right_eye"]
+[ext_resource type="Texture2D" uid="uid://cjkpicgq2cyu4" path="res://assets/characters/character_faces/mouth/1.png" id="5_mouth"]
+[ext_resource type="Texture2D" uid="uid://bq7c18tkrrqp0" path="res://assets/characters/character_faces/nose/3.png" id="5_uckyd"]
+[ext_resource type="Texture2D" uid="uid://c0ftb1ji1bcwa" path="res://assets/characters/character_faces/nose/4.png" id="6_hfvk8"]
+[ext_resource type="Texture2D" uid="uid://bbim7pq2bgudm" path="res://assets/characters/character_faces/nose/1.png" id="6_nose"]
+[ext_resource type="Texture2D" uid="uid://dyi2wljrb42qu" path="res://assets/characters/character_faces/nose/5.png" id="7_q38gr"]
+[ext_resource type="Texture2D" uid="uid://b67yoxuvrjymh" path="res://assets/characters/character_faces/hair/1.png" id="9_hair"]
+[ext_resource type="Texture2D" uid="uid://crj1m2x4a00cg" path="res://assets/characters/character_faces/eyes/2_left.png" id="9_yx2jc"]
+[ext_resource type="Texture2D" uid="uid://cjsbg1j20ch7u" path="res://assets/characters/character_faces/ears/1_left.png" id="10_left_ear"]
+[ext_resource type="Texture2D" uid="uid://dt3jul7nd5g3w" path="res://assets/characters/character_faces/ears/1_right.png" id="11_right_ear"]
+[ext_resource type="Texture2D" uid="uid://d4ktlccfeu3x3" path="res://assets/characters/character_faces/eyes/2_right.png" id="11_ut12b"]
+[ext_resource type="Texture2D" uid="uid://dtum0avvhxmi1" path="res://assets/characters/character_faces/head/2.png" id="13_ybsel"]
+[ext_resource type="Texture2D" uid="uid://c42ydvu2ipe5s" path="res://assets/characters/character_faces/hat/1.png" id="14_hat"]
+[ext_resource type="Texture2D" uid="uid://cfi7ubtkglrw2" path="res://assets/characters/character_faces/head/3.png" id="14_wyc16"]
+[ext_resource type="Texture2D" uid="uid://ormtk4btm4u" path="res://assets/characters/character_faces/head/4.png" id="15_vhnd0"]
+[ext_resource type="Texture2D" uid="uid://cjv08tnqhpgk5" path="res://assets/characters/character_faces/head/5.png" id="16_kt84n"]
+[ext_resource type="Texture2D" uid="uid://dc51f31fu85oc" path="res://assets/characters/character_faces/head/6.png" id="17_15b4k"]
+[ext_resource type="Texture2D" uid="uid://dw5nmtfj11ddl" path="res://assets/characters/character_faces/head/7.png" id="18_866mq"]
+[ext_resource type="Texture2D" uid="uid://cvwun0osdmcko" path="res://assets/characters/character_faces/hair/2.png" id="20_kam1e"]
+[ext_resource type="Texture2D" uid="uid://cakn52xrw1inx" path="res://assets/characters/character_faces/hair/3.png" id="21_vyt0w"]
+[ext_resource type="Texture2D" uid="uid://c732lv4f8b4x2" path="res://assets/characters/character_faces/hair/4.png" id="22_m38rn"]
+[ext_resource type="Texture2D" uid="uid://d17idashqaumg" path="res://assets/characters/character_faces/hat/2.png" id="24_tvlw8"]
+[ext_resource type="Texture2D" uid="uid://dmn4pir5yglfm" path="res://assets/characters/character_faces/hat/3.png" id="25_8a735"]
+[ext_resource type="Texture2D" uid="uid://44hvo02i71gx" path="res://assets/characters/character_faces/hat/4.png" id="26_6tmbq"]
+[ext_resource type="Texture2D" uid="uid://7k3prq52kgl2" path="res://assets/characters/character_faces/hat/5.png" id="27_8re71"]
+[ext_resource type="Texture2D" uid="uid://27g8vdmyh2xv" path="res://assets/characters/character_faces/hat/6.png" id="28_55fl0"]
+[ext_resource type="Texture2D" uid="uid://3xygguuaibsf" path="res://assets/characters/character_faces/brown/1left.png" id="29_vdkup"]
+[ext_resource type="Texture2D" uid="uid://bn7gl3y65cffn" path="res://assets/characters/character_faces/brown/1right.png" id="30_alx2v"]
+[ext_resource type="Texture2D" uid="uid://ctfesv5t3tnme" path="res://assets/characters/character_faces/brown/2left.png" id="31_h772j"]
+[ext_resource type="Texture2D" uid="uid://cnm2tk6jsuvx1" path="res://assets/characters/character_faces/brown/2right.png" id="32_4eo4o"]
+
+[node name="FaceRigTest" type="Node2D"]
+script = ExtResource("1_face_rig_test")
+mouth_smile_texture = ExtResource("5_mouth")
+profile_debug_logs = true
+nose_textures = Array[Texture2D]([ExtResource("6_nose"), ExtResource("4_peadw"), ExtResource("5_uckyd"), ExtResource("6_hfvk8"), ExtResource("7_q38gr")])
+eye_left_textures = Array[Texture2D]([ExtResource("3_left_eye"), ExtResource("9_yx2jc")])
+eye_right_textures = Array[Texture2D]([ExtResource("4_right_eye"), ExtResource("11_ut12b")])
+head_textures = Array[Texture2D]([ExtResource("2_face"), ExtResource("13_ybsel"), ExtResource("14_wyc16"), ExtResource("15_vhnd0"), ExtResource("16_kt84n"), ExtResource("17_15b4k"), ExtResource("18_866mq")])
+hair_textures = Array[Texture2D]([ExtResource("9_hair"), ExtResource("20_kam1e"), ExtResource("21_vyt0w"), ExtResource("22_m38rn")])
+hat_textures = Array[Texture2D]([ExtResource("14_hat"), ExtResource("24_tvlw8"), ExtResource("25_8a735"), ExtResource("26_6tmbq"), ExtResource("27_8re71"), ExtResource("28_55fl0")])
+mouth_textures = Array[Texture2D]([ExtResource("5_mouth")])
+brow_textures = Array[Texture2D]([ExtResource("29_vdkup"), ExtResource("30_alx2v"), ExtResource("31_h772j"), ExtResource("32_4eo4o")])
+ear_left_textures = Array[Texture2D]([ExtResource("10_left_ear")])
+ear_right_textures = Array[Texture2D]([ExtResource("11_right_ear")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-312, -45)
+
+[node name="FaceBase" type="Sprite2D" parent="."]
+z_index = -10
+scale = Vector2(2, 2)
+texture = ExtResource("2_face")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+position = Vector2(56, 72)
+scale = Vector2(2, 2)
+
+[node name="Root" type="Bone2D" parent="Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Root"]
+position = Vector2(24, 96)
+rest = Transform2D(1, 0, 0, 1, 24, 96)
+
+[node name="Eye_L" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(34.5, -139)
+scale = Vector2(0.5, 0.5)
+rest = Transform2D(1, 0, 0, 1, -96, -176)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Eye_L"]
+position = Vector2(12, 0)
+rest = Transform2D(1, 0, 0, 1, 12, 0)
+
+[node name="LeftEye" type="Sprite2D" parent="Skeleton2D/Root/Head/Eye_L"]
+position = Vector2(-128.75, 73.75)
+texture = ExtResource("3_left_eye")
+
+[node name="LeftPupil" type="Sprite2D" parent="Skeleton2D/Root/Head/Eye_L"]
+z_index = 1
+
+[node name="Eye_R" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(67, -33.5)
+scale = Vector2(0.5, 0.5)
+rest = Transform2D(1, 0, 0, 1, 88, -44)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Eye_R"]
+position = Vector2(12, 0)
+rest = Transform2D(1, 0, 0, 1, 12, 0)
+
+[node name="RightEye" type="Sprite2D" parent="Skeleton2D/Root/Head/Eye_R"]
+position = Vector2(-136, -148)
+texture = ExtResource("4_right_eye")
+
+[node name="RightPupil" type="Sprite2D" parent="Skeleton2D/Root/Head/Eye_R"]
+z_index = 1
+
+[node name="Mouth" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(-18.5, -84.5)
+scale = Vector2(0.8, 0.8)
+rest = Transform2D(1, 0, 0, 1, 24, 92)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Mouth"]
+position = Vector2(0, 12)
+rest = Transform2D(1, 0, 0, 1, 0, 12)
+
+[node name="MouthSprite" type="Sprite2D" parent="Skeleton2D/Root/Head/Mouth"]
+z_index = 1
+position = Vector2(16, 8)
+texture = ExtResource("5_mouth")
+
+[node name="Nose" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(47, 65.5)
+rest = Transform2D(1, 0, 0, 1, 16, 4)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Nose"]
+position = Vector2(0, 12)
+rest = Transform2D(1, 0, 0, 1, 0, 12)
+
+[node name="Nose" type="Sprite2D" parent="Skeleton2D/Root/Head/Nose"]
+position = Vector2(-36, -84)
+texture = ExtResource("6_nose")
+
+[node name="Ear_L" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(-69.5, -16)
+scale = Vector2(0.5, 0.5)
+rest = Transform2D(1, 0, 0, 1, -120, -4)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Ear_L"]
+position = Vector2(-12, 0)
+rest = Transform2D(1, 0, 0, 1, -12, 0)
+
+[node name="EarLeft" type="Sprite2D" parent="Skeleton2D/Root/Head/Ear_L"]
+z_index = -6
+position = Vector2(-67, -108)
+texture = ExtResource("10_left_ear")
+
+[node name="Ear_R" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(99.5, -12)
+scale = Vector2(0.5, 0.5)
+rest = Transform2D(1, 0, 0, 1, 150, 12)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Ear_R"]
+position = Vector2(12, 0)
+rest = Transform2D(1, 0, 0, 1, 12, 0)
+
+[node name="EarRight" type="Sprite2D" parent="Skeleton2D/Root/Head/Ear_R"]
+z_index = -12
+position = Vector2(-233, -140)
+texture = ExtResource("11_right_ear")
+
+[node name="Brow_L" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(-37.5, -117.5)
+scale = Vector2(0.5, 0.5)
+rest = Transform2D(1, 0, 0, 1, -80, -108)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Brow_L"]
+position = Vector2(12, 0)
+rest = Transform2D(1, 0, 0, 1, 12, 0)
+
+[node name="BrowLeft" type="Sprite2D" parent="Skeleton2D/Root/Head/Brow_L"]
+z_index = 2
+texture = ExtResource("29_vdkup")
+
+[node name="Brow_R" type="Bone2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(84, -58)
+scale = Vector2(0.5, 0.5)
+rest = Transform2D(1, 0, 0, 1, 96, -92)
+
+[node name="Tip" type="Bone2D" parent="Skeleton2D/Root/Head/Brow_R"]
+position = Vector2(12, 0)
+rest = Transform2D(1, 0, 0, 1, 12, 0)
+
+[node name="BrowRight" type="Sprite2D" parent="Skeleton2D/Root/Head/Brow_R"]
+z_index = 2
+position = Vector2(-176, -124)
+texture = ExtResource("29_vdkup")
+
+[node name="Hair" type="Sprite2D" parent="Skeleton2D/Root/Head"]
+position = Vector2(-53.5, -107.5)
+rotation = 0.0279275
+scale = Vector2(1.27525, 1.02432)
+texture = ExtResource("9_hair")
+
+[node name="Hat" type="Sprite2D" parent="Skeleton2D/Root/Head"]
+z_index = 1
+position = Vector2(-114.5, -199.5)
+rotation = -0.585167
+scale = Vector2(1.20313, 1.05364)
+texture = ExtResource("14_hat")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FaceGen" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = 176.0
+offset_right = 120.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="UI/FaceGen"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 520.0
+offset_bottom = 430.0
+
+[node name="Rows" type="VBoxContainer" parent="UI/FaceGen/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NoseRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="NoseLabel" type="Label" parent="UI/FaceGen/Panel/Rows/NoseRow"]
+layout_mode = 2
+text = "Nose"
+
+[node name="NosePrev" type="Button" parent="UI/FaceGen/Panel/Rows/NoseRow"]
+layout_mode = 2
+text = "<"
+
+[node name="NoseSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/NoseRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 4.0
+
+[node name="NoseNext" type="Button" parent="UI/FaceGen/Panel/Rows/NoseRow"]
+layout_mode = 2
+text = ">"
+
+[node name="EyeRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="EyeLabel" type="Label" parent="UI/FaceGen/Panel/Rows/EyeRow"]
+layout_mode = 2
+text = "Eyes"
+
+[node name="EyePrev" type="Button" parent="UI/FaceGen/Panel/Rows/EyeRow"]
+layout_mode = 2
+text = "<"
+
+[node name="EyeSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/EyeRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 1.0
+
+[node name="EyeNext" type="Button" parent="UI/FaceGen/Panel/Rows/EyeRow"]
+layout_mode = 2
+text = ">"
+
+[node name="HeadRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="HeadLabel" type="Label" parent="UI/FaceGen/Panel/Rows/HeadRow"]
+layout_mode = 2
+text = "Head"
+
+[node name="HeadPrev" type="Button" parent="UI/FaceGen/Panel/Rows/HeadRow"]
+layout_mode = 2
+text = "<"
+
+[node name="HeadSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/HeadRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 6.0
+
+[node name="HeadNext" type="Button" parent="UI/FaceGen/Panel/Rows/HeadRow"]
+layout_mode = 2
+text = ">"
+
+[node name="HairRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="HairLabel" type="Label" parent="UI/FaceGen/Panel/Rows/HairRow"]
+layout_mode = 2
+text = "Hair"
+
+[node name="HairPrev" type="Button" parent="UI/FaceGen/Panel/Rows/HairRow"]
+layout_mode = 2
+text = "<"
+
+[node name="HairSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/HairRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 3.0
+
+[node name="HairNext" type="Button" parent="UI/FaceGen/Panel/Rows/HairRow"]
+layout_mode = 2
+text = ">"
+
+[node name="HatRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="HatLabel" type="Label" parent="UI/FaceGen/Panel/Rows/HatRow"]
+layout_mode = 2
+text = "Hat"
+
+[node name="HatPrev" type="Button" parent="UI/FaceGen/Panel/Rows/HatRow"]
+layout_mode = 2
+text = "<"
+
+[node name="HatSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/HatRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 5.0
+
+[node name="HatNext" type="Button" parent="UI/FaceGen/Panel/Rows/HatRow"]
+layout_mode = 2
+text = ">"
+
+[node name="MouthRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="MouthLabel" type="Label" parent="UI/FaceGen/Panel/Rows/MouthRow"]
+layout_mode = 2
+text = "Mouth"
+
+[node name="MouthPrev" type="Button" parent="UI/FaceGen/Panel/Rows/MouthRow"]
+layout_mode = 2
+text = "<"
+
+[node name="MouthSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/MouthRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 0.0
+
+[node name="MouthNext" type="Button" parent="UI/FaceGen/Panel/Rows/MouthRow"]
+layout_mode = 2
+text = ">"
+
+[node name="BrowRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="BrowLabel" type="Label" parent="UI/FaceGen/Panel/Rows/BrowRow"]
+layout_mode = 2
+text = "Brow"
+
+[node name="BrowPrev" type="Button" parent="UI/FaceGen/Panel/Rows/BrowRow"]
+layout_mode = 2
+text = "<"
+
+[node name="BrowSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/BrowRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 3.0
+
+[node name="BrowNext" type="Button" parent="UI/FaceGen/Panel/Rows/BrowRow"]
+layout_mode = 2
+text = ">"
+
+[node name="EarRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+
+[node name="EarLabel" type="Label" parent="UI/FaceGen/Panel/Rows/EarRow"]
+layout_mode = 2
+text = "Ear"
+
+[node name="EarPrev" type="Button" parent="UI/FaceGen/Panel/Rows/EarRow"]
+layout_mode = 2
+text = "<"
+
+[node name="EarSlider" type="HSlider" parent="UI/FaceGen/Panel/Rows/EarRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+max_value = 0.0
+
+[node name="EarNext" type="Button" parent="UI/FaceGen/Panel/Rows/EarRow"]
+layout_mode = 2
+text = ">"
+
+[node name="ToggleRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HairToggleLabel" type="Label" parent="UI/FaceGen/Panel/Rows/ToggleRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hair"
+
+[node name="HairToggle" type="CheckBox" parent="UI/FaceGen/Panel/Rows/ToggleRow"]
+layout_mode = 2
+button_pressed = true
+text = "Enable"
+
+[node name="HatToggleLabel" type="Label" parent="UI/FaceGen/Panel/Rows/ToggleRow"]
+layout_mode = 2
+text = "Hat"
+
+[node name="HatToggle" type="CheckBox" parent="UI/FaceGen/Panel/Rows/ToggleRow"]
+layout_mode = 2
+button_pressed = true
+text = "Enable"
+
+[node name="ProfileActionsRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ProfileLabel" type="Label" parent="UI/FaceGen/Panel/Rows/ProfileActionsRow"]
+layout_mode = 2
+text = "Profile"
+
+[node name="ApplyProfileButton" type="Button" parent="UI/FaceGen/Panel/Rows/ProfileActionsRow"]
+layout_mode = 2
+text = "Apply"
+
+[node name="SaveProfileButton" type="Button" parent="UI/FaceGen/Panel/Rows/ProfileActionsRow"]
+layout_mode = 2
+text = "Save"
+
+[node name="ProfileModesRow" type="HBoxContainer" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="EditMode" type="CheckBox" parent="UI/FaceGen/Panel/Rows/ProfileModesRow"]
+layout_mode = 2
+button_pressed = true
+text = "Edit mode"
+
+[node name="AutoApply" type="CheckBox" parent="UI/FaceGen/Panel/Rows/ProfileModesRow"]
+layout_mode = 2
+button_pressed = true
+text = "Auto apply"
+
+[node name="ProfileStatus" type="Label" parent="UI/FaceGen/Panel/Rows"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Head 1 | Edit ON | Auto ON"

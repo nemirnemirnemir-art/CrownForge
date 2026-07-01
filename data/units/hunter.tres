@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_hunter"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "hunter"
+display_name = "Hunter"
+hp = 75
+dps = 5
+attack_range = 234.375
+max_range = 234.375
+projectile_speed = 300.0
+projectile_type = "arrow"
+projectile_spin_speed_deg = 0.0
+unit_classes = [2, 1]
+trait_description = "+10% to attack speed of Flying troops per Hunter (up to 100%)."

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://resources/spells/SpellConfig.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/spells/effects/FissureEffect.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+spell_id = "fissure"
+spell_name = "Fissure"
+description = "Creates a vertical fissure strip (64x640). After a short delay it hits enemies in the strip for 220 damage."
+icon = null
+target_radius = 50.0
+target_type = "area"
+effect_scene = ExtResource("2")
+duration = 1.0
+damage = 220.0
+damage_per_second = 0.0
+max_stacks = 99

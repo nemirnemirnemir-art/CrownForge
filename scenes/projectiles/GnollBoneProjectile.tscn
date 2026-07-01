@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/GnollBoneProjectile.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/gnoll/Gnoll_Bone/Gnoll_Bone1.png" id="2_b1"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/gnoll/Gnoll_Bone/Gnoll_Bone2.png" id="3_b2"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/gnoll/Gnoll_Bone/Gnoll_Bone3.png" id="4_b3"]
+[ext_resource type="Texture2D" path="res://assets/characters/enemies/gnoll/Gnoll_Bone/Gnoll_Bone4.png" id="5_b4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bone"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b4")
+}],
+"loop": true,
+"name": &"gnoll_bone",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(24, 18)
+
+[node name="GnollBoneProjectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_script")
+speed = 145.0
+projectile_type = "gnoll_bone"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_bone")
+animation = &"gnoll_bone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_body")

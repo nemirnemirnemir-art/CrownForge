@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_worm_rider"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "worm_rider"
+display_name = "Worm Rider"
+hp = 160
+dps = 34
+unit_classes = [3]
+trait_description = "+5% HP to Champion troops per Worm Rider (up to 100%)."

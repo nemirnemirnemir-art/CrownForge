@@ -1,0 +1,193 @@
+[gd_scene load_steps=33 format=3 uid="uid://dxnf3562bpt0q"]
+
+[ext_resource type="Script" path="res://scripts/hero/HeroOnField.gd" id="1_hero_on_field"]
+[ext_resource type="Texture2D" uid="uid://cu1qpa4ylwyli" path="res://assets/characters/tinyHeroes/assasin/run/1.png" id="2_run_1"]
+[ext_resource type="Texture2D" uid="uid://bngwqbgw1218j" path="res://assets/characters/tinyHeroes/assasin/run/2.png" id="3_run_2"]
+[ext_resource type="Texture2D" uid="uid://bhnbkmstw8llh" path="res://assets/characters/tinyHeroes/assasin/run/3.png" id="4_run_3"]
+[ext_resource type="Texture2D" uid="uid://dsnapdbocv7tx" path="res://assets/characters/tinyHeroes/assasin/run/4.png" id="5_run_4"]
+[ext_resource type="Texture2D" uid="uid://b1ww7gfsfb6r7" path="res://assets/characters/tinyHeroes/assasin/run/5.png" id="6_run_5"]
+[ext_resource type="Texture2D" uid="uid://b32xdbvuskwhb" path="res://assets/characters/tinyHeroes/assasin/run/6.png" id="7_run_6"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroStateMachine.gd" id="8_state_machine"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroIdleState.gd" id="9_idle_state"]
+[ext_resource type="Texture2D" uid="uid://npjdt8g32o0k" path="res://assets/characters/tinyHeroes/assasin/attack/1.png" id="10_attack_1"]
+[ext_resource type="Texture2D" uid="uid://duvb50t2rn2hv" path="res://assets/characters/tinyHeroes/assasin/attack/2.png" id="11_attack_2"]
+[ext_resource type="Texture2D" uid="uid://s17jokventg" path="res://assets/characters/tinyHeroes/assasin/attack/3.png" id="12_attack_3"]
+[ext_resource type="Texture2D" uid="uid://cfq6qfyo7tvxo" path="res://assets/characters/tinyHeroes/assasin/attack/4.png" id="13_attack_4"]
+[ext_resource type="Texture2D" uid="uid://vbn3gjkr1rtx" path="res://assets/characters/tinyHeroes/assasin/attack/5.png" id="14_attack_5"]
+[ext_resource type="Texture2D" uid="uid://cwjhful2pugbe" path="res://assets/characters/tinyHeroes/assasin/attack/6.png" id="15_attack_6"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToCombatState.gd" id="16_moving_to_combat_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroMovingToPortalState.gd" id="17_moving_to_portal_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroReturningHomeState.gd" id="18_returning_home_state"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroAttackingState.gd" id="19_real_attacking_state"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="20_aggro_area"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="21_hurtbox"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="22_hit_component"]
+[ext_resource type="Script" path="res://scripts/hero/states/HeroSaveFromStackState.gd" id="23_save_from_stack"]
+[ext_resource type="Texture2D" uid="uid://nld6pvfl73my" path="res://assets/ui/unit_selection_outline/back.png" id="24_outline_back"]
+[ext_resource type="Texture2D" uid="uid://f1jtv0gcocpc" path="res://assets/ui/unit_selection_outline/face.png" id="25_outline_face"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_feet"]
+radius = 15.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_run_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_run_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_run_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_run_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_run_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_run_6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_attack"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_attack_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_attack_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_attack_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_attack_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_attack_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_attack_6")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_health"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 180.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hurt"]
+radius = 22.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 18.7883
+
+[node name="Assassin" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_hero_on_field")
+
+[node name="SelectionOutlineBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-16, -40)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("24_outline_back")
+
+[node name="SelectionOutlineFront" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-16, -40)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("25_outline_face")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_feet")
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+frame_progress = 0.745903
+offset = Vector2(0, -30)
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_attack")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+offset = Vector2(0, -30)
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -18.8235
+offset_top = -56.4706
+offset_right = 31.1765
+offset_bottom = -51.4706
+theme_override_styles/background = SubResource("StyleBoxFlat_health")
+value = 100.0
+show_percentage = false
+
+[node name="AggroArea" type="Area2D" parent="."]
+position = Vector2(3.52941, -40)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("20_aggro_area")
+required_group = "enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(10.5882, -42.3529)
+scale = Vector2(1.0245, 2.04)
+collision_mask = 0
+script = ExtResource("21_hurtbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2(3.52941, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("22_hit_component")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hit")
+
+[node name="HeroStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("8_state_machine")
+initial_state = NodePath("HeroIdleState")
+
+[node name="HeroIdleState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("9_idle_state")
+
+[node name="HeroMovingToCombatState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("16_moving_to_combat_state")
+
+[node name="HeroMovingToPortalState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("17_moving_to_portal_state")
+
+[node name="HeroReturningHomeState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("18_returning_home_state")
+
+[node name="HeroAttackingState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("19_real_attacking_state")
+
+[node name="HeroSaveFromStackState" type="Node" parent="HeroStateMachine"]
+script = ExtResource("23_save_from_stack")

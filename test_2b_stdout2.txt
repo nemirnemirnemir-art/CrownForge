@@ -1,0 +1,22 @@
+Godot Engine v4.3.stable.official.77dcf97d8 - https://godotengine.org
+
+[HeroData] ✅ Loaded peasant from UnitConfig: HP=35, DPS=10
+[HeroData] ✅ Loaded slinger from UnitConfig: HP=45, DPS=8
+[HeroData] ✅ Loaded crossbowman from UnitConfig: HP=50, DPS=13
+[HeroData] ✅ Loaded hunter from UnitConfig: HP=75, DPS=5
+[HeroData] ✅ Loaded militia from UnitConfig: HP=140, DPS=7
+[HeroData] ✅ Loaded swordsman from UnitConfig: HP=80, DPS=13
+[HeroData] ✅ Loaded gnome from UnitConfig: HP=30, DPS=13
+[HeroData] ✅ Loaded assassin from UnitConfig: HP=190, DPS=33
+[HeroData] ✅ Loaded small_bones from UnitConfig: HP=45, DPS=10
+[HeroData] ✅ Loaded black_swordsman from UnitConfig: HP=380, DPS=42
+[HeroData] ✅ Loaded musketeer from UnitConfig: HP=120, DPS=19
+[HeroData] ❌ Failed to load UnitConfig for id: black
+[HeroData] ❌ Failed to load UnitConfig for id: black
+[PlayerInventory] Initialized
+[ForgeCore] Ready.
+[DamagePopupPool] Initialized - pool_size=20 max_active=30
+Phase 2B helper tests: 65 passed, 0 failed
+[DamagePopupPool] Pool initialized with 20 popups
+[DamagePopupPool] Pool initialized with 40 popups
+[DayNightCycle] Phase changed to: dawn (5.0%)

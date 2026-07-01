@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxw8pqc3q4v7"]
+
+[ext_resource type="Script" path="res://scripts/ui/building/BuildingCategoryFilter.gd" id="1_script"]
+
+[node name="BuildingCategoryFilter" type="GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+columns = 3
+script = ExtResource("1_script")

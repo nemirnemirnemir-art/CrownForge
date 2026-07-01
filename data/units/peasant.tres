@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_peasant"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "peasant"
+display_name = "Peasant"
+hp = 35
+dps = 10
+unit_classes = [0]
+trait_description = "+1% to all production for each Peasant on the battlefield."

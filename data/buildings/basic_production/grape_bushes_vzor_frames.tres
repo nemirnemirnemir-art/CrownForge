@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cpvd3a0lo85id"]
+
+[ext_resource type="Texture2D" uid="uid://strij5tgbvvy" path="res://assets/environment/buildings/buildingsAnim/apple_trees/1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d2gls3mq4dsae" path="res://assets/environment/buildings/buildingsAnim/apple_trees/2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://8kbf4gs5w3cq" path="res://assets/environment/buildings/buildingsAnim/apple_trees/3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dv2pww34syrd3" path="res://assets/environment/buildings/buildingsAnim/apple_trees/4.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c3oe1pg1q6rn4" path="res://assets/environment/buildings/buildingsAnim/apple_trees/5.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cj7tuf2ras34x" path="res://assets/environment/buildings/buildingsAnim/apple_trees/6.png" id="6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]

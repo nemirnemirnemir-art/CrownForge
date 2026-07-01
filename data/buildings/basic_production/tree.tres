@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://bukmc4wha6ccq"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+[ext_resource type="SpriteFrames" uid="uid://d4cayhdw5pp1f" path="res://data/buildings/basic_production/tree_vzor_frames.tres" id="4_vzor_frames"]
+[ext_resource type="Texture2D" uid="uid://8hgrgsclfv7n" path="res://assets/environment/buildings/buildingsAnim/tree/wood1.png" id="5_tree_icon"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "water"
+amount = 25
+
+[sub_resource type="Resource" id="Prod_0"]
+script = ExtResource("3_prod")
+resource_id = "wood"
+amount = 1
+
+[resource]
+script = ExtResource("1_script")
+building_id = "tree"
+display_name = "Tree"
+description = "Basic wood production. Produces 1 Wood per 0.8s cycle. Capacity: 200."
+icon = ExtResource("5_tree_icon")
+use_vzor_animation = true
+vzor_frames = ExtResource("4_vzor_frames")
+vzor_animation_name = &"default"
+building_type = 1
+building_category = 0
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0")])
+cycle_time = 0.8
+produces = Array[ExtResource("3_prod")]([SubResource("Prod_0")])
+consumes = Array[ExtResource("3_prod")]([])
+produced_unit_id = ""
+max_units = 200
+has_special_behavior = false
+special_script_path = ""

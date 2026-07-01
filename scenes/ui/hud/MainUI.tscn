@@ -1,0 +1,284 @@
+[gd_scene load_steps=20 format=3 uid="uid://d1520mf8nl8i"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/MainUI.gd" id="1_main_ui"]
+[ext_resource type="PackedScene" uid="uid://dcbculmntxka" path="res://scenes/ui/inventory/InventoryBar.tscn" id="8_inventory"]
+[ext_resource type="PackedScene" uid="uid://dh77at8q8mk6h" path="res://scenes/ui/inventory/ItemTooltip.tscn" id="9_tooltip"]
+[ext_resource type="PackedScene" uid="uid://cwnmgdfc4s8w8" path="res://scenes/ui/debug/PerksTestPanel.tscn" id="11_perks_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/artifacts/ArtifactPanel.tscn" id="12_artifact_panel"]
+[ext_resource type="PackedScene" uid="uid://dl4u3xl1gpqa7" path="res://scenes/ui/widgets/ScaleButton.tscn" id="14_scale_button"]
+[ext_resource type="Texture2D" uid="uid://b8jm6iej5l8qb" path="res://assets/ui/icons/settings.png" id="20_icon_settings"]
+[ext_resource type="PackedScene" path="res://scenes/ui/gaze/GazeUpgradeBar.tscn" id="21_gaze_bar"]
+[ext_resource type="PackedScene" uid="uid://b6y7w8oam0p1a" path="res://scenes/ui/hud/PopulationBar.tscn" id="21_pop_bar"]
+[ext_resource type="PackedScene" uid="uid://dgglwihj4bh01" path="res://scenes/ui/widgets/SliderButton.tscn" id="21_slider_btn"]
+[ext_resource type="Texture2D" uid="uid://c2mom4ri3i7b1" path="res://assets/ui/sliders/default_slider_left.png" id="22_slider_left_normal"]
+[ext_resource type="Texture2D" uid="uid://c7acfvmapujlb" path="res://assets/ui/sliders/default_slider_mouse_focus.png" id="23_slider_hover"]
+[ext_resource type="Texture2D" uid="uid://dxxxdgq3mdktj" path="res://assets/ui/sliders/default_slider_mouse_pressed_hold.png" id="24_slider_pressed"]
+[ext_resource type="Texture2D" uid="uid://dnet5ppbdowoy" path="res://assets/ui/sliders/default_slider_mouse_pressed_unhold.png" id="25_slider_unhold"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/DenariiDisplay.tscn" id="26_denarii_display"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/ResourceBarUnified.tscn" id="26_unified_bar"]
+[ext_resource type="PackedScene" path="res://scenes/ui/debug/DebugMenu.tscn" id="27_debug_menu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/spells/SpellPanel.tscn" id="28_spell_panel"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/KingSpellHud.tscn" id="29_king_spell_hud"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_main_ui")
+
+[node name="InventoryBar" parent="." instance=ExtResource("8_inventory")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -393.0
+offset_top = -140.0
+offset_right = 157.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ItemTooltip" parent="." instance=ExtResource("9_tooltip")]
+visible = false
+layout_mode = 0
+
+[node name="ArtifactPanel" parent="." instance=ExtResource("12_artifact_panel")]
+anchor_left = 0.0
+offset_left = 0.0
+offset_top = 2.0
+offset_right = 300.0
+offset_bottom = 302.0
+
+[node name="ResourceBarUnified" parent="." instance=ExtResource("26_unified_bar")]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 40.0
+offset_right = 2120.0
+offset_bottom = 122.0
+scale = Vector2(0.85, 0.85)
+
+[node name="DenariiDisplay" parent="." instance=ExtResource("26_denarii_display")]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 783.0
+offset_right = 120.0
+offset_bottom = 847.0
+
+[node name="PopulationBar" parent="." instance=ExtResource("21_pop_bar")]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 799.0
+offset_right = 278.0
+offset_bottom = 837.0
+
+[node name="GazeUpgradeBar" parent="." instance=ExtResource("21_gaze_bar")]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 799.0
+offset_right = 446.0
+offset_bottom = 837.0
+
+[node name="HirePanel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1169.0
+offset_top = -81.0
+offset_right = 1469.0
+offset_bottom = 279.0
+grow_vertical = 0
+
+[node name="UpgradePanel" type="Panel" parent="HirePanel"]
+custom_minimum_size = Vector2(190, 170)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HirePanel/UpgradePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="HireMenu" type="VBoxContainer" parent="HirePanel/UpgradePanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="UpgradeList" type="GridContainer" parent="HirePanel/UpgradePanel/ScrollContainer/HireMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 3
+
+[node name="HireNav" type="HBoxContainer" parent="HirePanel/UpgradePanel/ScrollContainer/HireMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HirePrevButton" parent="HirePanel/UpgradePanel/ScrollContainer/HireMenu/HireNav" instance=ExtResource("21_slider_btn")]
+layout_mode = 2
+texture_normal_state = ExtResource("22_slider_left_normal")
+texture_hover_state = ExtResource("23_slider_hover")
+texture_pressed_state = ExtResource("24_slider_pressed")
+texture_unhold_state = ExtResource("25_slider_unhold")
+
+[node name="HireNextButton" parent="HirePanel/UpgradePanel/ScrollContainer/HireMenu/HireNav" instance=ExtResource("21_slider_btn")]
+layout_mode = 2
+texture_normal_state = ExtResource("22_slider_left_normal")
+texture_hover_state = ExtResource("23_slider_hover")
+texture_pressed_state = ExtResource("24_slider_pressed")
+texture_unhold_state = ExtResource("25_slider_unhold")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 416.0
+offset_top = 1272.0
+offset_right = 639.0
+offset_bottom = 2008.0
+
+[node name="PrestigeButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Prestige"
+
+[node name="ButtonsGrid" type="GridContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="TestGoldButton" type="Button" parent="VBoxContainer/ButtonsGrid"]
+layout_mode = 2
+text = "+10,000 Gold (Test)"
+
+[node name="MineButton" parent="VBoxContainer/ButtonsGrid" instance=ExtResource("14_scale_button")]
+layout_mode = 2
+
+[node name="PerksTestButton" parent="VBoxContainer/ButtonsGrid" instance=ExtResource("14_scale_button")]
+layout_mode = 2
+texture_normal = ExtResource("20_icon_settings")
+
+[node name="CityButtons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -935.0
+offset_right = 139.0
+offset_bottom = -835.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="ForgeCityButton" parent="CityButtons" instance=ExtResource("14_scale_button")]
+modulate = Color(1, 0.588235, 0.25098, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CityButtons/ForgeCityButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Fo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryCityButton" parent="CityButtons" instance=ExtResource("14_scale_button")]
+modulate = Color(0.368627, 0.682353, 1, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CityButtons/InventoryCityButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "In"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AlchemyCityButton" parent="CityButtons" instance=ExtResource("14_scale_button")]
+modulate = Color(0.803922, 0.470588, 0.941176, 1)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CityButtons/AlchemyCityButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 18
+text = "Al"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PerksTestPanel" parent="." instance=ExtResource("11_perks_panel")]
+layout_mode = 1
+
+[node name="SpellPanel" parent="." instance=ExtResource("28_spell_panel")]
+z_index = 200
+layout_mode = 1
+offset_left = -618.0
+offset_top = -211.0
+offset_right = -303.0
+offset_bottom = 104.0
+
+[node name="KingSpellHud" parent="." instance=ExtResource("29_king_spell_hud")]
+layout_mode = 1
+offset_left = -338.0
+offset_top = -251.0
+offset_right = -60.0
+offset_bottom = -19.0
+
+[node name="PopupLayer" type="Control" parent="."]
+z_index = 1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = 21.0
+offset_right = 53.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ResetDialog" type="AcceptDialog" parent="."]
+title = "Reset Progress"
+dialog_text = "Are you sure you want to reset all progress? This will delete all gold, upgrades, passive units, and stages. This action cannot be undone!"
+
+[node name="DebugMenu" parent="." instance=ExtResource("27_debug_menu")]
+layout_mode = 1
+
+[connection signal="confirmed" from="ResetDialog" to="." method="_on_reset_dialog_confirmed"]

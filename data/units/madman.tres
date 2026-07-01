@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_madman"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "madman"
+display_name = "Madman"
+hp = 100
+dps = 3
+unit_classes = [6, 0]
+trait_description = "+4/8/12 Morale per 3/6/9 Madmen on the battlefield."

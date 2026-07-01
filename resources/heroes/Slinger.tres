@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="HeroDefinition" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/HeroDefinition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/characters/faces/heroes/Slinger.png" id="2"]
+
+
+[resource]
+script = ExtResource("1")
+id = "slinger"
+display_name = "Slinger"
+cost = 100.0
+base_hp = 10.0
+base_damage = 5.0
+is_ranged = true
+attack_range = 35.0
+max_range = 600.0
+icon = ExtResource("2")
+card_image = ExtResource("2")

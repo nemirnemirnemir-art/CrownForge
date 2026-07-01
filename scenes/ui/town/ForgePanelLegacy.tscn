@@ -1,0 +1,118 @@
+[gd_scene load_steps=2 format=3 uid="uid://forge_panel"]
+
+[ext_resource type="Script" path="res://scripts/ui/town/ForgePanelLegacy.gd" id="1_forge"]
+
+[node name="ForgePanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_forge")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -180.0
+offset_right = 280.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Content/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Forge"
+horizontal_alignment = 1
+
+[node name="CoresLabel" type="Label" parent="Content/Header"]
+layout_mode = 2
+text = "Cores: 0"
+
+[node name="HSeparator" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="SlotsContainer" type="GridContainer" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="HSeparator2" type="HSeparator" parent="Content"]
+layout_mode = 2
+
+[node name="Controls" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+alignment = 1
+
+[node name="TypeOption" type="OptionButton" parent="Content/Controls"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Weapon"
+popup/item_0/id = 0
+popup/item_1/text = "Armor"
+popup/item_1/id = 1
+popup/item_2/text = "Helmet"
+popup/item_2/id = 2
+popup/item_3/text = "Ring"
+popup/item_3/id = 3
+
+[node name="RarityOption" type="OptionButton" parent="Content/Controls"]
+layout_mode = 2
+selected = 0
+item_count = 6
+popup/item_0/text = "Common"
+popup/item_0/id = 0
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Epic"
+popup/item_2/id = 2
+popup/item_3/text = "Legendary"
+popup/item_3/id = 3
+popup/item_4/text = "Cosmic"
+popup/item_4/id = 4
+popup/item_5/text = "God"
+popup/item_5/id = 5
+
+[node name="CostLabel" type="Label" parent="Content/Controls"]
+layout_mode = 2
+text = "Cost: 10"
+
+[node name="CraftButton" type="Button" parent="Content/Controls"]
+layout_mode = 2
+text = "Craft"
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="pressed" from="CloseButton" to="." method="hide"]

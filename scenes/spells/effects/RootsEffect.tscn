@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/RootsEffect.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/vfx/spells/Roots.png" id="2_roots"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_roots"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_roots")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_roots"]
+radius = 60.0
+
+[node name="RootsEffect" type="Node2D"]
+script = ExtResource("1")
+
+[node name="RootsAnim" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 170
+sprite_frames = SubResource("SpriteFrames_roots")
+animation = &"grow"
+centered = true
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+monitoring = true
+monitorable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("CircleShape2D_roots")

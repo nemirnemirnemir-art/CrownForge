@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5firedoteffect"]
+
+[ext_resource type="Script" path="res://scripts/effects/FireDotEffect.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/1.png" id="2_frame1"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/2.png" id="3_frame2"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/3.png" id="4_frame3"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/4.png" id="5_frame4"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/5.png" id="6_frame5"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/6.png" id="7_frame6"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/7.png" id="8_frame7"]
+[ext_resource type="Texture2D" path="res://assets/takefromthis/project/fire_dot/8.png" id="9_frame8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fire"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frame1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frame2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frame3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frame4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_frame5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_frame6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_frame7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_frame8")
+}],
+"loop": true,
+"name": &"burn",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frame1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frame2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frame3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frame4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_frame5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_frame6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_frame7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_frame8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="FireDotEffect" type="Node2D"]
+script = ExtResource("1_script")
+tick_count = 3
+tick_interval = 1.0
+
+[node name="AnimFire" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -20)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_fire")
+autoplay = "burn"

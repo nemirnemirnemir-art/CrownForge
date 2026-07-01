@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://bd88gs2w7iv3x"]
+
+[ext_resource type="Texture2D" uid="uid://bbwiqd1vowhfk" path="res://assets/characters/enemies/tinyEnemies/Ogr/walk/1.png" id="1_5ekba"]
+[ext_resource type="Texture2D" uid="uid://wd0dn1h6njlg" path="res://assets/characters/enemies/tinyEnemies/Ogr/walk/2.png" id="2_1vewk"]
+[ext_resource type="Texture2D" uid="uid://c7q36prhfep7c" path="res://assets/characters/enemies/tinyEnemies/Ogr/walk/3.png" id="3_kask3"]
+[ext_resource type="Texture2D" uid="uid://853k2okotjiy" path="res://assets/characters/enemies/tinyEnemies/Ogr/walk/4.png" id="4_7th8d"]
+[ext_resource type="Texture2D" uid="uid://bdw0acgrk5ovw" path="res://assets/characters/enemies/tinyEnemies/Ogr/walk/5.png" id="5_ft3xo"]
+[ext_resource type="Texture2D" uid="uid://keyr1n4chvd" path="res://assets/characters/enemies/tinyEnemies/Ogr/walk/6.png" id="6_ioh14"]
+
+[resource]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5ekba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1vewk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kask3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7th8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ft3xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ioh14")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 4.0
+}]

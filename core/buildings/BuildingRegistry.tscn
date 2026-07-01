@@ -1,0 +1,216 @@
+[gd_scene load_steps=103 format=3 uid="uid://bmrgkadq5krhe"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingRegistry.gd" id="1_registry"]
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="2_config"]
+[ext_resource type="Resource" uid="uid://bwpg7ae6aqf7v" path="res://data/buildings/advanced_production/animal_farm.tres" id="ap_1"]
+[ext_resource type="Resource" uid="uid://40nhpjt4u6d0" path="res://data/buildings/advanced_production/fishermans_hut.tres" id="ap_3"]
+[ext_resource type="Resource" uid="uid://cxu4hbd5enpa5" path="res://data/buildings/advanced_production/forge.tres" id="ap_4"]
+[ext_resource type="Resource" uid="uid://dl815rlijjkec" path="res://data/buildings/advanced_production/fuel_pump.tres" id="ap_5"]
+[ext_resource type="Resource" uid="uid://rtlfvlgtaibx" path="res://data/buildings/advanced_production/market.tres" id="ap_6"]
+[ext_resource type="Resource" uid="uid://dcceuj7ka4kng" path="res://data/buildings/advanced_production/mill.tres" id="ap_7"]
+[ext_resource type="Resource" uid="uid://di1jyao1idme8" path="res://data/buildings/advanced_production/winery.tres" id="ap_8"]
+[ext_resource type="Resource" uid="uid://cbnhbp5xirtsk" path="res://data/buildings/basic_production/well.tres" id="bp_1"]
+[ext_resource type="Resource" uid="uid://cnie6hd0l63o3" path="res://data/buildings/basic_production/big_well.tres" id="bp_2"]
+[ext_resource type="Resource" uid="uid://b534x3grgoub6" path="res://data/buildings/basic_production/small_wheat_field.tres" id="bp_3"]
+[ext_resource type="Resource" uid="uid://bukmc4wha6ccq" path="res://data/buildings/basic_production/tree.tres" id="bp_4"]
+[ext_resource type="Resource" uid="uid://dyloyfyw2o0i8" path="res://data/buildings/basic_production/grape_bushes.tres" id="bp_5"]
+[ext_resource type="Resource" uid="uid://ydetbfd27mb0" path="res://data/buildings/basic_production/starter_clay_mine.tres" id="bp_6"]
+[ext_resource type="Resource" uid="uid://wq1ivknnqbs1" path="res://data/buildings/basic_production/starter_crystal_mine.tres" id="bp_7"]
+[ext_resource type="Resource" uid="uid://cbenayt13wk7r" path="res://data/buildings/basic_production/starter_gold_mine.tres" id="bp_8"]
+[ext_resource type="Resource" uid="uid://dgvxo4kaawl30" path="res://data/buildings/basic_production/starter_iron_mine.tres" id="bp_9"]
+[ext_resource type="Resource" uid="uid://csmaa7ahbvvns" path="res://data/buildings/elite_barracks/academy_of_lightning.tres" id="eb_1"]
+[ext_resource type="Resource" uid="uid://da3kbx6km1khb" path="res://data/buildings/elite_barracks/ballista_factory.tres" id="eb_2"]
+[ext_resource type="Resource" uid="uid://upj7m6201bru" path="res://data/buildings/elite_barracks/black_unicorn_field.tres" id="eb_4"]
+[ext_resource type="Resource" uid="uid://be5xaa5boeyta" path="res://data/buildings/elite_barracks/catapult_factory.tres" id="eb_6"]
+[ext_resource type="Resource" uid="uid://bgsujykn7wqwl" path="res://data/buildings/elite_barracks/giants_bedding.tres" id="eb_10"]
+[ext_resource type="Resource" uid="uid://bewv03bhnkpyg" path="res://data/buildings/elite_barracks/hydra_pond.tres" id="eb_12"]
+[ext_resource type="Resource" uid="uid://c4rk5fandpa5y" path="res://data/buildings/elite_barracks/lion_circus.tres" id="eb_13"]
+[ext_resource type="Resource" uid="uid://djj3bgt25ga5q" path="res://data/buildings/elite_barracks/pangolin_stump.tres" id="eb_14"]
+[ext_resource type="Resource" uid="uid://m3rqg8abgqkw" path="res://data/buildings/elite_barracks/ram_pasture.tres" id="eb_15"]
+[ext_resource type="Resource" uid="uid://drs5lfjr5y7fo" path="res://data/buildings/elite_barracks/white_unicorn_field.tres" id="eb_17"]
+[ext_resource type="Resource" uid="uid://tn3s2wfpc8a6" path="res://data/buildings/established_production/clay_mine.tres" id="ep_1"]
+[ext_resource type="Resource" uid="uid://b3s7t3g8wtksb" path="res://data/buildings/established_production/crystal_mine.tres" id="ep_2"]
+[ext_resource type="Resource" uid="uid://chrcqo1eq86fg" path="res://data/buildings/established_production/gold_mine.tres" id="ep_3"]
+[ext_resource type="Resource" uid="uid://xjilq11tbhhs" path="res://data/buildings/established_production/iron_mine.tres" id="ep_4"]
+[ext_resource type="Resource" uid="uid://bopvf3da12k7a" path="res://data/buildings/established_production/nether_rune_enchantery.tres" id="ep_5"]
+[ext_resource type="Resource" uid="uid://dlflh874pfbus" path="res://data/buildings/established_production/vineyard.tres" id="ep_7"]
+[ext_resource type="Resource" uid="uid://becffilixam3p" path="res://data/buildings/established_production/wheat_field.tres" id="ep_8"]
+[ext_resource type="Resource" uid="uid://nxe4fjvg6hjr" path="res://data/buildings/kingdom_infrastructure/archmages_university.tres" id="ki_1"]
+[ext_resource type="Resource" uid="uid://j760styxtv6i" path="res://data/buildings/kingdom_infrastructure/arena.tres" id="ki_2"]
+[ext_resource type="Resource" uid="uid://11rdufgr07wn" path="res://data/buildings/kingdom_infrastructure/brick_factory.tres" id="ki_3"]
+[ext_resource type="Resource" uid="uid://ce4pyd6e3tm16" path="res://data/buildings/kingdom_infrastructure/cannon.tres" id="ki_4"]
+[ext_resource type="Resource" uid="uid://c571m4nm6gie7" path="res://data/buildings/kingdom_infrastructure/concert.tres" id="ki_5"]
+[ext_resource type="Resource" uid="uid://wk456pkojgk8" path="res://data/buildings/kingdom_infrastructure/dragons_bakery.tres" id="ki_6"]
+[ext_resource type="Resource" uid="uid://b2gwumgbxdyd5" path="res://data/buildings/kingdom_infrastructure/execution_ground.tres" id="ki_7"]
+[ext_resource type="Resource" uid="uid://bkovy2v7dcdha" path="res://data/buildings/kingdom_infrastructure/fairy_fountain.tres" id="ki_8"]
+[ext_resource type="Resource" uid="uid://cr368sm3wtjl7" path="res://data/buildings/kingdom_infrastructure/hero_statue.tres" id="ki_10"]
+[ext_resource type="Resource" uid="uid://dvu5escty73tg" path="res://data/buildings/kingdom_infrastructure/hospital.tres" id="ki_11"]
+[ext_resource type="Resource" uid="uid://cuu7roxd8nw3u" path="res://data/buildings/kingdom_infrastructure/kings_statue.tres" id="ki_12"]
+[ext_resource type="Resource" uid="uid://cx1tx6xcx8c0q" path="res://data/buildings/kingdom_infrastructure/magic_ball.tres" id="ki_13"]
+[ext_resource type="Resource" uid="uid://clok5lp0d64w7" path="res://data/buildings/kingdom_infrastructure/magic_college.tres" id="ki_14"]
+[ext_resource type="Resource" uid="uid://bmfdqc60y01jt" path="res://data/buildings/kingdom_infrastructure/magic_school.tres" id="ki_15"]
+[ext_resource type="Resource" uid="uid://ct46e11yeumgx" path="res://data/buildings/kingdom_infrastructure/monument_to_the_kings_gaze.tres" id="ki_16"]
+[ext_resource type="Resource" uid="uid://hsoq7kmt8kn1" path="res://data/buildings/kingdom_infrastructure/research_laboratory.tres" id="ki_17"]
+[ext_resource type="Resource" uid="uid://dopgxcissme6t" path="res://data/buildings/kingdom_infrastructure/research_table.tres" id="ki_18"]
+[ext_resource type="Resource" uid="uid://cloi6bd04chro" path="res://data/buildings/kingdom_infrastructure/tavern.tres" id="ki_20"]
+[ext_resource type="Resource" uid="uid://dnqjhgincs5au" path="res://data/buildings/kingdom_infrastructure/tesla_tower.tres" id="ki_21"]
+[ext_resource type="Resource" uid="uid://dp7leg08ucoqj" path="res://data/buildings/kingdom_infrastructure/tile_enchanter.tres" id="ki_22"]
+[ext_resource type="Resource" uid="uid://unq0kwabwbv0" path="res://data/buildings/kingdom_infrastructure/tile_enchanter_epic.tres" id="ki_23"]
+[ext_resource type="Resource" uid="uid://blg2h6h4udnlp" path="res://data/buildings/kingdom_infrastructure/tile_enchanter_legendary.tres" id="ki_24"]
+[ext_resource type="Resource" uid="uid://ca3royi0b6n0i" path="res://data/buildings/kingdom_infrastructure/wheel_of_fortune.tres" id="ki_25"]
+[ext_resource type="Resource" uid="uid://dqa4bo3r2fnof" path="res://data/buildings/kingdom_infrastructure/worshippers_sanctuary.tres" id="ki_26"]
+[ext_resource type="Resource" uid="uid://cvdcaumoctmak" path="res://data/buildings/kingdom_infrastructure/buddhist_temple.tres" id="ki_27"]
+[ext_resource type="Resource" uid="uid://cvpwjonb2kwc8" path="res://data/buildings/levy_barracks/small_peasants_hut.tres" id="lb_1"]
+[ext_resource type="Resource" uid="uid://dfqx1i84ljaq5" path="res://data/buildings/levy_barracks/peasants_hut.tres" id="lb_2"]
+[ext_resource type="Resource" uid="uid://d2dkw73ue8so1" path="res://data/buildings/levy_barracks/archery.tres" id="lb_3"]
+[ext_resource type="Resource" uid="uid://c84kpoocipvl4" path="res://data/buildings/levy_barracks/gnome_dome.tres" id="lb_9"]
+[ext_resource type="Resource" uid="uid://cds0b6g3e4cg" path="res://data/buildings/levy_barracks/hunters.tres" id="lb_10"]
+[ext_resource type="Resource" uid="uid://bu1a3urwrj2i8" path="res://data/buildings/levy_barracks/madhouse.tres" id="lb_11"]
+[ext_resource type="Resource" uid="uid://ci1p2cqwwjcqh" path="res://data/buildings/levy_barracks/militia_camp.tres" id="lb_12"]
+[ext_resource type="Resource" uid="uid://cbigtn1i0l4c8" path="res://data/buildings/levy_barracks/slingers_tree.tres" id="lb_15"]
+[ext_resource type="Resource" uid="uid://d10ifvxui2df6" path="res://data/buildings/levy_barracks/swordsmen_barracks.tres" id="lb_16"]
+[ext_resource type="Resource" uid="uid://bqep46abq2gt" path="res://data/buildings/levy_barracks/whipmens_house.tres" id="lb_17"]
+[ext_resource type="Resource" uid="uid://n0rx0wugbme3" path="res://data/buildings/other_hybrid/ancient_pit.tres" id="oh_1"]
+[ext_resource type="Resource" uid="uid://dvjxfmfmht348" path="res://data/buildings/other_hybrid/basic_construction.tres" id="oh_2"]
+[ext_resource type="Resource" uid="uid://bik5jjm2iwswe" path="res://data/buildings/other_hybrid/blacksmiths_farm.tres" id="oh_3"]
+[ext_resource type="Resource" uid="uid://cwdxpvdtdnh32" path="res://data/buildings/other_hybrid/boar_feeder.tres" id="oh_4"]
+[ext_resource type="Resource" uid="uid://di0s83d8i6jkp" path="res://data/buildings/other_hybrid/carousel.tres" id="oh_5"]
+[ext_resource type="Resource" uid="uid://bcjfvuwl5t4na" path="res://data/buildings/other_hybrid/clay_gold_mine.tres" id="oh_6"]
+[ext_resource type="Resource" uid="uid://dfw61x4eehjli" path="res://data/buildings/other_hybrid/clay_iron_mine.tres" id="oh_7"]
+[ext_resource type="Resource" uid="uid://cab6m2dey7pnn" path="res://data/buildings/other_hybrid/clay_sawmill.tres" id="oh_8"]
+[ext_resource type="Resource" uid="uid://dgxr5a4phexln" path="res://data/buildings/other_hybrid/fire_brigade.tres" id="oh_9"]
+[ext_resource type="Resource" uid="uid://c2qjt057axcka" path="res://data/buildings/other_hybrid/gold_iron_mine.tres" id="oh_10"]
+[ext_resource type="Resource" uid="uid://db5igim7rp65t" path="res://data/buildings/other_hybrid/gold_sawmill.tres" id="oh_11"]
+[ext_resource type="Resource" uid="uid://cw6a3edl80dr7" path="res://data/buildings/other_hybrid/goldsmiths_farm.tres" id="oh_12"]
+[ext_resource type="Resource" uid="uid://cq6o0sae26vbd" path="res://data/buildings/other_hybrid/iron_sawmill.tres" id="oh_13"]
+[ext_resource type="Resource" uid="uid://dy81hjlcymsnp" path="res://data/buildings/other_hybrid/lumberjacks_farm.tres" id="oh_14"]
+[ext_resource type="Resource" uid="uid://dvt8q58fql14v" path="res://data/buildings/other_hybrid/phoenix_cannon.tres" id="oh_15"]
+[ext_resource type="Resource" uid="uid://662ldrw6q1wp" path="res://data/buildings/other_hybrid/potters_farm.tres" id="oh_16"]
+[ext_resource type="Resource" uid="uid://pavwdupgjukd" path="res://data/buildings/other_hybrid/pyre.tres" id="oh_17"]
+[ext_resource type="Resource" uid="uid://nxp1u11l35xi" path="res://data/buildings/other_hybrid/vampire_bar.tres" id="oh_18"]
+[ext_resource type="Resource" uid="uid://b2r6o70nrnrg3" path="res://data/buildings/other_hybrid/vampires_mirror.tres" id="oh_19"]
+[ext_resource type="Resource" path="res://data/buildings/other_hybrid/web_remover.tres" id="oh_20"]
+[ext_resource type="Resource" uid="uid://bylewtyoucpah" path="res://data/buildings/veteran_barracks/academy_of_fire.tres" id="vb_1"]
+[ext_resource type="Resource" uid="uid://mg1m42ynl02x" path="res://data/buildings/veteran_barracks/academy_of_nature.tres" id="vb_2"]
+[ext_resource type="Resource" uid="uid://dun4inexjq7iy" path="res://data/buildings/veteran_barracks/barbarian_tent.tres" id="vb_3"]
+[ext_resource type="Resource" uid="uid://bcph1ql0cgyxk" path="res://data/buildings/veteran_barracks/falcons_camp.tres" id="vb_10"]
+[ext_resource type="Resource" uid="uid://cmxni8341gd8a" path="res://data/buildings/veteran_barracks/firing_range.tres" id="vb_11"]
+[ext_resource type="Resource" uid="uid://b38ypsydnrg70" path="res://data/buildings/veteran_barracks/geese_training_field.tres" id="vb_12"]
+[ext_resource type="Resource" uid="uid://dox8m133ay05d" path="res://data/buildings/veteran_barracks/hive.tres" id="vb_14"]
+[ext_resource type="Resource" uid="uid://c5ot14crykoaf" path="res://data/buildings/veteran_barracks/longbowmens_camp.tres" id="vb_16"]
+[ext_resource type="Resource" uid="uid://dyq0vwgulvuuc" path="res://data/buildings/veteran_barracks/minotaur_camp.tres" id="vb_17"]
+[ext_resource type="Resource" uid="uid://worwmafyiypl" path="res://data/buildings/veteran_barracks/paladins_campus.tres" id="vb_19"]
+[ext_resource type="Resource" uid="uid://dt0880kp60nkf" path="res://data/buildings/veteran_barracks/pumpkin_field.tres" id="vb_20"]
+[ext_resource type="Resource" uid="uid://dxw2gy5hoh53a" path="res://data/buildings/veteran_barracks/stables.tres" id="vb_21"]
+
+[node name="BuildingRegistry" type="Node"]
+script = ExtResource("1_registry")
+buildings = Array[ExtResource("2_config")]([ExtResource("bp_1"), ExtResource("bp_2"), ExtResource("bp_3"), ExtResource("bp_4"), ExtResource("bp_5"), ExtResource("bp_6"), ExtResource("bp_7"), ExtResource("bp_8"), ExtResource("bp_9"), ExtResource("ep_1"), ExtResource("ep_2"), ExtResource("ep_3"), ExtResource("ep_4"), ExtResource("ep_5"), ExtResource("ep_7"), ExtResource("ep_8"), ExtResource("ap_1"), ExtResource("ap_3"), ExtResource("ap_4"), ExtResource("ap_5"), ExtResource("ap_6"), ExtResource("ap_7"), ExtResource("ap_8"), ExtResource("lb_1"), ExtResource("lb_2"), ExtResource("lb_3"), ExtResource("lb_9"), ExtResource("lb_10"), ExtResource("lb_11"), ExtResource("lb_12"), ExtResource("lb_15"), ExtResource("lb_16"), ExtResource("lb_17"), ExtResource("vb_1"), ExtResource("vb_2"), ExtResource("vb_3"), ExtResource("vb_10"), ExtResource("vb_11"), ExtResource("vb_12"), ExtResource("vb_14"), ExtResource("vb_16"), ExtResource("vb_17"), ExtResource("vb_19"), ExtResource("vb_20"), ExtResource("vb_21"), ExtResource("eb_1"), ExtResource("eb_2"), ExtResource("eb_4"), ExtResource("eb_6"), ExtResource("eb_10"), ExtResource("eb_12"), ExtResource("eb_13"), ExtResource("eb_14"), ExtResource("eb_15"), ExtResource("eb_17"), ExtResource("ki_1"), ExtResource("ki_2"), ExtResource("ki_3"), ExtResource("ki_4"), ExtResource("ki_5"), ExtResource("ki_6"), ExtResource("ki_7"), ExtResource("ki_8"), ExtResource("ki_10"), ExtResource("ki_11"), ExtResource("ki_12"), ExtResource("ki_13"), ExtResource("ki_14"), ExtResource("ki_15"), ExtResource("ki_16"), ExtResource("ki_17"), ExtResource("ki_18"), ExtResource("ki_20"), ExtResource("ki_21"), ExtResource("ki_22"), ExtResource("ki_23"), ExtResource("ki_24"), ExtResource("ki_25"), ExtResource("ki_26"), ExtResource("ki_27"), ExtResource("oh_1"), ExtResource("oh_2"), ExtResource("oh_3"), ExtResource("oh_4"), ExtResource("oh_5"), ExtResource("oh_6"), ExtResource("oh_7"), ExtResource("oh_8"), ExtResource("oh_9"), ExtResource("oh_10"), ExtResource("oh_11"), ExtResource("oh_12"), ExtResource("oh_13"), ExtResource("oh_14"), ExtResource("oh_15"), ExtResource("oh_16"), ExtResource("oh_17"), ExtResource("oh_18"), ExtResource("oh_19"), ExtResource("oh_20")])
+_placed_building_scale_overrides = {
+"academy_of_fire": 1.3,
+"academy_of_lightning": 0.3,
+"academy_of_nature": 1.4,
+"animal_farm": 0.5,
+"archery": 1.2,
+"barbarian_tent": 0.9,
+"clay_mine": 1.1,
+"fishermans_hut": 0.8,
+"fuel_pump": 1.2,
+"hive": 1.2,
+"hydra_pond": 0.5,
+"lion_circus": 0.5,
+"longbowmens_camp": 0.8,
+"market": 1.2,
+"mill": 1.1,
+"monument_to_the_kings_gaze": 0.8,
+"paladins_campus": 0.8,
+"pumpkin_field": 1.2,
+"stables": 0.3,
+"tesla_tower": 1.2,
+"wheat_field": 1.7,
+"whipmens_house": 1.2,
+"winery": 1.2
+}
+"Placed Building Scale/Basic Production/Big Well [big_well]" = 1.0
+"Placed Building Scale/Basic Production/Grape Bushes [grape_bushes]" = 1.0
+"Placed Building Scale/Basic Production/Small Wheat Field [small_wheat_field]" = 1.0
+"Placed Building Scale/Basic Production/Starter Clay Mine [starter_clay_mine]" = 1.0
+"Placed Building Scale/Basic Production/Starter Crystal Mine [starter_crystal_mine]" = 1.0
+"Placed Building Scale/Basic Production/Starter Gold Mine [starter_gold_mine]" = 1.0
+"Placed Building Scale/Basic Production/Starter Iron Mine [starter_iron_mine]" = 1.0
+"Placed Building Scale/Basic Production/Tree [tree]" = 1.0
+"Placed Building Scale/Basic Production/Well [well]" = 1.0
+"Placed Building Scale/Established Production/Clay Mine [clay_mine]" = 1.1
+"Placed Building Scale/Established Production/Crystal Mine [crystal_mine]" = 1.0
+"Placed Building Scale/Established Production/Gold Mine [gold_mine]" = 1.0
+"Placed Building Scale/Established Production/Iron Mine [iron_mine]" = 1.0
+"Placed Building Scale/Established Production/Vineyard [vineyard]" = 1.0
+"Placed Building Scale/Established Production/Wheat Field [wheat_field]" = 1.7
+"Placed Building Scale/Advanced Production/Animal Farm [animal_farm]" = 0.5
+"Placed Building Scale/Advanced Production/Fisherman's Hut [fishermans_hut]" = 0.8
+"Placed Building Scale/Advanced Production/Forge [forge]" = 1.0
+"Placed Building Scale/Advanced Production/Fuel Pump [fuel_pump]" = 1.2
+"Placed Building Scale/Advanced Production/Market [market]" = 1.2
+"Placed Building Scale/Advanced Production/Mill [mill]" = 1.1
+"Placed Building Scale/Advanced Production/Winery [winery]" = 1.2
+"Placed Building Scale/Levy Barracks/Archery [archery]" = 1.2
+"Placed Building Scale/Levy Barracks/Gnome Dome [gnome_dome]" = 1.0
+"Placed Building Scale/Levy Barracks/Hunters [hunters]" = 1.0
+"Placed Building Scale/Levy Barracks/Madhouse [madhouse]" = 1.0
+"Placed Building Scale/Levy Barracks/Militia Camp [militia_camp]" = 1.0
+"Placed Building Scale/Levy Barracks/Peasants' Hut [peasants_hut]" = 1.0
+"Placed Building Scale/Levy Barracks/Slingers' Tree [slingers_tree]" = 1.0
+"Placed Building Scale/Levy Barracks/Small Peasants' Hut [small_peasants_hut]" = 1.0
+"Placed Building Scale/Levy Barracks/Swordsmen Barracks [swordsmen_barracks]" = 1.0
+"Placed Building Scale/Levy Barracks/Whipmen's House [whipmens_house]" = 1.2
+"Placed Building Scale/Veteran Barracks/Academy of Fire [academy_of_fire]" = 1.3
+"Placed Building Scale/Veteran Barracks/Academy of Nature [academy_of_nature]" = 1.4
+"Placed Building Scale/Veteran Barracks/Barbarian Tent [barbarian_tent]" = 0.9
+"Placed Building Scale/Veteran Barracks/Falcons' Camp [falcons_camp]" = 1.0
+"Placed Building Scale/Veteran Barracks/Firing Range [firing_range]" = 1.0
+"Placed Building Scale/Veteran Barracks/Geese Training Field [geese_training_field]" = 1.0
+"Placed Building Scale/Veteran Barracks/Hive [hive]" = 1.2
+"Placed Building Scale/Veteran Barracks/Longbowmen's Camp [longbowmens_camp]" = 0.8
+"Placed Building Scale/Veteran Barracks/Minotaur Camp [minotaur_camp]" = 1.0
+"Placed Building Scale/Veteran Barracks/Paladins' Campus [paladins_campus]" = 0.8
+"Placed Building Scale/Veteran Barracks/Pumpkin Field [pumpkin_field]" = 1.2
+"Placed Building Scale/Veteran Barracks/Stables [stables]" = 0.3
+"Placed Building Scale/Elite Barracks/Academy of Lightning [academy_of_lightning]" = 0.3
+"Placed Building Scale/Elite Barracks/Ballista Factory [ballista_factory]" = 1.0
+"Placed Building Scale/Elite Barracks/Black Unicorn Field [black_unicorn_field]" = 1.0
+"Placed Building Scale/Elite Barracks/Catapult Factory [catapult_factory]" = 1.0
+"Placed Building Scale/Elite Barracks/Giant's Bedding [giants_bedding]" = 1.0
+"Placed Building Scale/Elite Barracks/Hydra Pond [hydra_pond]" = 0.5
+"Placed Building Scale/Elite Barracks/Lion Circus [lion_circus]" = 0.5
+"Placed Building Scale/Elite Barracks/Pangolin Stump [pangolin_stump]" = 1.0
+"Placed Building Scale/Elite Barracks/Ram Pasture [ram_pasture]" = 1.0
+"Placed Building Scale/Elite Barracks/White Unicorn Field [white_unicorn_field]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Archmage's University [archmages_university]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Arena [arena]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Brick Factory [brick_factory]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Buddhist Temple [buddhist_temple]" = 1.3
+"Placed Building Scale/Kingdom Infrastructure/Concert [concert]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Execution Ground [execution_ground]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Fairy Fountain [fairy_fountain]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Hero Statue [hero_statue]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Hospital [hospital]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/King's Statue [kings_statue]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Magic Ball [magic_ball]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Magic College [magic_college]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Magic School [magic_school]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Monument to the King's Gaze [monument_to_the_kings_gaze]" = 0.8
+"Placed Building Scale/Kingdom Infrastructure/Research Laboratory [research_laboratory]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Research Table [research_table]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Tavern [tavern]" = 1.0
+"Placed Building Scale/Kingdom Infrastructure/Tesla Tower [tesla_tower]" = 1.2
+"Placed Building Scale/Kingdom Infrastructure/Wheel of Fortune [wheel_of_fortune]" = 1.0
+"Placed Building Scale/Other/Basic Construction [basic_construction]" = 1.0
+"Placed Building Scale/Other/Clay Gold Mine [clay_gold_mine]" = 1.0
+"Placed Building Scale/Other/Clay Iron Mine [clay_iron_mine]" = 1.0
+"Placed Building Scale/Other/Clay Sawmill [clay_sawmill]" = 1.0
+"Placed Building Scale/Other/Gold Iron Mine [gold_iron_mine]" = 1.0
+"Placed Building Scale/Other/Gold Sawmill [gold_sawmill]" = 1.0
+"Placed Building Scale/Other/Goldsmith's Farm [goldsmiths_farm]" = 1.0
+"Placed Building Scale/Other/Iron Sawmill [iron_sawmill]" = 1.0
+"Placed Building Scale/Other/Lumberjack's Farm [lumberjacks_farm]" = 1.0
+"Placed Building Scale/Other/Potter's Farm [potters_farm]" = 1.0

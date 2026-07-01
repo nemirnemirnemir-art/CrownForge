@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1x8q2m3n4p5r"]
+
+[ext_resource type="Script" path="res://scripts/map/MapLayout.gd" id="1_map_layout"]
+[ext_resource type="PackedScene" uid="uid://c1x8q2m3n4p5q" path="res://scenes/map/MapSlot.tscn" id="2_8bsjq"]
+[ext_resource type="PackedScene" uid="uid://dufp2qk076mw6" path="res://scenes/map/Wall.tscn" id="3_wall"]
+
+[node name="MapLayout" type="Node2D"]
+position = Vector2(-57, -198)
+script = ExtResource("1_map_layout")
+
+[node name="BuildSlot0" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(9, -6)
+is_building_slot = true
+
+[node name="BuildSlot1" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(89, -6)
+is_building_slot = true
+
+[node name="BuildSlot2" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(169, -6)
+is_building_slot = true
+
+[node name="BuildSlot3" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(249, -6)
+is_building_slot = true
+
+[node name="BuildSlot4" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(9.00001, 74)
+is_building_slot = true
+
+[node name="BuildSlot5" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(89, 74)
+is_building_slot = true
+
+[node name="BuildSlot6" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(169, 74)
+is_building_slot = true
+
+[node name="BuildSlot7" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(249, 74)
+is_building_slot = true
+
+[node name="BuildSlot8" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(9, 154)
+is_building_slot = true
+
+[node name="BuildSlot9" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(89, 154)
+is_building_slot = true
+
+[node name="BuildSlot10" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(169, 154)
+is_building_slot = true
+
+[node name="BuildSlot11" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(249, 154)
+is_building_slot = true
+
+[node name="BuildSlot12" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(9.00001, 234)
+is_building_slot = true
+
+[node name="BuildSlot13" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(89, 234)
+is_building_slot = true
+
+[node name="BuildSlot14" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(169, 234)
+is_building_slot = true
+
+[node name="BuildSlot15" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(249, 234)
+is_building_slot = true
+
+[node name="BuildSlot16" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(9, 314)
+is_building_slot = true
+
+[node name="BuildSlot17" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(89, 314)
+is_building_slot = true
+
+[node name="BuildSlot18" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(169, 314)
+is_building_slot = true
+
+[node name="BuildSlot19" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(249, 314)
+is_building_slot = true
+
+[node name="BuildSlot20" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(9, 394)
+is_building_slot = true
+
+[node name="BuildSlot21" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(89, 394)
+is_building_slot = true
+
+[node name="BuildSlot22" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(169, 394)
+is_building_slot = true
+
+[node name="BuildSlot23" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(249, 394)
+is_building_slot = true
+
+[node name="BuildSlot24" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(325, -6)
+is_building_slot = true
+
+[node name="BuildSlot25" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(325, 74)
+is_building_slot = true
+
+[node name="BuildSlot26" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(325, 154)
+is_building_slot = true
+
+[node name="BuildSlot27" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(325, 234)
+is_building_slot = true
+
+[node name="BuildSlot28" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(325, 314)
+is_building_slot = true
+
+[node name="BuildSlot29" parent="." instance=ExtResource("2_8bsjq")]
+position = Vector2(325, 394)
+is_building_slot = true
+
+[node name="Wall" parent="." instance=ExtResource("3_wall")]
+position = Vector2(405, 131)

@@ -1,0 +1,184 @@
+[gd_scene load_steps=20 format=3 uid="uid://du4rd6ubgrw4q"]
+
+[ext_resource type="Texture2D" uid="uid://csdha2682c2qi" path="res://assets/environment/backgrounds/crypt.png" id="1_rbqj6"]
+[ext_resource type="PackedScene" uid="uid://bwepdn6s52vit" path="res://biomes/props/portal/Portal_01.tscn" id="2_22bmt"]
+[ext_resource type="PackedScene" uid="uid://ctgcmuj4s8k11" path="res://biomes/props/trees/Tree_01.tscn" id="3_ulr8a"]
+[ext_resource type="PackedScene" uid="uid://dd3dsslw454s1" path="res://biomes/props/trees/Tree_02.tscn" id="4_x7u8n"]
+[ext_resource type="PackedScene" uid="uid://dof324la1m1r2" path="res://biomes/props/bushes/Bush_01.tscn" id="5_kjok2"]
+[ext_resource type="PackedScene" uid="uid://y6g0bnluyfid" path="res://biomes/props/bushes/Bush_02.tscn" id="6_kyua7"]
+[ext_resource type="PackedScene" uid="uid://ct73myqx35gpi" path="res://biomes/props/bushes/Bush_03.tscn" id="7_804bq"]
+[ext_resource type="PackedScene" uid="uid://durhd5mntvu76" path="res://biomes/props/bushes/Bush_04.tscn" id="8_0udlj"]
+[ext_resource type="Texture2D" uid="uid://f27ds8sym5kj" path="res://assets/environment/biomes/decorations/forest/13.png" id="9_xrrs8"]
+[ext_resource type="Texture2D" uid="uid://02s8ylufevyx" path="res://assets/environment/biomes/decorations/forest/17.png" id="10_14hxu"]
+[ext_resource type="Texture2D" uid="uid://ds50ys85r0amj" path="res://assets/environment/biomes/decorations/forest/Rock1.png" id="11_abm67"]
+[ext_resource type="Texture2D" uid="uid://bu8nsq6sld85f" path="res://assets/environment/biomes/decorations/forest/09.png" id="12_lu0x3"]
+[ext_resource type="Texture2D" uid="uid://cfyj4ju4051to" path="res://assets/environment/biomes/decorations/forest/01.png" id="13_iw2yh"]
+[ext_resource type="Texture2D" uid="uid://di4p4g1iayvjq" path="res://assets/environment/biomes/decorations/forest/02.png" id="14_yevt5"]
+[ext_resource type="Texture2D" uid="uid://qxxbavr7350i" path="res://assets/environment/biomes/decorations/forest/04.png" id="15_gx2jf"]
+[ext_resource type="Texture2D" uid="uid://c3kwxv534lked" path="res://assets/environment/biomes/decorations/forest/06.png" id="16_yynof"]
+[ext_resource type="Texture2D" uid="uid://bd0c8o7nrccwq" path="res://assets/environment/biomes/decorations/forest/12.png" id="17_syfaj"]
+[ext_resource type="Texture2D" uid="uid://nxqjd1crve40" path="res://assets/environment/biomes/decorations/forest/07.png" id="18_31ihv"]
+[ext_resource type="Texture2D" uid="uid://n30ecrr50qiu" path="res://assets/environment/biomes/decorations/forest/08.png" id="19_h48nc"]
+
+[node name="Biome_Base" type="Node2D"]
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(398, 10)
+texture = ExtResource("1_rbqj6")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(398, -1064)
+texture = ExtResource("1_rbqj6")
+
+[node name="Ground3" type="Sprite2D" parent="."]
+position = Vector2(-1513, -1078)
+texture = ExtResource("1_rbqj6")
+
+[node name="Ground4" type="Sprite2D" parent="."]
+position = Vector2(-1510, 5)
+texture = ExtResource("1_rbqj6")
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Portal_01" parent="Props" instance=ExtResource("2_22bmt")]
+position = Vector2(625, -13)
+
+[node name="Tree_standart" parent="Props" instance=ExtResource("3_ulr8a")]
+position = Vector2(-62, -291)
+
+[node name="Tree_standart2" parent="Props" instance=ExtResource("3_ulr8a")]
+position = Vector2(-137, -334)
+
+[node name="Tree_standart3" parent="Props" instance=ExtResource("3_ulr8a")]
+position = Vector2(-183, -297)
+
+[node name="Tree_standart4" parent="Props" instance=ExtResource("3_ulr8a")]
+position = Vector2(-4, -294)
+
+[node name="Tree_02" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(112, -325)
+
+[node name="Tree_03" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(72, -275)
+
+[node name="Tree_04" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(191, -309)
+
+[node name="Tree_08" parent="Props/Tree_04" instance=ExtResource("4_x7u8n")]
+position = Vector2(-28, -137)
+
+[node name="Tree_05" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(287, -359)
+
+[node name="Tree_06" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(327, -288)
+
+[node name="Tree_07" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(327, -288)
+
+[node name="Tree_09" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(490, -341)
+
+[node name="Tree_10" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(393, -442)
+
+[node name="Tree_11" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(406, -366)
+
+[node name="Tree_12" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(446, -295)
+
+[node name="Tree_13" parent="Props" instance=ExtResource("4_x7u8n")]
+position = Vector2(528, -288)
+
+[node name="Bush_01" parent="Props" instance=ExtResource("5_kjok2")]
+position = Vector2(-152, -171)
+
+[node name="Bush_02" parent="Props" instance=ExtResource("6_kyua7")]
+position = Vector2(-69, -165)
+
+[node name="Bush_03" parent="Props" instance=ExtResource("7_804bq")]
+position = Vector2(12, -166)
+
+[node name="Bush_04" parent="Props" instance=ExtResource("8_0udlj")]
+position = Vector2(111, -160)
+
+[node name="Bush_05" parent="Props" instance=ExtResource("5_kjok2")]
+position = Vector2(197, -178)
+
+[node name="Bush_06" parent="Props" instance=ExtResource("6_kyua7")]
+position = Vector2(248, -191)
+
+[node name="Bush_07" parent="Props" instance=ExtResource("7_804bq")]
+position = Vector2(501, -162)
+
+[node name="Bush_08" parent="Props" instance=ExtResource("8_0udlj")]
+position = Vector2(396, -181)
+
+[node name="13" type="Sprite2D" parent="Props"]
+position = Vector2(557, 223)
+texture = ExtResource("9_xrrs8")
+
+[node name="17" type="Sprite2D" parent="Props"]
+position = Vector2(589, 201)
+texture = ExtResource("10_14hxu")
+
+[node name="Rock1" type="Sprite2D" parent="Props"]
+position = Vector2(572, 233)
+texture = ExtResource("11_abm67")
+
+[node name="09" type="Sprite2D" parent="Props"]
+position = Vector2(307, -151)
+texture = ExtResource("12_lu0x3")
+
+[node name="06" type="Sprite2D" parent="Props"]
+position = Vector2(410, -153)
+texture = ExtResource("16_yynof")
+
+[node name="07" type="Sprite2D" parent="Props"]
+position = Vector2(442, -146)
+texture = ExtResource("16_yynof")
+
+[node name="BattleAnchor" type="Node2D" parent="."]
+
+[node name="01" type="Sprite2D" parent="."]
+position = Vector2(272, -187)
+texture = ExtResource("13_iw2yh")
+
+[node name="02" type="Sprite2D" parent="."]
+position = Vector2(380, -140)
+texture = ExtResource("14_yevt5")
+
+[node name="04" type="Sprite2D" parent="."]
+position = Vector2(-101, -201)
+texture = ExtResource("15_gx2jf")
+
+[node name="06" type="Sprite2D" parent="."]
+position = Vector2(-111, -161)
+texture = ExtResource("16_yynof")
+
+[node name="12" type="Sprite2D" parent="."]
+position = Vector2(156, -172)
+texture = ExtResource("17_syfaj")
+
+[node name="09" type="Sprite2D" parent="."]
+position = Vector2(549, -143)
+texture = ExtResource("12_lu0x3")
+
+[node name="07" type="Sprite2D" parent="."]
+position = Vector2(239, -179)
+texture = ExtResource("18_31ihv")
+
+[node name="08" type="Sprite2D" parent="."]
+position = Vector2(-43, -201)
+texture = ExtResource("19_h48nc")
+
+[node name="05" type="Sprite2D" parent="."]
+position = Vector2(607, 249)
+texture = ExtResource("15_gx2jf")
+
+[node name="10" type="Sprite2D" parent="."]
+position = Vector2(482, -200)
+texture = ExtResource("15_gx2jf")
+
+[node name="11" type="Sprite2D" parent="."]

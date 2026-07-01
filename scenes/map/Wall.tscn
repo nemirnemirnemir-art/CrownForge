@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dufp2qk076mw6"]
+
+[ext_resource type="Script" path="res://scripts/map/Wall.gd" id="1_wall_script"]
+[ext_resource type="Texture2D" uid="uid://b657a811duo0y" path="res://assets/environment/wall/wall_2.png" id="2_qjgad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(75.5, 908)
+
+[node name="Wall" type="Area2D" groups=["wall"]]
+position = Vector2(39, -21)
+script = ExtResource("1_wall_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 2
+position = Vector2(-1, 70)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Solid" type="StaticBody2D" parent="."]
+scale = Vector2(0.730256, 1)
+collision_layer = 128
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Solid"]
+position = Vector2(16.25, 70)
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Stronghold" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-166, 49)
+scale = Vector2(0.333977, 0.417499)
+texture = ExtResource("2_qjgad")

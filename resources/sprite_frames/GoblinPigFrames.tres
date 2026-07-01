@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://65yo3o5dwoix"]
+
+[ext_resource type="Texture2D" uid="uid://d4lfy85gc5226" path="res://assets/characters/enemies/tinyEnemies/pig/walk/1.png" id="1_ooco4"]
+[ext_resource type="Texture2D" uid="uid://bgqcbp7vkugor" path="res://assets/characters/enemies/tinyEnemies/pig/walk/2.png" id="2_lprar"]
+[ext_resource type="Texture2D" uid="uid://dl5rm7mc0xdfk" path="res://assets/characters/enemies/tinyEnemies/pig/walk/3.png" id="3_ibcu0"]
+[ext_resource type="Texture2D" uid="uid://b3ytrsb6nq8gr" path="res://assets/characters/enemies/tinyEnemies/pig/walk/4.png" id="4_6tnvk"]
+[ext_resource type="Texture2D" uid="uid://bbmuv1rqw1dm2" path="res://assets/characters/enemies/tinyEnemies/pig/walk/5.png" id="5_ls8ce"]
+[ext_resource type="Texture2D" uid="uid://cxgv814jlpcal" path="res://assets/characters/enemies/tinyEnemies/pig/walk/6.png" id="6_lcp5f"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ooco4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lprar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ibcu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6tnvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ls8ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lcp5f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

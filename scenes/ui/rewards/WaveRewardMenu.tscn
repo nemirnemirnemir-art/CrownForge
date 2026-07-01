@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://ovp6a45aevga"]
+
+[ext_resource type="Script" path="res://scripts/ui/rewards/WaveRewardMenu.gd" id="1_menu_script"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font_size = 34
+font_color = Color(0.95, 0.9, 0.85, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_action"]
+bg_color = Color(0.1, 0.08, 0.06, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92, 0.6, 0.25, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="WaveRewardMenu" type="Control"]
+process_mode = 3
+visible = false
+z_index = 200
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.35)
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_top = 10.0
+offset_right = 300.0
+offset_bottom = 60.0
+text = "Claim your rewards"
+label_settings = SubResource("LabelSettings_title")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollapseButton" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 14.0
+offset_right = -20.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.95, 0.9, 0.85, 1)
+theme_override_font_sizes/font_size = 28
+text = "▼"
+flat = true
+
+[node name="CardsContainer" type="HFlowContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -140.0
+offset_right = 480.0
+offset_bottom = 140.0
+alignment = 1
+
+[node name="ClaimNextButton" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -70.0
+offset_right = -40.0
+offset_bottom = -30.0
+theme_override_colors/font_color = Color(0.98, 0.9, 0.8, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_action")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_action")
+theme_override_styles/normal = SubResource("StyleBoxFlat_action")
+text = "Claim next"

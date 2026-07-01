@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SealConfig" load_steps=3 format=3 uid="uid://bheacdljymevg"]
+
+[ext_resource type="Texture2D" uid="uid://bv7kthoptkxvg" path="res://assets/items/seals/epic_seal.png" id="1_et5vv"]
+[ext_resource type="Script" path="res://core/seals/SealConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "seal_epic"
+display_name = "Epic Seal"
+description = "Production increased by 35%."
+tier = 2
+production_modifier = 0.35
+cost = {
+"crystal": 200
+}
+icon = ExtResource("1_et5vv")
+color = Color(0.6, 0.2, 0.8, 1)

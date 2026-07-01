@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_mushroom_warrior"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "mushroom_warrior"
+display_name = "Mushroom Warrior"
+hp = 220
+dps = 20
+unit_classes = [6, 1]
+trait_description = "+3% attack speed of Arcane troops per Mushroom Warrior (up to 30%)."

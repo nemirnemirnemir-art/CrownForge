@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PerkData" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://core/perk_data.gd" id="1_perk"]
+[ext_resource type="Texture2D" path="res://assets/ui/perks/insomnia.png" id="2_icon"]
+
+[resource]
+script = ExtResource("1_perk")
+id = "insomnia"
+display_name = "Insomnia"
+description = "-25% Rest time needed."
+icon = ExtResource("2_icon")
+is_positive = true
+potion_heal_bonus_percent = 0.0
+max_potions_bonus = 0
+armor_bonus = 0
+damage_bonus_percent = 0.0
+speed_bonus_percent = 0.0
+fatigue_rest_reduction_percent = 0.25

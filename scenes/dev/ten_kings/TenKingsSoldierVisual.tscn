@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bskm7r2x8f1y3"]
+
+[ext_resource type="Script" path="res://scripts/dev/ten_kings/TenKingsSoldierVisual.gd" id="1_script"]
+
+[node name="TenKingsSoldierVisual" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgglwihj4bh01"]
+
+[ext_resource type="Script" path="res://scripts/ui/widgets/SliderButton.gd" id="1_script"]
+
+[node name="SliderButton" type="TextureButton"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_script")

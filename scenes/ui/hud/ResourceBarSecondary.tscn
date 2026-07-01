@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://secondary_resource_bar"]
+
+[ext_resource type="Texture2D" uid="uid://xupoewm2ix3" path="res://assets/items/resources/iron_ingot_6.png" id="1_steel"]
+[ext_resource type="Texture2D" uid="uid://dvv1pxuaoor88" path="res://assets/items/resources/flour_8.png" id="2_flour"]
+[ext_resource type="Texture2D" uid="uid://c27xdwbdhidau" path="res://assets/items/resources/meat_9.png" id="3_meat"]
+[ext_resource type="Texture2D" path="res://assets/items/resources/oil.png" id="4_oil"]
+[ext_resource type="Script" path="res://scripts/ui/hud/ResourceBarSecondary.gd" id="6_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_transparent"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+
+[node name="ResourceBarSecondary" type="PanelContainer"]
+offset_left = 20.0
+offset_top = 60.0
+mouse_filter = 2
+script = ExtResource("6_script")
+theme_override_styles/panel = SubResource("StyleBoxFlat_transparent")
+steel_icon = ExtResource("1_steel")
+flour_icon = ExtResource("2_flour")
+meat_icon = ExtResource("3_meat")
+oil_icon = ExtResource("4_oil")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Resource_steel" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_steel"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_steel")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_steel"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_steel/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_flour" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_flour"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_flour")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_flour"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_flour/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_meat" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_meat"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_meat")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_meat"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_meat/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resource_oil" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 2
+
+[node name="Icon" type="TextureRect" parent="HBox/Resource_oil"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_oil")
+stretch_mode = 5
+
+[node name="ValueBg" type="TextureRect" parent="HBox/Resource_oil"]
+custom_minimum_size = Vector2(44, 18)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ValueLabel" type="Label" parent="HBox/Resource_oil/ValueBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,282 @@
+[gd_resource type="SpriteFrames" load_steps=64 format=3 uid="uid://c1dwibjwu24ur"]
+
+[ext_resource type="Texture2D" uid="uid://5nry6xhjhyns" path="res://assets/characters/bosses/minotaur/Minotaur_attack/1.png" id="1_att1"]
+[ext_resource type="Texture2D" uid="uid://bs0prlsdl4tae" path="res://assets/characters/bosses/minotaur/Minotaur_attack/2.png" id="2_att2"]
+[ext_resource type="Texture2D" uid="uid://d3o0aju0cmngr" path="res://assets/characters/bosses/minotaur/Minotaur_attack/3.png" id="3_att3"]
+[ext_resource type="Texture2D" uid="uid://bb8emhgsahomo" path="res://assets/characters/bosses/minotaur/Minotaur_attack/4.png" id="4_att4"]
+[ext_resource type="Texture2D" uid="uid://dl1qmfr7tgk7v" path="res://assets/characters/bosses/minotaur/Minotaur_attack/5.png" id="5_att5"]
+[ext_resource type="Texture2D" uid="uid://d1x312dc8evya" path="res://assets/characters/bosses/minotaur/Minotaur_attack/6.png" id="6_att6"]
+[ext_resource type="Texture2D" uid="uid://cjnphethbn7wh" path="res://assets/characters/bosses/minotaur/Minotaur_attack/7.png" id="7_att7"]
+[ext_resource type="Texture2D" uid="uid://ctjxj1ecuvlje" path="res://assets/characters/bosses/minotaur/Minotaur_attack/8.png" id="8_att8"]
+[ext_resource type="Texture2D" uid="uid://cg7hjnrptpcwv" path="res://assets/characters/bosses/minotaur/Minotaur_attack/9.png" id="9_att9"]
+[ext_resource type="Texture2D" uid="uid://cpc3642yg6pr5" path="res://assets/characters/bosses/minotaur/Minotaur_attack/10.png" id="10_att10"]
+[ext_resource type="Texture2D" uid="uid://dvkpit44c3n1w" path="res://assets/characters/bosses/minotaur/Minotaur_attack/11.png" id="11_att11"]
+[ext_resource type="Texture2D" uid="uid://r2nj4ir5us5u" path="res://assets/characters/bosses/minotaur/Minotaur_attack/12.png" id="12_att12"]
+[ext_resource type="Texture2D" uid="uid://closmd7ore604" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard1.png" id="13_ch1"]
+[ext_resource type="Texture2D" uid="uid://47o1eeenfik6" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard2.png" id="14_ch2"]
+[ext_resource type="Texture2D" uid="uid://cqckqgg7vup8g" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard3.png" id="15_ch3"]
+[ext_resource type="Texture2D" uid="uid://bufa41vx0dwnx" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard4.png" id="16_ch4"]
+[ext_resource type="Texture2D" uid="uid://dy3vs263rqt85" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard5.png" id="17_ch5"]
+[ext_resource type="Texture2D" uid="uid://cccj0mkgyka4b" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard6.png" id="18_ch6"]
+[ext_resource type="Texture2D" uid="uid://xt6eycnsyh67" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard7.png" id="19_ch7"]
+[ext_resource type="Texture2D" uid="uid://csln83j7a5eaj" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard8.png" id="20_ch8"]
+[ext_resource type="Texture2D" uid="uid://d0all25k5ytde" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard9.png" id="21_ch9"]
+[ext_resource type="Texture2D" uid="uid://b1kaoc7hg4gjt" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard10.png" id="22_ch10"]
+[ext_resource type="Texture2D" uid="uid://c42hjftxbdvtl" path="res://assets/characters/bosses/minotaur/Minotaur_charge/Minotaur_Guard11.png" id="23_ch11"]
+[ext_resource type="Texture2D" uid="uid://cwdwt7hllx0h8" path="res://assets/characters/bosses/minotaur/Minotaur_idle/1.png" id="24_id1"]
+[ext_resource type="Texture2D" uid="uid://cs1vvob5ana1n" path="res://assets/characters/bosses/minotaur/Minotaur_idle/2.png" id="25_id2"]
+[ext_resource type="Texture2D" uid="uid://fa4awgbfwcqm" path="res://assets/characters/bosses/minotaur/Minotaur_idle/3.png" id="26_id3"]
+[ext_resource type="Texture2D" uid="uid://lcunhxp1esk" path="res://assets/characters/bosses/minotaur/Minotaur_idle/4.png" id="27_id4"]
+[ext_resource type="Texture2D" uid="uid://bbmmcvuuq32bx" path="res://assets/characters/bosses/minotaur/Minotaur_idle/5.png" id="28_id5"]
+[ext_resource type="Texture2D" uid="uid://b3vv0oxv463h7" path="res://assets/characters/bosses/minotaur/Minotaur_idle/6.png" id="29_id6"]
+[ext_resource type="Texture2D" uid="uid://c5ftyfw05r23n" path="res://assets/characters/bosses/minotaur/Minotaur_idle/7.png" id="30_id7"]
+[ext_resource type="Texture2D" uid="uid://qqba74qmx5r4" path="res://assets/characters/bosses/minotaur/Minotaur_idle/8.png" id="31_id8"]
+[ext_resource type="Texture2D" uid="uid://bh3e0lqtmjrqi" path="res://assets/characters/bosses/minotaur/Minotaur_idle/9.png" id="32_id9"]
+[ext_resource type="Texture2D" uid="uid://ccgpolj6xdjdh" path="res://assets/characters/bosses/minotaur/Minotaur_idle/10.png" id="33_id10"]
+[ext_resource type="Texture2D" uid="uid://ctsi7xhcubcgk" path="res://assets/characters/bosses/minotaur/Minotaur_idle/11.png" id="34_id11"]
+[ext_resource type="Texture2D" uid="uid://bq8645kbcu03m" path="res://assets/characters/bosses/minotaur/Minotaur_idle/12.png" id="35_id12"]
+[ext_resource type="Texture2D" uid="uid://xb80kb1ov53h" path="res://assets/characters/bosses/minotaur/Minotaur_idle/13.png" id="36_id13"]
+[ext_resource type="Texture2D" uid="uid://cesleca61vyb5" path="res://assets/characters/bosses/minotaur/Minotaur_idle/14.png" id="37_id14"]
+[ext_resource type="Texture2D" uid="uid://cf1bbw514na7v" path="res://assets/characters/bosses/minotaur/Minotaur_idle/15.png" id="38_id15"]
+[ext_resource type="Texture2D" uid="uid://bnx6o3t87rrub" path="res://assets/characters/bosses/minotaur/Minotaur_idle/16.png" id="39_id16"]
+[ext_resource type="Texture2D" uid="uid://bkrnj1b3aorev" path="res://assets/characters/bosses/minotaur/Minoutaur_point/1.png" id="40_pt1"]
+[ext_resource type="Texture2D" uid="uid://c5nd11b4w8bpk" path="res://assets/characters/bosses/minotaur/Minoutaur_point/2.png" id="41_pt2"]
+[ext_resource type="Texture2D" uid="uid://bkowaj34md8ab" path="res://assets/characters/bosses/minotaur/Minoutaur_point/3.png" id="42_pt3"]
+[ext_resource type="Texture2D" uid="uid://cgfcp2oktf0bo" path="res://assets/characters/bosses/minotaur/Minoutaur_point/4.png" id="43_pt4"]
+[ext_resource type="Texture2D" uid="uid://bpqvmbjmf3sc8" path="res://assets/characters/bosses/minotaur/Minoutaur_point/5.png" id="44_pt5"]
+[ext_resource type="Texture2D" uid="uid://bv00ml6f56m00" path="res://assets/characters/bosses/minotaur/Minoutaur_point/6.png" id="45_pt6"]
+[ext_resource type="Texture2D" uid="uid://crvguc8l5hasq" path="res://assets/characters/bosses/minotaur/Minoutaur_point/7.png" id="46_pt7"]
+[ext_resource type="Texture2D" uid="uid://bv2j3dtr3s3ja" path="res://assets/characters/bosses/minotaur/Minoutaur_point/8.png" id="47_pt8"]
+[ext_resource type="Texture2D" uid="uid://jx4h4j8gugqa" path="res://assets/characters/bosses/minotaur/Minoutaur_point/9.png" id="48_pt9"]
+[ext_resource type="Texture2D" uid="uid://rlpnwv3oya2w" path="res://assets/characters/bosses/minotaur/Minoutaur_point/10.png" id="49_pt10"]
+[ext_resource type="Texture2D" uid="uid://xg0yfp24mact" path="res://assets/characters/bosses/minotaur/Minoutaur_point/11.png" id="50_pt11"]
+[ext_resource type="Texture2D" uid="uid://c30eqt5x8dcql" path="res://assets/characters/bosses/minotaur/Minoutaur_point/12.png" id="51_pt12"]
+[ext_resource type="Texture2D" uid="uid://d2sgajn2e8v2d" path="res://assets/characters/bosses/minotaur/Minoutaur_point/13.png" id="52_pt13"]
+[ext_resource type="Texture2D" uid="uid://ifbvweos66vf" path="res://assets/characters/bosses/minotaur/Minoutaur_point/14.png" id="53_pt14"]
+[ext_resource type="Texture2D" uid="uid://d0r14h4fmkno2" path="res://assets/characters/bosses/minotaur/Minoutaur_point/15.png" id="54_pt15"]
+[ext_resource type="Texture2D" uid="uid://dhcbo5urvnoi5" path="res://assets/characters/bosses/minotaur/Minoutaur_point/16.png" id="55_pt16"]
+[ext_resource type="Texture2D" uid="uid://b2r8hjf7afyo6" path="res://assets/characters/bosses/minotaur/Minotaur_walk/1.png" id="56_diq34"]
+[ext_resource type="Texture2D" uid="uid://bf1j2ywxcwbuy" path="res://assets/characters/bosses/minotaur/Minotaur_walk/2.png" id="57_a0iwi"]
+[ext_resource type="Texture2D" uid="uid://bdj14x0gg8wo2" path="res://assets/characters/bosses/minotaur/Minotaur_walk/3.png" id="58_paxif"]
+[ext_resource type="Texture2D" uid="uid://dl5b3im8o7v3n" path="res://assets/characters/bosses/minotaur/Minotaur_walk/4.png" id="59_kkgpe"]
+[ext_resource type="Texture2D" uid="uid://rim0k110yge7" path="res://assets/characters/bosses/minotaur/Minotaur_walk/5.png" id="60_smook"]
+[ext_resource type="Texture2D" uid="uid://b18e3liwsfoh2" path="res://assets/characters/bosses/minotaur/Minotaur_walk/6.png" id="61_r3m5r"]
+[ext_resource type="Texture2D" uid="uid://7al64q1yo1el" path="res://assets/characters/bosses/minotaur/Minotaur_walk/7.png" id="62_0inhv"]
+[ext_resource type="Texture2D" uid="uid://dfw87krtaqg5u" path="res://assets/characters/bosses/minotaur/Minotaur_walk/8.png" id="63_wrkhx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_att1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_att2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_att3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_att4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_att5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_att6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_att7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_att8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_att9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_att10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_att11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_att12")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ch1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ch2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ch3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ch4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ch5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ch6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ch7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ch8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ch9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ch10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ch11")
+}],
+"loop": false,
+"name": &"charge",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_id1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_id2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_id3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_id4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_id5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_id6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_id7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_id8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_id9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_id10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_id11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_id12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_id13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_id14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_id15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_id16")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_pt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_pt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_pt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_pt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_pt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_pt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_pt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_pt9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_pt10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_pt11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_pt12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_pt13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_pt14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_pt15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_pt16")
+}],
+"loop": false,
+"name": &"point",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_diq34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_a0iwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_paxif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_kkgpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_smook")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_r3m5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_0inhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_wrkhx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]

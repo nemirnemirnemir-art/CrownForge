@@ -1,0 +1,29 @@
+[gd_scene load_steps=12 format=3 uid="uid://dm1oeqj5shrm6"]
+
+[ext_resource type="Script" path="res://scripts/ui/overlays/DamagePopup.gd" id="1_damage_popup"]
+[ext_resource type="Texture2D" uid="uid://da8g1o250ys2m" path="res://assets/ui/digits/WhiteNumbers/0.png" id="2_o7hkp"]
+[ext_resource type="Texture2D" uid="uid://cd2ipsjm2hpw2" path="res://assets/ui/digits/WhiteNumbers/1.png" id="3_7tmkw"]
+[ext_resource type="Texture2D" uid="uid://capuodp3bg6aa" path="res://assets/ui/digits/WhiteNumbers/2.png" id="4_tp5p7"]
+[ext_resource type="Texture2D" uid="uid://0k8jkye0r2ve" path="res://assets/ui/digits/WhiteNumbers/3.png" id="5_ct4bw"]
+[ext_resource type="Texture2D" uid="uid://dd8qt4caiqcb8" path="res://assets/ui/digits/WhiteNumbers/4.png" id="6_jf8sc"]
+[ext_resource type="Texture2D" uid="uid://bos8ofl3bykw3" path="res://assets/ui/digits/WhiteNumbers/5.png" id="7_hb6c4"]
+[ext_resource type="Texture2D" uid="uid://ri8wa5ivj3ht" path="res://assets/ui/digits/WhiteNumbers/6.png" id="8_yc51l"]
+[ext_resource type="Texture2D" uid="uid://eyrscl3wbye7" path="res://assets/ui/digits/WhiteNumbers/7.png" id="9_8kjyp"]
+[ext_resource type="Texture2D" uid="uid://bn4v62uctwnhe" path="res://assets/ui/digits/WhiteNumbers/8.png" id="10_q36il"]
+[ext_resource type="Texture2D" uid="uid://d1vxjnbklub0u" path="res://assets/ui/digits/WhiteNumbers/9.png" id="11_cjv12"]
+
+[node name="DamagePopup" type="Node2D"]
+z_index = 100
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_damage_popup")
+digit_textures = Array[Texture2D]([ExtResource("2_o7hkp"), ExtResource("3_7tmkw"), ExtResource("4_tp5p7"), ExtResource("5_ct4bw"), ExtResource("6_jf8sc"), ExtResource("7_hb6c4"), ExtResource("8_yc51l"), ExtResource("9_8kjyp"), ExtResource("10_q36il"), ExtResource("11_cjv12")])
+spacing_px = 6.0
+scale_digits = 0.8
+start_offset = Vector2(0, -20)
+rise_px = 35.0
+duration_sec = 0.9
+start_scale = 0.5
+peak_scale = 1.3
+end_scale = 0.3
+scale_up_duration = 0.12
+scale_down_duration = 0.78

@@ -1,0 +1,42 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://un6f0ymb5m7f"]
+
+[ext_resource type="Texture2D" uid="uid://cfkljcngok3iq" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/1.png" id="1_0k5js"]
+[ext_resource type="Texture2D" uid="uid://besqkph2xbcyk" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/2.png" id="2_c42w7"]
+[ext_resource type="Texture2D" uid="uid://dvir1dcpcgmgk" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/3.png" id="3_rdm7i"]
+[ext_resource type="Texture2D" uid="uid://bxcr0kagtshk" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/4.png" id="4_kq5sw"]
+[ext_resource type="Texture2D" uid="uid://c1fdt7m26o4a1" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/5.png" id="5_jjciv"]
+[ext_resource type="Texture2D" uid="uid://pa0n76kh3ct3" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/6.png" id="6_cw14t"]
+[ext_resource type="Texture2D" uid="uid://c0tnoxwuufp2w" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/7.png" id="7_8kjbo"]
+[ext_resource type="Texture2D" uid="uid://c7c3xsg6e6hs8" path="res://assets/characters/enemies/tinyEnemies/crossbowman/walk/8.png" id="8_00ft6"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0k5js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c42w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rdm7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kq5sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jjciv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cw14t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8kjbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_00ft6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+building_id = "clay_iron_mine"
+display_name = "Clay Iron Mine"
+description = "Produces 1 Ore, 1 Clay. 2s cycle."
+building_type = 1
+building_category = 7
+build_costs = []
+cycle_time = 2.0
+produces = []
+consumes = []
+produced_unit_id = ""
+max_units = 0
+has_special_behavior = false
+special_script_path = ""

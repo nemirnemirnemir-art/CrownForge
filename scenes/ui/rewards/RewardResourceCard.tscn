@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://bktofhi3krbvi"]
+
+[ext_resource type="Script" path="res://scripts/ui/rewards/RewardResourceCard.gd" id="1_card_script"]
+[ext_resource type="Texture2D" uid="uid://eoaxt63d0aoo" path="res://assets/ui/resource_cards/Resource_card_background_left.png" id="2_bg_left"]
+[ext_resource type="Texture2D" uid="uid://dpmkfgsxma8r4" path="res://assets/ui/resource_cards/Resource_card_background_center.png" id="3_bg_center"]
+[ext_resource type="Texture2D" uid="uid://dnbg2osat4krv" path="res://assets/ui/resource_cards/Resource_card_background_right.png" id="4_bg_right"]
+[ext_resource type="Texture2D" uid="uid://c28oiml8klcme" path="res://assets/ui/resource_cards/name_header_background.png" id="5_header_bg"]
+[ext_resource type="Texture2D" uid="uid://bpwxihyrftwjs" path="res://assets/ui/resource_cards/resource_button_background.png" id="6_btn_bg"]
+[ext_resource type="FontFile" uid="uid://b1w36vwmi538s" path="res://assets/ui/fonts/ThaleahFat.ttf" id="7_header_font"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/components/RewardChooseButton.tscn" id="8_choose_btn"]
+
+[node name="RewardResourceCard" type="Control"]
+custom_minimum_size = Vector2(360, 420)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 420.0
+script = ExtResource("1_card_script")
+background_left = ExtResource("2_bg_left")
+background_center = ExtResource("3_bg_center")
+background_right = ExtResource("4_bg_right")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3_bg_center")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeaderBg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 40.0
+offset_right = 142.0
+offset_bottom = 106.0
+grow_horizontal = 2
+texture = ExtResource("5_header_bg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeaderLabel" type="Label" parent="HeaderBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.1, 0.1, 0.1, 1)
+theme_override_fonts/font = ExtResource("7_header_font")
+theme_override_font_sizes/font_size = 34
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChooseButton" type="TextureButton" parent="."]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 108.0
+offset_right = 90.0
+offset_bottom = 288.0
+mouse_filter = 2
+texture_normal = ExtResource("6_btn_bg")
+stretch_mode = 5
+
+[node name="ResourceIcon" type="TextureRect" parent="ChooseButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -46.0
+offset_right = 58.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AmountDigits" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(180, 70)
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.0
+offset_top = 300.0
+offset_right = 120.0
+offset_bottom = 345.0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Choose" parent="." instance=ExtResource("8_choose_btn")]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 520.0
+offset_right = 110.0
+offset_bottom = 560.0

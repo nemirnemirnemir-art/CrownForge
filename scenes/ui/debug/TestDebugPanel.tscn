@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/debug/TestDebugPanel.gd" id="1_script"]
+
+[node name="TestDebugPanel" type="PanelContainer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 260.0
+offset_bottom = 160.0
+script = ExtResource("1_script")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="SpawnPeasant" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Spawn Peasant"
+
+[node name="SpawnGoblinBandit" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Spawn GoblinBandit"
+
+[node name="ClearScene" type="Button" parent="VBox"]
+layout_mode = 2
+text = "Clear Scene"

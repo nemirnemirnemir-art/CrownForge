@@ -1,0 +1,150 @@
+{
+  "levels": [
+    {
+      "level": 1,
+      "easy": [
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "goblin_bandit", "variants": [{"mob_1_count": 4}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_crossbowman", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]}
+      ],
+      "mid": [
+        {"family": "bruiser_push", "reward_bias": "bruiser_push", "mob_1_id": "goblin_swordsman", "variants": [{"mob_1_count": 2}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 3, "mob_2_count": 1}]}
+      ],
+      "hard": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_giant", "variants": [{"mob_1_count": 2, "mob_2_count": 1}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "wall_buster", "variants": [{"mob_1_count": 2}]},
+        {"family": "bruiser_push", "reward_bias": "rare_strong", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 1, "mob_2_count": 1, "is_rare_strong": true}]}
+      ]
+    },
+    {
+      "level": 2,
+      "easy": [
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "goblin_bandit", "variants": [{"mob_1_count": 6}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 3, "mob_2_count": 1}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_fire_mage", "variants": [{"mob_1_count": 3, "mob_2_count": 1}]}
+      ],
+      "mid": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_giant", "variants": [{"mob_1_count": 2, "mob_2_count": 1}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "wall_buster", "variants": [{"mob_1_count": 4}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_crossbowman", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 2, "mob_2_count": 1}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "goblin_shaman", "mob_2_id": "goblin_lightning_mage", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]},
+        {"family": "bruiser_push", "reward_bias": "mid_strong", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]}
+      ],
+      "hard": [
+        {"family": "flank_pressure", "reward_bias": "mid_strong", "mob_1_id": "goblin_lizard", "variants": [{"mob_1_count": 2}]},
+        {"family": "swarm", "reward_bias": "mid_strong", "mob_1_id": "goblin_bandit", "variants": [{"mob_1_count": 10}]}
+      ]
+    },
+    {
+      "level": 3,
+      "easy": [
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "goblin_lizard", "variants": [{"mob_1_count": 3}]},
+        {"family": "bruiser_push", "reward_bias": "bruiser_push", "mob_1_id": "goblin_pig", "variants": [{"mob_1_count": 2}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_fire_mage", "variants": [{"mob_1_count": 3, "mob_2_count": 1}]},
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "goblin_bandit", "variants": [{"mob_1_count": 10}]}
+      ],
+      "mid": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "goblin_giant", "variants": [{"mob_1_count": 3}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_lightning_mage", "variants": [{"mob_1_count": 2}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_crossbowman", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 3, "mob_2_count": 1}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "goblin_bandit", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 6, "mob_2_count": 1}]},
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "blue_slime", "variants": [{"mob_1_count": 7}]}
+      ],
+      "hard": [
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "variants": [{"mob_1_count": 1}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_crossbowman", "mob_2_id": "goblin_lizard", "variants": [{"mob_1_count": 5, "mob_2_count": 1}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "wall_buster", "variants": [{"mob_1_count": 8}]}
+      ]
+    },
+    {
+      "level": 4,
+      "easy": [
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "goblin_lizard", "variants": [{"mob_1_count": 5}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "goblin_lizard", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 3, "mob_2_count": 2}]},
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "blue_slime", "variants": [{"mob_1_count": 7}]}
+      ],
+      "mid": [
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "goblin_bat_rider", "mob_2_id": "goblin_giant", "variants": [{"mob_1_count": 2, "mob_2_count": 1}]},
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "goblin_giant", "variants": [{"mob_1_count": 4}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_lightning_mage", "variants": [{"mob_1_count": 3}]},
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "goblin_swordsman", "variants": [{"mob_1_count": 10}]}
+      ],
+      "hard": [
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "stone_golem", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]},
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "variants": [{"mob_1_count": 2}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_crossbowman", "variants": [{"mob_1_count": 1, "mob_2_count": 5}]}
+      ]
+    },
+    {
+      "level": 5,
+      "easy": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "variants": [{"mob_1_count": 1}]},
+        {"family": "swarm", "reward_bias": "swarm", "mob_1_id": "blue_slime", "variants": [{"mob_1_count": 3}, {"mob_1_count": 4}]},
+        {"family": "bruiser_push", "reward_bias": "siege", "mob_1_id": "wall_buster", "mob_2_id": "goblin_swordsman", "variants": [{"mob_1_count": 1, "mob_2_count": 2}]}
+      ],
+      "mid": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "mob_2_id": "goblin_crossbowman", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "blue_slime", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 3, "mob_2_count": 1}, {"mob_1_count": 4, "mob_2_count": 1}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "wall_buster", "mob_2_id": "goblin_swordsman", "variants": [{"mob_1_count": 2, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 3}]},
+        {"family": "mixed_threat", "reward_bias": "siege", "mob_1_id": "goblin_giant", "mob_2_id": "wall_buster", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_lightning_mage", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 1, "mob_2_count": 1}, {"mob_1_count": 1, "mob_2_count": 2}]}
+      ],
+      "hard": [
+        {"family": "mixed_threat", "reward_bias": "siege", "mob_1_id": "stone_golem", "mob_2_id": "wall_buster", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "mob_2_id": "goblin_crossbowman", "variants": [{"mob_1_count": 1, "mob_2_count": 4}, {"mob_1_count": 2, "mob_2_count": 2}]},
+        {"family": "mixed_threat", "reward_bias": "siege", "mob_1_id": "goblin_giant", "mob_2_id": "wall_buster", "variants": [{"mob_1_count": 2, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 3}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "blue_slime", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 5, "mob_2_count": 1}, {"mob_1_count": 6, "mob_2_count": 1}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_lightning_mage", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 2, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 3}]},
+        {"family": "bruiser_push", "reward_bias": "siege", "mob_1_id": "wall_buster", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 3, "mob_2_count": 1}, {"mob_1_count": 4, "mob_2_count": 1}]}
+      ]
+    },
+    {
+      "level": 6,
+      "easy": [
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "variants": [{"mob_1_count": 1}]},
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "crab_rider", "variants": [{"mob_1_count": 1}]},
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "mob_2_id": "crab_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_fire_mage", "mob_2_id": "goblin_bat_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]}
+      ],
+      "mid": [
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_crossbowman", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "crab_rider", "mob_2_id": "goblin_swordsman", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "mob_2_id": "crab_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "goblin_fire_mage", "mob_2_id": "goblin_bat_rider", "variants": [{"mob_1_count": 2, "mob_2_count": 1}, {"mob_1_count": 1, "mob_2_count": 2}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "sunfaced", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 1, "mob_2_count": 1}, {"mob_1_count": 1, "mob_2_count": 2}]}
+      ],
+      "hard": [
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "crab_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 1}, {"mob_1_count": 1, "mob_2_count": 2}]},
+        {"family": "gunline", "reward_bias": "gunline", "mob_1_id": "sunfaced", "mob_2_id": "goblin_crossbowman", "variants": [{"mob_1_count": 1, "mob_2_count": 4}, {"mob_1_count": 1, "mob_2_count": 5}]},
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "stone_golem", "mob_2_id": "crab_rider", "variants": [{"mob_1_count": 2, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 4}]},
+        {"family": "support_pack", "reward_bias": "support_pack", "mob_1_id": "sunfaced", "mob_2_id": "goblin_shaman", "variants": [{"mob_1_count": 1, "mob_2_count": 3}, {"mob_1_count": 2, "mob_2_count": 2}]},
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "crab_rider", "mob_2_id": "goblin_bat_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 2}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "wall_buster", "mob_2_id": "crab_rider", "variants": [{"mob_1_count": 4, "mob_2_count": 1}, {"mob_1_count": 5, "mob_2_count": 1}]}
+      ]
+    },
+    {
+      "level": 7,
+      "easy": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "sunfaced", "mob_2_id": "stone_golem", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]},
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "crab_rider", "mob_2_id": "goblin_bat_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 1}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_fire_mage", "variants": [{"mob_1_count": 1, "mob_2_count": 2}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "stone_golem", "mob_2_id": "wall_buster", "variants": [{"mob_1_count": 1, "mob_2_count": 2}]}
+      ],
+      "mid": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "sunfaced", "mob_2_id": "stone_golem", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 1}]},
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "crab_rider", "mob_2_id": "goblin_bat_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 1}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_fire_mage", "variants": [{"mob_1_count": 1, "mob_2_count": 3}, {"mob_1_count": 1, "mob_2_count": 4}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "stone_golem", "mob_2_id": "wall_buster", "variants": [{"mob_1_count": 1, "mob_2_count": 4}, {"mob_1_count": 2, "mob_2_count": 3}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 1, "mob_2_count": 3}, {"mob_1_count": 1, "mob_2_count": 4}]}
+      ],
+      "hard": [
+        {"family": "elite_wall", "reward_bias": "elite_wall", "mob_1_id": "sunfaced", "mob_2_id": "stone_golem", "variants": [{"mob_1_count": 2, "mob_2_count": 2}, {"mob_1_count": 1, "mob_2_count": 3}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "crab_rider", "variants": [{"mob_1_count": 1, "mob_2_count": 2}, {"mob_1_count": 2, "mob_2_count": 2}]},
+        {"family": "siege", "reward_bias": "siege", "mob_1_id": "stone_golem", "mob_2_id": "wall_buster", "variants": [{"mob_1_count": 2, "mob_2_count": 4}, {"mob_1_count": 2, "mob_2_count": 5}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_fire_mage", "variants": [{"mob_1_count": 2, "mob_2_count": 3}, {"mob_1_count": 2, "mob_2_count": 4}]},
+        {"family": "mixed_threat", "reward_bias": "mixed_threat", "mob_1_id": "sunfaced", "mob_2_id": "goblin_pig", "variants": [{"mob_1_count": 2, "mob_2_count": 4}, {"mob_1_count": 2, "mob_2_count": 5}]},
+        {"family": "flank_pressure", "reward_bias": "flank_pressure", "mob_1_id": "crab_rider", "mob_2_id": "goblin_bat_rider", "variants": [{"mob_1_count": 2, "mob_2_count": 3}, {"mob_1_count": 2, "mob_2_count": 4}]}
+      ]
+    }
+  ]
+}

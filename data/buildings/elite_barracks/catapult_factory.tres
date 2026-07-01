@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="BuildingConfig" load_steps=8 format=3 uid="uid://be5xaa5boeyta"]
+
+[ext_resource type="Script" path="res://core/buildings/BuildingConfig.gd" id="1_script"]
+[ext_resource type="Script" path="res://core/buildings/BuildingCostEntry.gd" id="2_cost"]
+[ext_resource type="Texture2D" uid="uid://vi4hcm8fgoxy" path="res://assets/environment/buildings/catapult_factory.png" id="3_0pyvt"]
+[ext_resource type="Script" path="res://core/buildings/BuildingProductionEntry.gd" id="3_prod"]
+
+[sub_resource type="Resource" id="Cost_0"]
+script = ExtResource("2_cost")
+resource_id = "wood"
+amount = 320
+
+[sub_resource type="Resource" id="Cost_1"]
+script = ExtResource("2_cost")
+resource_id = "metal"
+amount = 180
+
+[sub_resource type="Resource" id="Cons_0"]
+script = ExtResource("3_prod")
+resource_id = "metal"
+amount = 90
+
+[resource]
+script = ExtResource("1_script")
+building_id = "catapult_factory"
+display_name = "Catapult Factory"
+description = "Recruits Catapult units. 15s cycle. Capacity: 1. Consumes 90 Metal."
+icon = ExtResource("3_0pyvt")
+use_vzor_animation = false
+vzor_animation_name = &"default"
+building_type = 0
+building_category = 5
+build_costs = Array[ExtResource("2_cost")]([SubResource("Cost_0"), SubResource("Cost_1")])
+cycle_time = 15.0
+produces = Array[ExtResource("3_prod")]([])
+consumes = Array[ExtResource("3_prod")]([SubResource("Cons_0")])
+produced_unit_id = "catapult"
+max_units = 1
+has_special_behavior = false
+special_script_path = ""

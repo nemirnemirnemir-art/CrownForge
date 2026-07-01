@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/rewards/RewardArtifactCard.gd" id="1_card_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/components/RewardChooseButton.tscn" id="2_choose_btn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_card"]
+bg_color = Color(0.9, 0.85, 0.75, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.4, 0.3, 0.2, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[node name="RewardArtifactCard" type="Panel"]
+custom_minimum_size = Vector2(360, 420)
+offset_right = 360.0
+offset_bottom = 420.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_card")
+script = ExtResource("1_card_script")
+
+[node name="IconBG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 118.0
+offset_bottom = 118.0
+color = Color(0.25, 0.55, 1, 1)
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 118.0
+offset_bottom = 118.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 22.0
+offset_right = 340.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.25, 0.15, 0.05, 1)
+theme_override_font_sizes/font_size = 20
+text = "Artifact"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="SepHeader" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 124.0
+offset_right = 342.0
+offset_bottom = 126.0
+color = Color(0.55, 0.45, 0.3, 1)
+
+[node name="DescriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 138.0
+offset_right = 334.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0.2, 0.15, 0.1, 1)
+theme_override_font_sizes/font_size = 14
+text = "Description"
+autowrap_mode = 3
+
+[node name="ChooseButton" parent="." instance=ExtResource("2_choose_btn")]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 358.0
+offset_right = 290.0
+offset_bottom = 398.0

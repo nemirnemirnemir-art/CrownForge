@@ -1,0 +1,25 @@
+Crossbowman +4 to HP of Icon-Unit-Class-Warrior.pngWarrior troops for each Crossbowman on the battlefield.
+
+Assassin +50% to HP of Icon-Unit-Class-Grunt.pngGrunt Troops if Assassin is on the battlefield.
+
+Black Sheep Provides +3 morale for each Unit-Black-Sheep.pngBlack Sheep on the battlefield.
+
+Small Bones +2% to damage dealt by and HP of Icon-Unit-Class-Undead.pngUndead troops for each Small Bones on the battlefield.
+
+Gnome Provides 1 Morale per Gnome on the battlefield.
+
+Hunter +10% to attack speed of Icon-Unit-Class-Flying.pngFlying troops for each hunter on the battlefield, up to 100%
+
+Madman +4/8/12 to morale for per 3/6/9 Madmen on the battlefield.
+
+Militia +2% to HP of Militias for each Militia on the battlefield.
+
+Peasant +1% to all production for each Peasant on the battlefield.
+
+Slinger +2% to HP to all units for each Unit-Slinger.pngSlinger on the battlefield
+
+Black Swordsman +50% attack speed to Icon-Unit-Class-Grunt.pngGrunt troops if a Black Swordsman is on the battlefield.
+
+Swordsman +2% to damage dealt by Swordsmen for each Unit-Swordsman.pngSwordsman on the battlefield.
+
+Whipman +3% to damage dealt by all units for each Whipman on the battlefield.

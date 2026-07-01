@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SealConfig" load_steps=3 format=3 uid="uid://bk076k2tu7d2g"]
+
+[ext_resource type="Texture2D" uid="uid://caavdwiw5v6l1" path="res://assets/items/seals/normal_seal.png" id="1_eywjd"]
+[ext_resource type="Script" path="res://core/seals/SealConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+id = "seal_normal"
+display_name = "Normal Seal"
+description = "Production increased by 20%."
+tier = 1
+production_modifier = 0.2
+cost = {
+"crystal": 100
+}
+icon = ExtResource("1_eywjd")
+color = Color(0.2, 0.8, 0.2, 1)

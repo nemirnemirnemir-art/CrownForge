@@ -1,0 +1,279 @@
+[gd_scene load_steps=43 format=3 uid="uid://b3artiivle3nm"]
+
+[ext_resource type="Script" path="res://scripts/bosses/DragonBoss.gd" id="1_dragon"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobStateMachine.gd" id="2_sm"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMoveState.gd" id="3_move"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackState.gd" id="4_attack"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobDeathState.gd" id="5_death"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToWallState.gd" id="6_towall"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobMovingToHeroState.gd" id="7_tohero"]
+[ext_resource type="Script" path="res://scripts/mob/states/MobAttackWallState.gd" id="8_attackwall"]
+[ext_resource type="Script" path="res://scripts/components/AggroArea.gd" id="9_aggro"]
+[ext_resource type="Script" path="res://scripts/combat/Hurtbox.gd" id="10_hurt"]
+[ext_resource type="Script" path="res://scripts/components/HitComponent.gd" id="11_hit"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobHealth.gd" id="13_health"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobRewards.gd" id="14_rewards"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobSlots.gd" id="15_slots"]
+[ext_resource type="Script" path="res://scripts/mob/components/MobClickHandler.gd" id="16_click"]
+[ext_resource type="Texture2D" uid="uid://c7nn0eaq2r0e3" path="res://assets/characters/bosses/dragon/drakewalk/1.png" id="17_walk_1"]
+[ext_resource type="Texture2D" uid="uid://d1pvab8a7f8u7" path="res://assets/characters/bosses/dragon/drakewalk/2.png" id="18_walk_2"]
+[ext_resource type="Texture2D" uid="uid://b5p7r6vb2xrbw" path="res://assets/characters/bosses/dragon/drakewalk/3.png" id="19_walk_3"]
+[ext_resource type="Texture2D" uid="uid://dpkfxc7vo50xi" path="res://assets/characters/bosses/dragon/drakewalk/4.png" id="20_walk_4"]
+[ext_resource type="Texture2D" uid="uid://ch3ixa068npaq" path="res://assets/characters/bosses/dragon/drake_ATTACK/1.png" id="21_attack_1"]
+[ext_resource type="Texture2D" uid="uid://buw823bhjcbng" path="res://assets/characters/bosses/dragon/drake_ATTACK/2.png" id="22_attack_2"]
+[ext_resource type="Texture2D" uid="uid://bu2gq3qs61inf" path="res://assets/characters/bosses/dragon/drake_ATTACK/3.png" id="23_attack_3"]
+[ext_resource type="Texture2D" uid="uid://bn17la4k1igl1" path="res://assets/characters/bosses/dragon/drake_ATTACK/4.png" id="24_attack_4"]
+[ext_resource type="Texture2D" uid="uid://bpovjrdt2qnkg" path="res://assets/characters/bosses/dragon/drake_ATTACK/5.png" id="25_attack_5"]
+[ext_resource type="Texture2D" uid="uid://h5ub3vjo3135" path="res://assets/characters/bosses/dragon/drake_ATTACK/6.png" id="26_attack_6"]
+[ext_resource type="Texture2D" uid="uid://5ns8l3d6otev" path="res://assets/characters/bosses/dragon/drake_ATTACK/7.png" id="27_attack_7"]
+[ext_resource type="Texture2D" uid="uid://v1thrg3bx3p2" path="res://assets/characters/bosses/dragon/drake_ATTACK/8.png" id="28_attack_8"]
+[ext_resource type="Script" path="res://scripts/bosses/states/DragonFlyUpState.gd" id="29_fly_up_state"]
+[ext_resource type="Script" path="res://scripts/bosses/states/DragonFlyAcrossState.gd" id="30_fly_across_state"]
+[ext_resource type="Script" path="res://scripts/bosses/states/DragonFlyReturnState.gd" id="31_fly_return_state"]
+[ext_resource type="Texture2D" uid="uid://dgkgoko0yihwr" path="res://assets/characters/bosses/dragon/dragon_up/1.png" id="35_fly_1"]
+[ext_resource type="Texture2D" uid="uid://dfanu8ohdaaaa" path="res://assets/characters/bosses/dragon/dragon_up/2.png" id="36_fly_2"]
+[ext_resource type="Texture2D" uid="uid://fxpfbivnbn22" path="res://assets/characters/bosses/dragon/dragon_up/3.png" id="37_fly_3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_walk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_walk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_walk_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_walk_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_walk_4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_attack"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_attack_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_attack_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_attack_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_attack_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_attack_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_attack_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_attack_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_attack_8")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_up"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_fly_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fly_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_fly_3")
+}],
+"loop": true,
+"name": &"dragon_up",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_fly_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_fly_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_fly_3")
+}],
+"loop": true,
+"name": &"dragon_fly",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aggro"]
+radius = 220.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hurtbox"]
+size = Vector2(200, 180)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hit"]
+radius = 55.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wallcol"]
+radius = 26.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_click"]
+size = Vector2(90, 90)
+
+[node name="Dragon" type="CharacterBody2D"]
+y_sort_enabled = true
+scale = Vector2(0.625, 0.625)
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_dragon")
+fire_spawn_offset = Vector2(-600, 300)
+invert_visual_facing = true
+
+[node name="AnimWalk" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(0, -24)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_walk")
+animation = &"walk"
+
+[node name="AnimAttack" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-131.2, 60.8)
+scale = Vector2(0.601694, 0.5492)
+sprite_frames = SubResource("SpriteFrames_attack")
+animation = &"attack"
+
+[node name="AnimUp" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-88, 9.6)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_up")
+animation = &"dragon_up"
+
+[node name="AnimFly" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-86.4, 9.6)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_fly")
+animation = &"dragon_fly"
+
+[node name="HealthBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -40.0
+offset_top = -85.0
+offset_right = 40.0
+offset_bottom = -78.0
+
+[node name="Background" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 1)
+
+[node name="Fill" type="ColorRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8, 0.2, 0.2, 1)
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("9_aggro")
+required_group = "hero"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_aggro")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("10_hurt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_hurtbox")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("11_hit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wallcol")
+
+[node name="MobStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_sm")
+initial_state = NodePath("MobMoveState")
+
+[node name="MobMoveState" type="Node" parent="MobStateMachine"]
+script = ExtResource("3_move")
+
+[node name="MobAttackState" type="Node" parent="MobStateMachine"]
+script = ExtResource("4_attack")
+
+[node name="MobDeathState" type="Node" parent="MobStateMachine"]
+script = ExtResource("5_death")
+
+[node name="MobMovingToWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("6_towall")
+
+[node name="MobMovingToHeroState" type="Node" parent="MobStateMachine"]
+script = ExtResource("7_tohero")
+
+[node name="MobAttackWallState" type="Node" parent="MobStateMachine"]
+script = ExtResource("8_attackwall")
+
+[node name="DragonFlyUpState" type="Node" parent="MobStateMachine"]
+script = ExtResource("29_fly_up_state")
+
+[node name="DragonFlyAcrossState" type="Node" parent="MobStateMachine"]
+script = ExtResource("30_fly_across_state")
+
+[node name="DragonFlyReturnState" type="Node" parent="MobStateMachine"]
+script = ExtResource("31_fly_return_state")
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_click")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="Health" type="Node" parent="Components"]
+script = ExtResource("13_health")
+fixed_max_health = 10000.0
+
+[node name="Rewards" type="Node" parent="Components"]
+script = ExtResource("14_rewards")
+
+[node name="Slots" type="Node" parent="Components"]
+script = ExtResource("15_slots")
+
+[node name="ClickHandler" type="Node" parent="Components"]
+script = ExtResource("16_click")

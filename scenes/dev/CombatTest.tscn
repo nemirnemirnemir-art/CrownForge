@@ -1,0 +1,152 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo4qh6j2ty5pt"]
+
+[ext_resource type="Script" path="res://scripts/dev/CombatTest.gd" id="1_combat_test"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_1"]
+vertices = PackedVector2Array(1473.68, 959.844, -674.844, 790.758, -655.148, -418.398, 985.906, -487.688)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+
+[node name="CombatTest" type="Node2D"]
+script = ExtResource("1_combat_test")
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="World"]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_1")
+
+[node name="Heroes" type="Node2D" parent="World"]
+
+[node name="Mobs" type="Node2D" parent="World"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="UI"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 430.0
+
+[node name="VBox" type="VBoxContainer" parent="UI/Panel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 290.0
+offset_bottom = 410.0
+
+[node name="HeroRow" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="HeroOption" type="OptionButton" parent="UI/Panel/VBox/HeroRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AddHero" type="Button" parent="UI/Panel/VBox/HeroRow"]
+layout_mode = 2
+text = "Add Hero"
+
+[node name="ClearRow" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="ClearAll" type="Button" parent="UI/Panel/VBox/ClearRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear All"
+
+[node name="MobRowBat" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBox/MobRowBat"]
+layout_mode = 2
+text = "Bat"
+
+[node name="Count" type="SpinBox" parent="UI/Panel/VBox/MobRowBat"]
+layout_mode = 2
+max_value = 50.0
+value = 1.0
+
+[node name="Spawn" type="Button" parent="UI/Panel/VBox/MobRowBat"]
+layout_mode = 2
+text = "Spawn"
+
+[node name="MobRowMushroom" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBox/MobRowMushroom"]
+layout_mode = 2
+text = "Mushroom"
+
+[node name="Count" type="SpinBox" parent="UI/Panel/VBox/MobRowMushroom"]
+layout_mode = 2
+max_value = 50.0
+value = 1.0
+
+[node name="Spawn" type="Button" parent="UI/Panel/VBox/MobRowMushroom"]
+layout_mode = 2
+text = "Spawn"
+
+[node name="MobRowGreenSlime" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBox/MobRowGreenSlime"]
+layout_mode = 2
+text = "GreenSlime"
+
+[node name="Count" type="SpinBox" parent="UI/Panel/VBox/MobRowGreenSlime"]
+layout_mode = 2
+max_value = 50.0
+value = 1.0
+
+[node name="Spawn" type="Button" parent="UI/Panel/VBox/MobRowGreenSlime"]
+layout_mode = 2
+text = "Spawn"
+
+[node name="MobRowLizard" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBox/MobRowLizard"]
+layout_mode = 2
+text = "Lizard"
+
+[node name="Count" type="SpinBox" parent="UI/Panel/VBox/MobRowLizard"]
+layout_mode = 2
+max_value = 50.0
+value = 1.0
+
+[node name="Spawn" type="Button" parent="UI/Panel/VBox/MobRowLizard"]
+layout_mode = 2
+text = "Spawn"
+
+[node name="MobRowMiniDrake" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBox/MobRowMiniDrake"]
+layout_mode = 2
+text = "MiniDrake"
+
+[node name="Count" type="SpinBox" parent="UI/Panel/VBox/MobRowMiniDrake"]
+layout_mode = 2
+max_value = 50.0
+value = 1.0
+
+[node name="Spawn" type="Button" parent="UI/Panel/VBox/MobRowMiniDrake"]
+layout_mode = 2
+text = "Spawn"
+
+[node name="MobRowWoodenBoy" type="HBoxContainer" parent="UI/Panel/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/Panel/VBox/MobRowWoodenBoy"]
+layout_mode = 2
+text = "WoodenBoy"
+
+[node name="Count" type="SpinBox" parent="UI/Panel/VBox/MobRowWoodenBoy"]
+layout_mode = 2
+max_value = 50.0
+value = 1.0
+
+[node name="Spawn" type="Button" parent="UI/Panel/VBox/MobRowWoodenBoy"]
+layout_mode = 2
+text = "Spawn"

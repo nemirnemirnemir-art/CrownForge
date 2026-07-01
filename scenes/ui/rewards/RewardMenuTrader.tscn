@@ -1,0 +1,212 @@
+
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/rewards/RewardMenuTrader.gd" id="1_menu_script"]
+[ext_resource type="PackedScene" path="res://scenes/ui/rewards/TraderOfferTile.tscn" id="2_offer_tile_scene"]
+[ext_resource type="PackedScene" uid="uid://denarii_display_001" path="res://scenes/ui/hud/DenariiDisplay.tscn" id="3_denarii_display"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/Golderonny.png" id="4_coin_icon"]
+[ext_resource type="Texture2D" path="res://assets/ui/trader_ui/trader_background.png" id="5_trader_bg"]
+
+[node name="RewardMenuTrader" type="Control"]
+process_mode = 3
+z_index = 1000
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu_script")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78)
+mouse_filter = 1
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="Root"]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_trader_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Content" type="VBoxContainer" parent="Root"]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = -40.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 24
+
+[node name="TopBar" type="HBoxContainer" parent="Root/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Spacer" type="Control" parent="Root/Content/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DenariiDisplay" parent="Root/Content/TopBar" instance=ExtResource("3_denarii_display")]
+layout_mode = 2
+
+[node name="Buildings" type="GridContainer" parent="Root/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 8
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="B1" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B2" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B3" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B4" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B5" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B6" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B7" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="B8" parent="Root/Content/Buildings" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="Row1" type="HBoxContainer" parent="Root/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 60
+
+[node name="Artifacts" type="GridContainer" parent="Root/Content/Row1"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 14
+
+[node name="A1" parent="Root/Content/Row1/Artifacts" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="A2" parent="Root/Content/Row1/Artifacts" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="A3" parent="Root/Content/Row1/Artifacts" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="BuildingUpgrades" type="GridContainer" parent="Root/Content/Row1"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 14
+
+[node name="U1" parent="Root/Content/Row1/BuildingUpgrades" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="U2" parent="Root/Content/Row1/BuildingUpgrades" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="U3" parent="Root/Content/Row1/BuildingUpgrades" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="Row2" type="HBoxContainer" parent="Root/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Resources" type="GridContainer" parent="Root/Content/Row2"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+alignment = 1
+
+[node name="R1" parent="Root/Content/Row2/Resources" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="R2" parent="Root/Content/Row2/Resources" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="R3" parent="Root/Content/Row2/Resources" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="Spells" type="GridContainer" parent="Root/Content/Row2"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+alignment = 1
+
+[node name="S1" parent="Root/Content/Row2/Spells" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="S2" parent="Root/Content/Row2/Spells" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="S3" parent="Root/Content/Row2/Spells" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="Row3" type="HBoxContainer" parent="Root/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TroopRow" type="GridContainer" parent="Root/Content/Row3"]
+layout_mode = 2
+columns = 3
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="TT1" parent="Root/Content/Row3/TroopRow" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="BU1" parent="Root/Content/Row3/TroopRow" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="BU2" parent="Root/Content/Row3/TroopRow" instance=ExtResource("2_offer_tile_scene")]
+coin_icon = ExtResource("4_coin_icon")
+
+[node name="ContinueButton" type="Button" parent="Root"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -70.0
+offset_right = -40.0
+offset_bottom = -30.0
+text = "Продолжить"

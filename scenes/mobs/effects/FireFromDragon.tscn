@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://0awkm0uns8co"]
+
+[ext_resource type="Script" path="res://scripts/bosses/effects/FireFromDragon.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://clecidvoxe6u7" path="res://assets/characters/bosses/dragon/fire_from_dragon/1.png" id="2_fire_1"]
+[ext_resource type="Texture2D" uid="uid://dtfforctl1r5o" path="res://assets/characters/bosses/dragon/fire_from_dragon/2.png" id="3_fire_2"]
+[ext_resource type="Texture2D" uid="uid://b7bhn7hft30kb" path="res://assets/characters/bosses/dragon/fire_from_dragon/3.png" id="4_fire_3"]
+[ext_resource type="Texture2D" uid="uid://cbxfxoewxxgow" path="res://assets/characters/bosses/dragon/fire_from_dragon/4.png" id="5_fire_4"]
+[ext_resource type="Texture2D" uid="uid://deo1vypqg30a1" path="res://assets/characters/bosses/dragon/fire_from_dragon/5.png" id="6_fire_5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fire"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fire_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fire_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fire_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fire_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fire_5")
+}],
+"loop": true,
+"name": &"fire_from_dragon",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fire"]
+size = Vector2(360, 220)
+
+[node name="FireFromDragon" type="Node2D"]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_script")
+
+[node name="FireAnim" type="AnimatedSprite2D" parent="."]
+z_index = 180
+sprite_frames = SubResource("SpriteFrames_fire")
+animation = &"fire_from_dragon"
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+shape = SubResource("RectangleShape2D_fire")

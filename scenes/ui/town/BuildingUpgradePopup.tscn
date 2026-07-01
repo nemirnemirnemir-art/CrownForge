@@ -1,0 +1,275 @@
+[gd_scene load_steps=17 format=3 uid="uid://dxl24wlhh5mwr"]
+
+[ext_resource type="Script" path="res://scripts/ui/town/BuildingUpgradePopup.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://b3oi13c8n5oic" path="res://scenes/ui/town/UpgradeGrid.tscn" id="3_upgrade_grid"]
+[ext_resource type="PackedScene" uid="uid://dgglwihj4bh01" path="res://scenes/ui/widgets/SliderButton.tscn" id="8_slider_btn"]
+[ext_resource type="Texture2D" uid="uid://40ljyh73hey4" path="res://assets/ui/buttons/button_close.png" id="9_fspoh"]
+[ext_resource type="PackedScene" uid="uid://cxtk6rxibcw1p" path="res://scenes/ui/town/AlchemistCraftPanel.tscn" id="10_alchemist_craft_panel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxPanel"]
+bg_color = Color(0.11, 0.09, 0.16, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.45, 0.75, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_offset = Vector2(3, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxButtonNormal"]
+bg_color = Color(0.25, 0.2, 0.35, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.45, 0.75, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxButtonHover"]
+bg_color = Color(0.33, 0.27, 0.45, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.65, 0.95, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxButtonPressed"]
+bg_color = Color(0.18, 0.14, 0.26, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.45, 0.35, 0.6, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxButtonDisabled"]
+bg_color = Color(0.15, 0.12, 0.2, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.3, 0.25, 0.4, 0.8)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3ggp"]
+atlas = ExtResource("9_fspoh")
+region = Rect2(0, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpwh1"]
+atlas = ExtResource("9_fspoh")
+region = Rect2(25, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfeex"]
+atlas = ExtResource("9_fspoh")
+region = Rect2(50, 0, 25, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56g5f"]
+atlas = ExtResource("9_fspoh")
+region = Rect2(75, 0, 25, 0)
+
+[node name="BuildingUpgradePopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxPanel")
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 20.0
+anchor_right = 1.0
+anchor_bottom = 50.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 24
+text = "Building Title"
+horizontal_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 60.0
+offset_right = -20.0
+offset_bottom = 120.0
+grow_horizontal = 2
+text = "Building description goes here."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CurrentStatsLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -100.0
+offset_right = 190.0
+offset_bottom = 50.0
+grow_vertical = 2
+text = "Current Stats"
+
+[node name="NextStatsLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -190.0
+offset_top = -100.0
+offset_right = -20.0
+offset_bottom = 50.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Next Stats"
+horizontal_alignment = 2
+
+[node name="UpgradeGrid" parent="Panel" instance=ExtResource("3_upgrade_grid")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -150.0
+offset_right = 180.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CostLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Cost: 100 Gold"
+horizontal_alignment = 1
+
+[node name="BuyBottleButton" type="Button" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -140.0
+offset_right = 120.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "BUY HOLLOW BOTTLE"
+
+[node name="CraftButton" type="Button" parent="Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -180.0
+offset_right = 120.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/disabled = SubResource("StyleBoxButtonDisabled")
+theme_override_styles/hover = SubResource("StyleBoxButtonHover")
+theme_override_styles/pressed = SubResource("StyleBoxButtonPressed")
+theme_override_styles/normal = SubResource("StyleBoxButtonNormal")
+text = "CRAFT"
+
+[node name="UpgradeButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -60.0
+offset_right = 80.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/disabled = SubResource("StyleBoxButtonDisabled")
+theme_override_styles/hover = SubResource("StyleBoxButtonHover")
+theme_override_styles/pressed = SubResource("StyleBoxButtonPressed")
+theme_override_styles/normal = SubResource("StyleBoxButtonNormal")
+text = "UPGRADE"
+
+[node name="CloseButton" parent="Panel" instance=ExtResource("8_slider_btn")]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_right = 0.0
+grow_horizontal = 0
+texture_normal_state = SubResource("AtlasTexture_a3ggp")
+texture_hover_state = SubResource("AtlasTexture_cpwh1")
+texture_pressed_state = SubResource("AtlasTexture_lfeex")
+texture_unhold_state = SubResource("AtlasTexture_56g5f")
+
+[node name="AlchemistCraftPanel" parent="." instance=ExtResource("10_alchemist_craft_panel")]
+visible = false
+layout_mode = 1

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_ram"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "ram"
+display_name = "Ram"
+hp = 860
+dps = 48
+unit_classes = [4]
+trait_description = "+10% attack speed of Arcane troops per Ram (up to 100%)."

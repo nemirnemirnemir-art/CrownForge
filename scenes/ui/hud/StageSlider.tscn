@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://4rw4dcrregba"]
+
+[ext_resource type="Script" path="res://scripts/ui/hud/StageSlider.gd" id="1_stage_slider"]
+[ext_resource type="PackedScene" path="res://scenes/ui/widgets/SliderButton.tscn" id="2_slider_btn"]
+[ext_resource type="Texture2D" uid="uid://c2mom4ri3i7b1" path="res://assets/ui/sliders/default_slider_left.png" id="3_left"]
+[ext_resource type="Texture2D" uid="uid://c7acfvmapujlb" path="res://assets/ui/sliders/default_slider_mouse_focus.png" id="4_hover"]
+[ext_resource type="Texture2D" uid="uid://dxxxdgq3mdktj" path="res://assets/ui/sliders/default_slider_mouse_pressed_hold.png" id="5_pressed"]
+[ext_resource type="Texture2D" uid="uid://dnet5ppbdowoy" path="res://assets/ui/sliders/default_slider_mouse_pressed_unhold.png" id="6_unhold"]
+
+[node name="StageSlider" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_top = 100.0
+offset_right = 350.0
+offset_bottom = 175.0
+grow_horizontal = 2
+script = ExtResource("1_stage_slider")
+
+[node name="Background" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CardsContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 60.0
+offset_top = 5.0
+offset_right = -60.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LeftArrow" parent="." instance=ExtResource("2_slider_btn")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal_state = ExtResource("3_left")
+texture_hover_state = ExtResource("4_hover")
+texture_pressed_state = ExtResource("5_pressed")
+texture_unhold_state = ExtResource("6_unhold")
+
+[node name="RightArrow" parent="." instance=ExtResource("2_slider_btn")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = -10.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(20, 20)
+texture_normal_state = ExtResource("3_left")
+texture_hover_state = ExtResource("4_hover")
+texture_pressed_state = ExtResource("5_pressed")
+texture_unhold_state = ExtResource("6_unhold")
+
+[node name="BiomeLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -35.0
+offset_right = 50.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Forest Lvl 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyCounterContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -20.0
+offset_right = 25.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="EnemyIcon" type="TextureRect" parent="EnemyCounterContainer"]
+custom_minimum_size = Vector2(12, 12)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="EnemyCounterLabel" type="Label" parent="EnemyCounterContainer"]
+layout_mode = 2
+text = "0/10"
+vertical_alignment = 1
+
+[connection signal="pressed" from="LeftArrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="RightArrow" to="." method="_on_right_arrow_pressed"]

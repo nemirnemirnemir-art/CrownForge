@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/unit_selection_outline/back.png" id="1_back"]
+[ext_resource type="Texture2D" path="res://assets/ui/unit_selection_outline/face.png" id="2_face"]
+
+[node name="UnitSelectionOutline" type="Node2D"]
+visible = false
+
+[node name="Back" type="Sprite2D" parent="."]
+z_index = 0
+texture = ExtResource("1_back")
+
+[node name="Face" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("2_face")

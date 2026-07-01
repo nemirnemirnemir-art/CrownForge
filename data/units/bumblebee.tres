@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UnitConfig" load_steps=2 format=3 uid="uid://cunit_bumblebee"]
+
+[ext_resource type="Script" path="res://core/units/UnitConfig.gd" id="1_script"]
+
+[resource]
+script = ExtResource("1_script")
+unit_id = "bumblebee"
+display_name = "Bumblebee"
+hp = 480
+dps = 11
+unit_classes = [5, 1]
+trait_description = "+10% to damage dealt by Champion troops."
